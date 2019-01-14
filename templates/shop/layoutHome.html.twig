@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
+{% endblock %}
+
+{% block body %}
+    {% include 'components/_navbar.html.twig' %}
+
+    {% block content %}
+        {% block shop_content '' %}
+    {% endblock %}
+
+    {% include 'components/_footer.html.twig' %}
+{% endblock %}
+
+

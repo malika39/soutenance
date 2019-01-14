@@ -12,6 +12,10 @@ class Slugger
         $this->productRepository = $productRepository;
     }
 
+    /**
+     * @param $product
+     * @return string
+     */
     public function slugify($product): string
     {
         $name = $product->getName();
@@ -19,7 +23,7 @@ class Slugger
         $transliterator = \Transliterator::createFromRules(':: NFD; :: [:Nonspacing Mark:] Remove; :: Lower(); :: NFC;', \Transliterator::FORWARD);
         $slug = $transliterator->transliterate($slug);
         $slug = preg_replace('/[^a-z0-9\-]/i', '', $slug);
-
+        
         $lastProduct = $this->productRepository->findDuplicateSlug($product->getId(), $slug);
 
         if ($lastProduct) {

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-css/config.json') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-css/css/bootstrap.css') }}">
-    <link  href="{{ asset('css/styles_galerie.css') }}" rel="stylesheet">
+    <!-- <link  href="{{ asset('css/styles_galerie.css') }}" rel="stylesheet">-->
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
 
     <!-- Plugin Scroll Magic-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
@@ -29,6 +30,8 @@
     <!-- Scripts-->
     <script src="{{ asset('js/bootsrap-js/bootstrap.js') }}"></script>
     <script src="js/script-content.js"></script>
+    <script src="{{asset('/js/flash.js') }}"></script>
+    <script src="{{asset('/js/script.js') }}"></script>
     <script src="js/basket.js"></script>
 
     <title>{% block title %}
@@ -40,6 +43,23 @@
 </head>
 <body>
 {% block body '' %}
+
+        {% if app.session.flashbag.peekAll is not empty %}
+
+            <div class="flash container mt-2" id="flash">
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                            <span class="font-weight-bold">{{ message }}</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
 {% block javascripts '' %}
 {% block final_javascripts '' %}
 </body>

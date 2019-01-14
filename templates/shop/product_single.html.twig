@@ -1,46 +1,54 @@
 {% extends 'shop/layout.html.twig' %}
 
-{% block page_title %}
-    {{ product.name }}
-{% endblock %}
+{% block breadcrumb %}
+<div >
+    <div class="container">
+        <nav>
+                    <a href="{{ path('index') }}">Accueil</a>
+               <div>{{ product.name }}</div>
+        </nav>
+    </div>
+</div>
+{% endblock breadcrumb %}
 
 {% block content %}
     <div class="container">
-        <div class="breadcrumbs">
-        <nav aria-label="breadcrumb" id="recap-link">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="{{ path('index') }}">Accueil</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
-            </ol>
-        </nav>
-    </div>
+        <div class="row">
+    <div class="col-md-4">
+        {% set cover = product.images|first %}
+        <div class="image-container">
+            <img src="/img/upload/{{ cover.name }}" alt="{{ cover.description }}" class="img img-fluid product-single__image">
+        </div>
 
-        <div class="card-body content-card recap-summary">
-            <div class="row">
-                <div class="col-md-5 pr-md-5 mb-4 mb-md-0">
-                    {% set cover = product.images|first %}
-                 <div class="image-container">
-                     <img src="/img/upload/{{ cover.name }}" alt="{{ cover.description }}" class="img img-fluid product-single__image">
-                </div>
-                {% if product.images.count > 1 %}
-                    <div class="d-flex mt-2">
-                    {% for image in product.images[1:] %}
+        {% if product.images.count > 1 %}
+            <div class="">
+                {% for image in product.images[1:] %}
                     <div class="mr-2 image-container w-25">
                         <img src="/img/upload/{{ image.name }}" alt="{{ image.description }}" class="img img-fluid product-single__image">
                     </div>
                 {% endfor %}
-                </div>
-                {% endif %}
             </div>
+        {% endif %}
+    </div>
 
-    <div class="col-md-7">
+    <div class="col-md-8">
         <header class="mb-4">
-            <h1 class="product-single__heading">{{ product.name }}</h1>
+            <h1 class="product-single__heading">{{ product.name }}  - {{ product.stock }} pièces</h1>
         </header>
-        <p class="product-single__price">{{ product.price }} €</p>
+
         <div class="basket-add mb-4">
+
+        </div>
+        <p>
+            {{ product.description }}
+        </p>
+
+        <p>
+            Poids: {{ product.weight }} gr
+        </p>
+
+
+            <p class="product-single__price">{{ product.price }} € T.T.C.</p>
             {% if product.hasStock %}
                 <a href="/basket/add/{{ product.id }}" class="btn btn-primary">
                     <i class="fas fa-shopping-cart mr-2"></i>
@@ -49,30 +57,15 @@
             {% else %}
                 <a href="#" class="btn btn-secondary disabled">Rupture de stock</a>
             {% endif %}
-        </div>
-        <p>
-            {{ product.description }}
-        </p>
-    </div>
-</div>
 
-<!--<div class="overlay">
-    <div class="overlay__inner">
-        <div class="overlay__close">
-            <i class="fas fa-times"></i>
-        </div>
-        <button class="btn previous mr-4">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="overlay__slide">
-        </div>
-        <button class="btn next ml-4">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>-->
+
+    </div>
         </div>
     </div>
-    </div>
+
+
+
+
 
 {% endblock %}
 
