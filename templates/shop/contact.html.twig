@@ -1,71 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/styles_galerie.css') }}">
+{% extends 'shop/layout.html.twig' %}
 
-    <title>Lovin Sweet - Traiteur en pâtisserie</title>
-</head>
-<body>
-<nav class="navbar navbar-light" id="menu-lovin">
-    <a class="navbar-brand" href="{{ path('index') }}" id="logo">Lovin Sweet</a>
-    <ul class="nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="{{ path('index') }}">Accueil</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ path('category') }}">Galerie</a>
-        </li>
+{% block page_title %}
+    Contact
+{% endblock %}
 
-        <li class="nav-item">
-            <a class="nav-link" href="#">Boutique</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="{{ path('contact') }}">Contact</a>
-        </li>
-
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ...
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbar-dropdown">
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <!-- Si l'utilisateur est connecté et dispose d'un compte -->
-                <a class="dropdown-item" href={{ path('user_account') }}>Mon compte</a>
-            <!-- Si l'utilisateur est nouveau -->
-            {% else %}
-                <a class="dropdown-item" href={{ path('user_welcome') }}>Inscription</a>
-                <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
-            {% endif %}
-                {% if is_granted('ROLE_ADMIN') %}
-                    <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
-                {% endif %}
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a class="dropdown-item" href="{{ path('security_logout' )}}">Déconnexion</a>
-                {% endif %}
-            </div>
-    </ul>
-
-    <div id="icons-menu">
-        <a href="#"><i class="far fa-user icon-style"></i></a>
-        <a href="{{ path('basket_show')}}"><i class="fas fa-shopping-cart icon-style">
-                <div class="basket-count d-flex justify-content-center align-items-center">
-                            <span class="text-white">
-                                {{ render(controller('App\\Controller\\BasketController::productCount')) }}
-                            </span>
-                </div>
-            </i></a>
-    </div>
-    </div>
-</nav>
-
-<div class="container-fluid">
+{% block content %}
+<div class="container-fluid contact-container">
     <div class="row">
         <div class="col-md-12">
             <img src="{{ asset('img/eiffel-tower-951509.jpg') }}" class="img-fluid">
@@ -73,60 +13,23 @@
     </div>
 
     <div class="row">
-        <div class="container">
+        <div class="container mt-3">
             <div class="row">
                 <div class="col-md-6 meet">
                     <h3 class="meet-us">Nous rencontrer</h3>
                     <p class="content-contact">Vous pouvez vous rendre dans notre boutique parisienne à l'adresse suivante:</p><br />
                 </div>
                 <div class="col-md-6 meet">
-                    <img src="{{ asset('img/vitrine.jpg') }}" class="img-fluid" >
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6289045861026!2d2.2892704!3d48.865286399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe52c41a92b%3A0xfd890374916abf39!2s75+Avenue+Kl%C3%A9ber%2C+75116+Paris!5e0!3m2!1sfr!2sfr!4v1546902884102" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="row">
         <div class="col-md-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6289045861026!2d2.2892704!3d48.865286399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe52c41a92b%3A0xfd890374916abf39!2s75+Avenue+Kl%C3%A9ber%2C+75116+Paris!5e0!3m2!1sfr!2sfr!4v1546902884102" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <img src="{{ asset('img/muffins.jpg') }}" class="img-fluid">
         </div>
     </div>
 </div>
-
-    <!-- FOOTER -->
-    <footer class="container-fluid" >
-        <div class="row">
-            <div class="col-md-4">
-                <h1 class="text-center" id="title-footer">Lovin' Sweet</h1>
-            </div>
-            <div class="col-md-4" id="address">
-                <p>
-                    75 Avenue Kléber<br />
-                    75116 Paris<br />
-                    01.45.65.09.11
-                </p>
-            </div>
-            <div class="col-md-4" id="social-network">
-                <p>Suivez-nous<br />
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a><!-- Insérer les icônes-->
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Plugin Scroll Magic-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
-
-    <!-- Jquery & Popper -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-    <!-- Scripts-->
-    <script src="js/script-content.js"></script>
-</body>
-</html>
+{% endblock %}

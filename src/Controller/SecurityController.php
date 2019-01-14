@@ -54,11 +54,11 @@ class SecurityController extends AbstractController
             try {
                 $em->flush();
             } catch (\Exception $e) {
-                $this->addFlash('warning', 'Cette adresse email est déjà utilisée');
+                $this->addFlash('warning', 'Attention ! Cette adresse email est déjà utilisée.');
                 return $this->redirectToRoute('user_welcome');
             }
 
-            $this->addFlash('success', 'Compte créé. Vous pouvez maintenant vous connecter');
+            $this->addFlash('success', 'Félicitations, votre compte a bien été créé. Vous pouvez désormais vous connecter.');
         }
 
         return $this->render('shop/account/register_form.html.twig', [
@@ -86,7 +86,7 @@ class SecurityController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('success', 'Mot de passe changé');
+            $this->addFlash('success', 'Votre mot de passe a bien été modifié.');
 
             return $this->redirectToRoute('user_account');
         }

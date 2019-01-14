@@ -1,30 +1,27 @@
 {% extends 'shop/layout.html.twig' %}
-{% block title %}Adresse{% endblock %}
+{% block page_title %}Adresse{% endblock %}
 
-{% block breadcrumb %}
-<div class="breadcrumbs">
+{% block content %}
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center">
-            <li class="breadcrumb-item">Identification</li>
-            <li class="breadcrumb-item active" aria-current="page">Adresse</li>
-            <li class="breadcrumb-item">Livraison</li>
-            <li class="breadcrumb-item">Récapitulatif</li>
-            <li class="breadcrumb-item">Paiement</li>
-            </ol>
-        </nav>
-    </div>
-</div>
-{% endblock breadcrumb %}
-
-{% block shop_content %}
-<header class="mb-4">
-    <h1>Adresse de livraison</h1>
-</header>
+        <div class="breadcrumbs">
+            <nav aria-label="breadcrumb" id="recap-link">
+                <ol class="breadcrumb justify-content-center recap-list">
+                    <li class="breadcrumb-item"><a href="{{ path('user_account') }}">Identification</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Adresse</li>
+                    <li class="breadcrumb-item">Livraison</li>
+                    <li class="breadcrumb-item">Récapitulatif</li>
+                    <li class="breadcrumb-item">Paiement</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card-body content-card recap">
+    <h1 class="text-center">Adresse de livraison</h1>
 
 {{ form_start(address_form, { 'attr': { 'id': 'address-form' }}) }}
     {% include "shop/account/address_form.html.twig" with {'address_form': address_form} %}
 {{ form_end(address_form) }}
-<input type="submit" form="address-form" value="Suivant" class="btn btn-primary">
+<input type="submit" form="address-form" value="Suivant" class="btn button-account">
 
+</div>
+    </div>
 {% endblock %}

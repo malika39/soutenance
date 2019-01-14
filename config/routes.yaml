@@ -7,7 +7,18 @@ product_show:
     controller: App\Controller\ProductController::show
     requirements:
         slug: '[a-zA-Z1-9\-]+'
-        product : '[a-zA-Z1-9-_/]+'
+
+category:
+    path: /category-gallery
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: shop/category.html.twig
+
+contact:
+    path: /contact
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: shop/contact.html.twig
 
 admin_index:
     path: /admin

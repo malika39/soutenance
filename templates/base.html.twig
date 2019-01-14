@@ -1,101 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}E-commerce{% endblock %}</title>
-        <meta name="viewport" content="width=device-width initial-scale=1.0">
-        <meta name="description" content="E-commerce">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
-        <!--<link rel="stylesheet" href="/css/style.css">-->
-        <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-        {% block stylesheets %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets -->
+    <link href= "{{ asset('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-css/config.json') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-css/css/bootstrap.css') }}">
+    <!-- <link  href="{{ asset('css/styles_galerie.css') }}" rel="stylesheet">-->
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
+
+    <!-- Plugin Scroll Magic-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
+
+    <!-- Jquery & Popper -->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+    <!-- Scripts-->
+    <script src="{{ asset('js/bootsrap-js/bootstrap.js') }}"></script>
+    <script src="js/script-content.js"></script>
+    <script src="{{asset('/js/flash.js') }}"></script>
+    <script src="{{asset('/js/script.js') }}"></script>
+    <script src="js/basket.js"></script>
+
+    <title>{% block title %}
+            {%  block page_title '' %} |
+            {% block site_title 'Lovin Sweet' %}
         {% endblock %}
-    </head>
-    <body class="">
-        <header class="top-header bg-white">
-            <nav class="navbar navbar-light" id="menu-lovin">
-                <a class="navbar-brand" href="{{ path('index') }}" id="logo">Lovin Sweet</a>
-                <ul class="nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('index') }}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Galerie</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('allAteliers') }}">Ateliers</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Contact</a>
-                    </li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ...
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbar-dropdown">
-                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                <!-- Si l'utilisateur est connecté et dispose d'un compte -->
-                                <a class="dropdown-item" href="{{ path('user_account') }}">Mon compte</a>
-                                <a class="dropdown-item" href="{{ path('user_orders') }}">Suivi des commandes</a>
-                                <!-- Si l'utilisateur est nouveau -->
-                            {% else %}
-                                <a class="dropdown-item" href={{ path('user_welcome') }}>Inscription</a>
-                                <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
-                            {% endif %}
-                            {% if is_granted('ROLE_ADMIN') %}
-                                <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
-                            {% endif %}
-                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                <a class="dropdown-item" href="{{ path('security_logout' )}}">Déconnexion</a>
-                            {% endif %}
-                        </div>
-                </ul>
-
-                <div id="icons-menu">
-                    <a href="{{ path('user_welcome') }}"><i class="far fa-user icon-style"></i></a>
-                    <a href="{{ path('basket_show')}}"><i class="fas fa-shopping-cart icon-style"></i>
-                        <div class="basket-count d-flex justify-content-center align-items-center">
-                            <span class="text-white">
-                                {{ render(controller('App\\Controller\\BasketController::productCount')) }}
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </nav>
-        </header>
-      {#
-        {% if app.request.attributes.get('_route') == 'index' %}
-            <div id="background">
-                <img class="img-fluid" src="{{ asset('img/s_8.jpg') }}">
-            </div>
-            <div class="hero"></div>
-            <div class="container d-flex justify-content-between align-items-center border-top">
-            <object width="430" height="315"
-                    data="{{ asset('img/Chocolate.mp4') }}">
-            </object>
-            <object width="430" height="315"
-                    data="{{ asset('img/Strawberries.mp4') }}">
-            </object>
-            <object width="430" height="315"
-                    data="{{ asset('img/Pouring Milk Into Flour.mp4') }}">
-            </object>
-            </div>
-        {% endif %}
-        #}
-
-
+    </title>
+    {% block stylesheets '' %}
+</head>
+<body>
+{% block body '' %}
 
         {% if app.session.flashbag.peekAll is not empty %}
 
@@ -113,54 +60,7 @@
             </div>
         {% endif %}
 
-        {% block content %}{% endblock %}
-
-        <footer class="footer mt-5">
-            <div class="footer__upper py-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md">
-                            <ul class="footer__nav p-0">
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Moyens de paiment</a></li>
-                                <li><a href="#">Livraison</a></li>
-                                <li><a href="#">Conditions générales de vente</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-md">
-                            <p>Retrouvez nous sur:</p>
-                            <ul class="d-flex flex-row social-icons p-0">
-                                <li class="mx-1 border">
-                                    <a href="https://www.facebook.com/mgueddour" class="social-link d-flex justify-content-center align-items-center">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="mx-1 border">
-                                    <a href="https://www.facebook.com/mgueddour" class="social-link d-flex justify-content-center align-items-center">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="mx-1 border">
-                                    <a href="https://www.facebook.com/mgueddour" class="social-link d-flex justify-content-center align-items-center">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {% block footer %}{% endblock %}
-        </footer>
-
-        <script src="{{asset('/js/flash.js') }}"></script>
-        {% block javascripts %}
-
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-            <script src="{{asset('/js/script.js') }}"></script>
-        {% endblock %}
-    </body>
+{% block javascripts '' %}
+{% block final_javascripts '' %}
+</body>
 </html>
