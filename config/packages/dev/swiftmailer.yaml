@@ -1,0 +1,14 @@
+# See https://symfony.com/doc/current/email/dev_environment.html
+swiftmailer:
+  transport:        smtp
+  username:         neggazmalika@gmail.com
+  password:
+  host:             '%env(MAILER_HOST)%'
+  port:             465
+  encryption:       ssl
+  auth-mode:        login
+  stream_options:
+    ssl:
+      allow_self_signed: true
+      verify_peer: false
+      verify_peer_name: false
