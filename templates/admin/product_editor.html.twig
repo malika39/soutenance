@@ -1,13 +1,12 @@
 {% extends 'admin/layout.html.twig' %}
 {% block title %}{{ title }}{% endblock title %}
 
-{% block admin_content %}
-    <header class="mb-4 d-flex flex-column align-items-start flex-md-row align-items-md-center">
-        <h1>{{ title }}</h1>
-        {% if form.vars.data.id is not empty %}
-            <a href="{{ path('admin_product-delete', {'id': form.vars.data.id }) }}" class="delete-product btn btn-danger ml-md-4">Supprimer</a>
-        {% endif %}
-    </header>
+{% block content %}
+
+    <div class="container" id="product-editor">
+
+        <h1 class="text-center mt-4">{{ title }}</h1>
+
 
     {{ form_start(form) }}
         {{ form_row(form.name, {
@@ -29,13 +28,20 @@
             'label': 'Poids',
         }) }}
 
-        <div class="d-flex mb-2">
+        <div class="text-center">
             <h3>Images</h3>
         </div>
-        <div class="images row" data-prototype="{{ form_widget(form.images.vars.prototype)|e('html_attr') }}">
+
+
+        <!-- IMAGE -->
+        <div class="container" data-prototype="{{ form_widget(form.images.vars.prototype)|e('html_attr') }}">
+
             {% for image in form.images %}
-                <div class="col-md-4 image">
-                    <img src="/img/upload/{{ image.vars.value.name }}" alt="{{ image.vars.value.description }}" class="img img-fluid">  
+                <div class="col-md-12">
+                    <img src="/img/upload/{{ image.vars.value.name }}" alt="" class="img img-fluid">
+
+
+
                     <div>{{ form_row(image.description) }}</div>
                     <div>{{ form_row(image.file, {
                         'label': false,
@@ -44,18 +50,29 @@
                             'accept': 'image/*',
                         }
                     }) }}</div>
-                </div>
+
             {% endfor %}
             {% if form.images|length < 3 %}
                 <div class="col-md-4 add-image-container">
-                    <div class="w-100 h-100 border add-image d-flex align-items-center justify-content-center">
+                    <div class="">
                         <i class="far fa-plus-square"></i>
                     </div>
                 </div>
             {% endif %}
         </div>
-        <input type="submit" value="Valider" class="btn btn-primary mt-4">
+
+                <button class="btn btn-primary">
+                    valider
+                </button>
+
+            <!-- button supprimer -->
+            {% if form.vars.data.id is not empty %}
+                <a href="{{ path('admin_product-delete', {'id': form.vars.data.id }) }}" class="delete-product btn btn-danger ml-md-4">Supprimer</a>
+                <!-- pour supprimer un produit, on met path admin_product-delete. Function dans ProductController.php -->
+            {% endif %}
+        </div>
     {{ form_end(form) }}
+        </div>
 
 {% endblock %}
 

@@ -29,7 +29,7 @@ class StripeController extends AbstractController
         $this->session = new Session();
     }
 
-    public function stripeCheckout(Request $req, Mailer $mailer, OrderFactory $orderFactory): Response
+    public function stripeCheckout(Request $req, Mailer $mailer, OrderFactory $orderFactory, $message): Response
     {
         if (!$this->session->get('checkout/payment')) {
             return $this->redirectToRoute('basket_show');
@@ -67,6 +67,7 @@ class StripeController extends AbstractController
         $em->flush();
         
         $mailer->orderConfirmation($user);
+        $mailer->send($message);
 
         $this->basket->clear();
         

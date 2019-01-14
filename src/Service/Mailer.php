@@ -27,4 +27,6 @@ class Mailer
 
         $this->swiftMailer->send($message);
     }
+
+
 }

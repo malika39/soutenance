@@ -80,6 +80,7 @@ class Address
         $metadata->addPropertyConstraint('address1', new Assert\NotNull());
 
         $metadata->addPropertyConstraint('address2', new Assert\Type('string'));
+        $metadata->addPropertyConstraint('address2', new Assert\NotNull());
 
         $metadata->addPropertyConstraint('city', new Assert\Type('string'));
         $metadata->addPropertyConstraint('city', new Assert\NotNull());

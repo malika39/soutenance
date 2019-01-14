@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light" id="menu-lovin">
+    <a class="navbar-brand" href="{{ path('index') }}" id="logo">Lovin Sweet</a>
+    <ul class="nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ path('index') }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('category') }}">Galerie</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Boutique</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+        </li>
+
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ...
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbar-dropdown">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <!-- Si l'utilisateur est connecté et dispose d'un compte -->
+                    <a class="dropdown-item" href={{ path('user_account') }}>Mon compte</a>
+                    <!-- Si l'utilisateur est nouveau -->
+                {% else %}
+                    <a class="dropdown-item" href={{ path('user_welcome') }}>Inscription</a>
+                    <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
+                {% endif %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="dropdown-item" href="{{ path('security_logout' )}}">Déconnexion</a>
+                {% endif %}
+            </div>
+    </ul>
+
+    <div id="icons-menu">
+        <a href="{{ path('user_welcome') }}"><i class="far fa-user icon-style"></i></a>
+        <a href="{{ path('basket_show')}}"><i class="fas fa-shopping-cart icon-style">
+                <div class="basket-count d-flex justify-content-center align-items-center">
+                            <span class="text-white">
+                                {{ render(controller('App\\Controller\\BasketController::productCount')) }}
+                            </span>
+                </div>
+            </i></a>
+    </div>
+</nav>

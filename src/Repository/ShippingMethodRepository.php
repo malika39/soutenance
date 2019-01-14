@@ -19,10 +19,11 @@ class ShippingMethodRepository extends ServiceEntityRepository
         parent::__construct($registry, ShippingMethod::class);
     }
 
-//    /**
-//     * @return ShippingMethod[] Returns an array of ShippingMethod objects
-//     */
-    /*
+    /**  * Returns an array of ShippingMethod objects
+     * @param $value
+     * @return ShippingMethod[]
+     */
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('s')
@@ -31,20 +32,16 @@ class ShippingMethodRepository extends ServiceEntityRepository
             ->orderBy('s.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
+
     public function findOneBySomeField($value): ?ShippingMethod
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getOneOrNullResult();
     }
-    */
 }

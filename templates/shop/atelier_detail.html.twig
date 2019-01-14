@@ -1,0 +1,199 @@
+{% extends 'shop/layout.html.twig' %}
+{% block title %}Lovin Sweet{% endblock title %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <section class="container-fluid" id="atelier-detail-section-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Trouver l'atelier qui correspond à vos envies</h3>
+                    <a href="">Lieu</a>
+                    <dt>Date souhaitée</dt>
+                    <dd>
+                        <input type="text" id="datefrom" class="hasDatepicker" placeholder="De">
+                        <input type="text" id="datefrom" class="hasDatepicker" placeholder="à">
+                    </dd>
+                    <dt>Les techniques de Maxime</dt>
+                    <dd>
+                        <ul>
+                            <li><a href="">Les ateliers: nos thématiques</a></li>
+                            <li><a href="">Tous nos ateliers</a></li>
+                            <li><a href="">Les ateliers pour les enfants</a></li>
+                        </ul>
+                    </dd>
+                    <dt>Jour de la semaine</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Lundi
+                                    <span class="count">(4)</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    Mardi
+                                    <span class="count">(7)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Mercredi
+                                    <span class="count">(10)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Jeudi
+                                    <span class="count">(3)</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    Vendredi
+                                    <span class="count">(10)</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    Samedi
+                                    <span class="count">(10)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Dimanche
+                                    <span class="count">(10)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Créneau
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                <a href="">Matin</a>
+                                <span class="count">(10)</span>
+                            </li>
+                            <li>
+                                <a href="">Après-midi</a>
+                                <span class="count">(10)</span>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>Niveau du cours</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Facile
+                                    <span class="count">(4)</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    Intermédiaire
+                                    <span class="count">(7)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Difficle
+                                    <span class="count">(10)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt>
+                        Prix
+                    </dt>
+                    <dt>
+                        Professeur
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Pierre <span>Prevost</span>
+                                    <span class="count">(4)</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    Pierre <span>Prevost</span>
+                                    <span class="count">(4)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Pierre <span>Prevost</span>
+                                    <span class="count">(4)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                </div>
+
+
+                <div class="col-md-3">
+                    <img src="{{ asset('img/29.png') }}" alt="">
+                    <div class="info">
+                        <h2>
+                            <a href="">
+                                Plaisir façon LovinSweet
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ asset('img/29.png') }}" alt="">
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ asset('img/29.png') }}" alt="">
+                </div>
+            </div>
+</div>
+    </section>
+</div>
+
+
+
+
+    
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block footer %}
+
+
+
+{% endblock %}
+
+
+{% block javascript_final %}
+    <script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
+
+

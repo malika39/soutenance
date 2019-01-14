@@ -2,12 +2,13 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}LovinSweet{% endblock %}</title>
+        <title>{% block title %}E-commerce{% endblock %}</title>
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <meta name="description" content="E-commerce">
         <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/styles_galerie.css') }}">
-        <link rel="stylesheet" href="/css/style.css" id="mycss">
+        <!--<link rel="stylesheet" href="/css/style.css">-->
+        <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -16,37 +17,55 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
         {% block stylesheets %}
-
         {% endblock %}
     </head>
     <body class="">
         <header class="top-header bg-white">
-            <nav class="top-nav navbar navbar-light">
-                <a href="{{ path('index') }}" class="navbar-brand">Lovin Sweet</a>
-                {% set them = 0 %}
-                <div class="nav-right d-flex mx-2">
-                    <div class="dropdown mr-4">
-                        <i class="far fa-user"></i>
-                        <div class="dropdown-menu">
+            <nav class="navbar navbar-light" id="menu-lovin">
+                <a class="navbar-brand" href="{{ path('index') }}" id="logo">Lovin Sweet</a>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('index') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Galerie</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('allAteliers') }}">Ateliers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbar-dropdown">
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                <a href="{{ path('user_account') }}" class="dropdown-item">Mon compte</a>
+                                <!-- Si l'utilisateur est connecté et dispose d'un compte -->
+                                <a class="dropdown-item" href="{{ path('user_account') }}">Mon compte</a>
+                                <a class="dropdown-item" href="{{ path('user_orders') }}">Suivi des commandes</a>
+                                <!-- Si l'utilisateur est nouveau -->
                             {% else %}
-                                <a href="{{ path('user_welcome') }}" class="dropdown-item">Connexion</a>
-                                <a href={{ path('category')}} class="dropdown-item">Catégorie</a>
-                                <a href="{{ path('user_welcome') }}" class="dropdown-item">Nouveau compte</a>
+                                <a class="dropdown-item" href={{ path('user_welcome') }}>Inscription</a>
+                                <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a class="dropdown-item" href="{{ path('admin_index') }}">Administration</a>
-                                {% set them = 1 %}
+                                <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
                             {% endif %}
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="dropdown-item" href="{{ path('security_logout' )}}">Déconnexion</a>
                             {% endif %}
                         </div>
-                    </div>
+                </ul>
 
-                    <a class="basket-link mx-2" href="{{ path('basket_show') }}">
-                        <i class="fas fa-shopping-cart"></i>
+                <div id="icons-menu">
+                    <a href="{{ path('user_welcome') }}"><i class="far fa-user icon-style"></i></a>
+                    <a href="{{ path('basket_show')}}"><i class="fas fa-shopping-cart icon-style"></i>
                         <div class="basket-count d-flex justify-content-center align-items-center">
                             <span class="text-white">
                                 {{ render(controller('App\\Controller\\BasketController::productCount')) }}
@@ -56,31 +75,30 @@
                 </div>
             </nav>
         </header>
-
+      {#
         {% if app.request.attributes.get('_route') == 'index' %}
-
             <div id="background">
                 <img class="img-fluid" src="{{ asset('img/s_8.jpg') }}">
             </div>
             <div class="hero"></div>
             <div class="container d-flex justify-content-between align-items-center border-top">
-            {% if them ==1%}
-                <object width="430" height="315"
-                        data="{{ asset('img/Chocolate.mp4') }}">
-                </object>
-                <object width="430" height="315"
-                        data="{{ asset('img/Strawberries.mp4') }}">
-                </object>
-                <object width="430" height="315"
-                        data="{{ asset('img/Pouring Milk Into Flour.mp4') }}">
-                </object>
+            <object width="430" height="315"
+                    data="{{ asset('img/Chocolate.mp4') }}">
+            </object>
+            <object width="430" height="315"
+                    data="{{ asset('img/Strawberries.mp4') }}">
+            </object>
+            <object width="430" height="315"
+                    data="{{ asset('img/Pouring Milk Into Flour.mp4') }}">
+            </object>
             </div>
-        {% endif%}
         {% endif %}
-        
-        {% block breadcrumb %}{% endblock breadcrumb %}
+        #}
+
+
 
         {% if app.session.flashbag.peekAll is not empty %}
+
             <div class="flash container mt-2" id="flash">
                 {% for label, messages in app.flashes %}
                     {% for message in messages %}
@@ -103,7 +121,7 @@
                     <div class="row">
                         <div class="col-12 col-md">
                             <ul class="footer__nav p-0">
-                                <li><a href="#">News Letters</a></li>
+                                <li><a href="#">Contact</a></li>
                                 <li><a href="#">Moyens de paiment</a></li>
                                 <li><a href="#">Livraison</a></li>
                                 <li><a href="#">Conditions générales de vente</a></li>
@@ -113,47 +131,36 @@
                             <p>Retrouvez nous sur:</p>
                             <ul class="d-flex flex-row social-icons p-0">
                                 <li class="mx-1 border">
-                                    <a href="#" class="social-link d-flex justify-content-center align-items-center">
+                                    <a href="https://www.facebook.com/mgueddour" class="social-link d-flex justify-content-center align-items-center">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li class="mx-1 border">
-                                    <a href="#" class="social-link d-flex justify-content-center align-items-center">
+                                    <a href="https://www.facebook.com/mgueddour" class="social-link d-flex justify-content-center align-items-center">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li class="mx-1 border">
-                                    <a href="#" class="social-link d-flex justify-content-center align-items-center">
+                                    <a href="https://www.facebook.com/mgueddour" class="social-link d-flex justify-content-center align-items-center">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10522.055402213145!2d1.9456027499999997!3d48.7529827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdeaab37d771b73f5!2sLidl!5e0!3m2!1sfr!2sfr!4v1546361546101" width="200" height=auto frameborder="0"  allowfullscreen></iframe>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-lower bg-white">
-                <div class="container d-flex justify-content-between align-items-center border-top">
-                    <span class="p-4 text-secondary">Copyright © 2018 Mathieu Coudurier</span>
-                    <div class="footer-img">
-                        <img class="px-2" src="/img/visa.png" alt="visa">
-                        <img class="px-2" src="/img/paypal.png" alt="paypal">
-                        <img class="px-2" src="/img/mastercard.png" alt="mastercard">
-                    </div>
-                    <button onclick="switchStyle('/css/stylealternatif.css')">Changer le theme !</button>
-                </div>
-            </div>
+
             {% block footer %}{% endblock %}
         </footer>
-        <script src="/js/flash.js"></script>
-        <script type="text/javascript">
-            function switchStyle(style){
-                document.getElementById("mycss").setAttribute("href", style);
-            }
-        </script>
 
+        <script src="{{asset('/js/flash.js') }}"></script>
+        {% block javascripts %}
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <script src="{{asset('/js/script.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

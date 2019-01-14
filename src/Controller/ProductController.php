@@ -7,28 +7,17 @@ use App\Repository\ProductRepository;
 
 class ProductController extends AbstractController
 {
+    /**
+     * @param ProductRepository $productRepository
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function index(ProductRepository $productRepository)
     {
         $allProducts = $productRepository->findAll();
         $latestProducts = $productRepository->findLatest(3);
-
         return $this->render('shop/index.html.twig', [
             'all_products' => $allProducts,
             'latest_products' => $latestProducts,
-        ]);
-    }
-
-    public function category(ProductRepository $productRepository){
-        $allProducts = $productRepository->findAll();
-
-        return $this->render('shop/category.html.twig',[
-            'all_products' => $allProducts,
-            ]);
-    }
-    public function contact(ProductRepository $productRepository){
-        $allProducts = $productRepository->findAll();
-        return $this->render('shop/contact.html.twig',[
-            'all_products' => $allProducts,
         ]);
     }
 

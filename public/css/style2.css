@@ -1,0 +1,1549 @@
+/*
+	body -> #F2D8E1
+	a link -> #2E0823  #BDC1E0
+	a link hover -> #F2D8E1
+	paragraph -> #6C5B7B
+	button -> #FFD7E8
+
+
+
+
+Couleur background: background-color: #fff4db;
+
+Mes polices pour l'instant :
+
+@import url('https://fonts.googleapis.com/css?family=Cookie|Poiret+One');
+
+Titres : font-family: 'Cookie', cursive;
+Corps:font-family: 'Poiret One', cursive;
+
+
+*/
+
+
+/* --------------------------
+		GLOBAL SETTINGS
+-----------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Dosis|Handlee');
+
+html {
+    margin:0 !important;
+    padding:0 !important;
+
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Petit+Formal+Script');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo')*/
+
+body{
+    /*background-color:#F2D8E1;*/
+    /*	color:#FECFB8;*/
+    /*font-family: 'Varela Round', sans-serif !important;*/
+    background-image:url("../../images/background3.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Dosis', sans-serif;
+
+}
+
+a{
+    /*color:#fff !important;*/
+    text-decoration:none !important;
+    transition:0.4s ease-in;
+    font-size:1.4rem;
+}
+
+/*a:hover{
+	color:#CBBFCE !important;
+}*/
+
+
+
+a.button-style-1 {
+    color:black !important;
+    border:1px solid black;
+    padding:12px 12px;
+    text-transform:uppercase;
+    font-size:0.81rem;
+    transition:0.6s ease-out;
+}
+
+a.button-style-1:hover{
+    color:#FFD7E8;
+}
+
+
+a.button-style-2{
+    font-size:1.1rem;
+    text-transform:uppercase;
+    padding:20px 20px;
+    background-color:black;
+    color:white;
+    transition:0.6s ease-out;
+}
+
+a.button-style-2:hover{
+    color:#FFD7E8;
+}
+
+p{
+    line-height: 2rem;
+}
+
+ul {
+    list-style:none !important;
+}
+
+h2{
+    text-transform:uppercase;
+}
+
+span{
+    color:black !important;
+}
+
+
+.container-fluid{
+    padding-right:0px !important;
+    padding-left:0px !important;
+    overflow:hidden;
+}
+
+
+/* background-image */
+#background{
+    position:fixed;
+    z-index:-1;
+    top:-5%;
+    width:100%;
+}
+
+
+/* navbar */
+
+#navbar{
+    margin-top:2rem;
+}
+
+.nav-item li{
+    margin-top:1.3rem;
+
+}
+
+#menu-lovin{
+    background: black;
+    color: white;
+    font-size: 1.7rem;
+}
+
+#menu-lovin a {
+    color: burlywood;
+}
+
+#logo {
+    font-size: 4rem;
+    font-family: 'Cookie', cursive;
+}
+
+#navbar-dropdown {
+    background-color: burlywood;
+}
+
+#navbar-dropdown a {
+    color: black;
+}
+
+#navbar-dropdown a:hover {
+    background-color:black;
+    color: burlywood;
+}
+
+#user {
+    font-size: 2.5rem;
+    color:#fff4db;
+}
+
+
+
+
+#link-block1 ul, #link-block2 ul, #link-block3 ul, #link-block4 ul, #link-block5 ul{
+    background-color:white;
+    position:absolute;
+    display:none;
+}
+
+#link-block1 ul{
+    width:17rem;
+
+}
+
+#link-block1 li{
+    margin-left:-15rem;
+
+}
+
+
+#link-block2 ul{
+    width:12rem;
+}
+
+#link-block2 li{
+    margin-left:-10rem;
+}
+
+#link-block3 ul{
+    width:10rem;
+}
+
+#link-block3 li{
+    margin-left:-8rem;
+}
+
+
+
+#link-block4 ul{
+    width:13rem;
+}
+
+#link-block4 li{
+    margin-left:-10rem;
+}
+
+#link-block5 li{
+    margin-left:-4rem;
+}
+
+
+
+
+.fab{
+    color:white;
+}
+
+.navbar-dark .navbar-brand{
+    color:#B094AD !important;
+}
+
+.navbar-nav a{
+    color:#87BA6E !important;
+    font-size:1.2rem;
+}
+.navbar-nav a:hover{
+    color:#6972A7 !important;
+}
+
+.navbar-nav li{
+    margin-left:20px;
+}
+
+.navbar-nav span a{
+
+}
+
+.bg-dark{
+    /*background-color:#B094AD !important;*/
+    background-color:transparent !important;
+}
+
+
+/* font-awesome */
+i{
+    color:black;
+    font-size:1.8rem;
+    margin-top:0.8rem;
+}
+
+
+/* button small screen for toggle */
+.navbar-toggler-icon{
+    filter:sepia(100) saturate(3000%) hue-rotate(210deg);
+}
+
+.navbar-toggler{
+    border:1px solid rgb(145,82,98) !important;
+}
+
+
+
+
+
+/*-----------------------------------
+           MENU DU HAUT hachimia
+-------------------------------------*/
+
+#menu-lovin{
+    background: black;
+    color: white;
+    font-size: 1.7rem;
+}
+
+#menu-lovin a {
+    color: burlywood;
+}
+
+#menu-lovin a:hover {
+    color:#fff4db;
+}
+
+#logo {
+    font-size: 4rem;
+    font-family: 'Cookie', cursive;
+}
+
+#navbar-dropdown {
+    background-color: burlywood;
+}
+
+#navbar-dropdown a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+#navbar-dropdown a:hover {
+    background-color:black;
+    color: burlywood;
+}
+
+.icon-style{
+    font-size: 3rem;
+    padding-right: 0.5rem;
+}
+
+.basket-count {
+    height: 1.4rem;
+    width: 1.4rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    position: absolute;
+    right: 19px;
+    top: 22px;
+    transform: translate(50%);
+    background: #E14658;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------
+		   INTRO
+-----------------------------*/
+#video{
+    width:100%;
+}
+
+#skip{
+
+
+}
+
+a#skip {
+
+    z-index:2;
+    color:#E3ED82 !important;
+    position:absolute;
+    top:80%;
+    left:20%;
+    font-size:3rem;
+    margin:0;
+    text-transform:uppercase;
+}
+
+/* --------------------------
+		   HEADER
+-----------------------------*/
+
+/*#carousel{
+	position:fixed;
+	z-index:-2;
+	top:1%;
+}*/
+
+
+/* logo */
+#logo-top{
+    background-color:#DDEFF2;
+    padding:20px 0px;
+
+}
+
+
+/* carousel */
+.carousel-control-next-icon{
+    z-index:2 !important;
+}
+
+.carousel-caption{
+    display: none;
+
+}
+
+#text{
+    color: white;
+    position: absolute;
+    top: 60%;
+    /* display: block; */
+    z-index: 4;
+
+    transition:1.4s ease-in;
+}
+
+#text h3{
+    font-size:5rem;
+}
+
+#main{
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+/* --------------------------
+		PAGE ACCUEIL
+-----------------------------*/
+
+#presentation-block{
+    margin-top:60rem;
+    /*background-color:rgba(220,200,250, 0.7);*/
+    /*background-color:#F2D8E1;*/
+    /*background-image:url("../../images/background3.jpg");*/
+    background-repeat: no-repeat;
+    background-color: #ffffdb;
+    color:black;
+    transition:0.6s ease-in;
+}
+
+
+/* Pour effet scroll */
+#presentation-section-1 {
+    transition:0.6s ease-in;
+
+    height:40rem;
+}
+
+#presentation-section-1 p{
+    /*transition:6s ease-in;*/
+}
+
+#presentation-section-1 .container{
+    transition:margin-top 0.6s ease-in, opacity 2s ease-in;
+    opacity:0;
+}
+
+
+#presentation-block .container{
+    max-width:1300px;
+    margin-top:3rem;
+}
+
+#presentation{
+
+}
+
+#presentation p {
+    max-width:400px !important;
+}
+
+#presentation h2{
+    margin-top:6rem;
+    margin-bottom:6rem;
+}
+
+#gourmand{
+    font-size:2rem;
+    border:3px solid black;
+    padding-top:5%;
+    z-index:4;
+    display:block;
+    position:relative;
+}
+
+
+
+/* présentation section 2 */
+#presentation-section-2{
+    margin-top:4.4rem;
+    transition:0.6s ease-in;
+}
+
+#presentation-section-2 img{
+    width:100%;
+}
+
+
+.image-text {
+
+}
+
+
+
+#presentation-section-2 div{
+    transition:0.8s ease-in;
+}
+
+.see-more-btn{
+    margin-top:10rem;
+}
+
+.see-more-btn p {
+    font-size:1rem;
+    margin:40px 0px;
+}
+
+
+#presentation-section-2-small img{
+    margin-right:4rem;
+}
+
+#img_11{
+    max-width:200% !important;
+    margin-left:-80px;
+}
+
+#img_12{
+    max-width:60% !important;
+}
+
+#img_13{
+    max-width:60% !important;
+}
+
+
+
+
+
+
+
+/* présentation section 3 */
+#presentation-section-3{
+    margin-top:5rem;
+    max-width:87%;
+    transition:1.3s ease-in;
+}
+
+#presentation-section-3 div{
+    transition:1.8s ease-in;
+}
+
+
+#img_9{
+    max-width:100% !important;
+}
+#img_22{
+    max-width:138% !important;
+    margin-left:-95%;
+    margin-top:40%;
+
+}
+#img_11{
+    max-width:100% !important;
+
+}
+
+
+#presentation-section-3 .block_3 h2{
+
+}
+
+#presentation-section-3 .block_3 p{
+    margin-bottom:1rem;
+
+}
+
+
+
+/* presentation-section-4*/
+#presentation-section-4{
+    margin-top:1rem;
+    max-width:87%;
+    transition:1.4s ease-in;
+}
+
+#presentation-section-4 div{
+    transition:1.8s ease-in;
+}
+
+
+#img_16{
+
+
+
+}
+
+#img_17{
+
+    margin-top:-47px;
+
+}
+
+#arrow {
+    position:absolute;
+    z-index:4;
+    top:100px;
+
+    left:220px;
+    width:20%;
+
+}
+
+#img_19{
+
+    width:120%;
+}
+
+
+
+
+/* presentation-section-5*/
+#presentation-section-5{
+    margin-top:5rem;
+    max-width:87%;
+    transition:1.1s ease-in;
+}
+
+#presentation-section-5 div{
+    transition:1.8s ease-in;
+}
+
+#presentation-section-5 p{
+    margin-top:3rem;
+    max-width:87%;
+    margin-left:5rem;
+}
+
+#presentation-section-5 a{
+    margin-left:5rem;
+}
+
+
+
+/* presentation-section-6*/
+#presentation-section-6{
+    margin-top:5rem;
+    max-width:87%;
+    transition:1.4s ease-in;
+}
+
+#presentation-section-6 div{
+    transition:1.8s ease-in;
+}
+
+#img_24{
+
+    max-width:120%;
+    margin-left:32%;
+}
+
+#presentation-section-6 .block_1 p{
+    max-width:360px;
+    margin-left:24%;
+    margin-top:2rem;
+}
+
+#presentation-section-6 .block_1 a{
+    margin-left:24%;
+
+}
+
+
+#presentation-section-6 .block_2 p{
+    max-width:300px;
+    margin-left:35%;
+    margin-top:2rem;
+}
+
+#presentation-section-6 .block_2 a {
+    margin-left:33%;
+}
+
+
+
+/* presentation-section-7*/
+#presentation-section-7{
+    margin-top:4rem;
+    max-width:87%;
+    transition:1.7s ease-in;
+    padding-bottom:100px;
+}
+
+
+
+#presentation-section-7 h2{
+    transition:1.3s ease-out;
+    margin-bottom:2px;
+}
+
+#presentation-section-7 .block_2{
+    margin-left:40px;
+}
+
+#presentation-section-7 a{
+    transition:1.7s ease-out;
+}
+
+#presentation-section-7 div{
+    transition:1.8s ease-in;
+}
+
+#img_25{
+    transition:1.7s;
+}
+
+#img_26{
+    transition:1.6s;
+    margin-top:50px;
+}
+
+
+
+
+
+
+/* PRESENTATION SECTION-8*/
+
+#presentation-section-8 .col-md-4{
+    margin-top:6.3rem;
+}
+
+#presentation-section-8 .container{
+    max-width:95rem;
+}
+
+#presentation-section-8 .row{
+    margin-top:-4rem;
+}
+
+#presentation-section-8 img{
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+}
+
+#presentation-section-8 h3{
+   color:black;
+}
+
+
+/* solid overlay when hover on picture */
+
+.overlay-container-2{
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.overlay-background-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: 1s background-color ease, 1s opacity ease;
+    -moz-transition: 1s background-color ease, 1s opacity ease;
+    transition: 1s background-color ease, 1s opacity ease;
+}
+
+.overlay-background-2:hover{
+    opacity:1;
+}
+
+
+
+
+
+
+/* --------------------------
+	  PAGE NOS BOUTIQUES
+-----------------------------*/
+
+#main-container{
+    /*background-color:#D8C9CA;*/
+}
+
+
+
+.small-link{
+    margin-top:-25rem;
+    padding-bottom:20rem;
+}
+
+.small-link a{
+    color:black;
+    font-size:0.8rem;
+}
+
+.small-link p{
+    color:#878787;
+    font-size:0.8rem;
+}
+
+iframe{
+
+    margin-left:-9%;
+    margin-top:30px;
+}
+
+h2{
+    color:black;
+
+}
+
+#iframe {
+    padding-top:40px;
+}
+
+#iframe h2{
+    padding:20px 5px;
+    border:2px solid black;
+    color:black;
+}
+
+.block-boutique {
+    background-color:#B78576;
+    margin-left:-3rem;
+    width:17.4rem;
+    padding:50px 0px;
+    border-radius:7px;
+    color:white;
+}
+
+.block-boutique ul{
+
+}
+
+#nos-boutiques-france{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------
+			EVENEMENT
+-----------------------------*/
+
+
+
+
+#evenement h2{
+    margin-top:40px;
+}
+
+#evenement a{
+    font-size:3rem;
+}
+
+
+#background-evenement{
+    position:absolute;
+    width:100%;
+    filter:grayscale(0.8);
+    transition:0.4s;
+}
+
+#background-evenement:hover{
+    filter:grayscale(0);
+}
+
+
+
+/* --------------------------
+			OFFRES
+-----------------------------*/
+
+#offres{
+    margin-top:10%;
+    background-color:white;
+    color:black;
+}
+
+#offres h2{
+    margin-top:2%;
+}
+
+
+
+
+
+.button-style-2{
+    font-size:1.1rem;
+    text-transform:uppercase;
+    padding:20px 20px;
+    background-color:black;
+    color:white;
+}
+
+
+#actualités-button-2 {
+    display:none;
+}
+
+
+
+
+/* --------------------------
+			CONTACT
+-----------------------------*/
+
+#logo{
+    width:30%;
+    margin-top:-225px;
+    margin-right:20px;
+}
+
+/*p.logo-mini{
+	margin-top:152px;
+}*/
+
+#main-footer{
+    /*background-color:rgba(152,160,125, 0.7);*/
+    z-index:5;
+    color: white;
+}
+
+
+.logo-mini{
+
+}
+
+
+
+footer h4 {
+
+
+}
+
+#footer-container {
+    background-color: #3E2644;
+}
+
+#footer-container .row{
+    margin-top:30px;
+    padding-left:20px;
+}
+
+footer li{
+    font-size:1.1rem;
+}
+
+footer a {
+    font-size:1.2rem;
+    color:#BDC1E0
+}
+
+footer a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+hr {
+    border-top : 1px solid white !important;
+}
+
+
+#footer-block2{
+    width:30rem;
+    margin-left:-20px;
+}
+
+#footer-block2 span{
+    text-transform:uppercase;
+}
+
+
+#footer-block3{
+    min-width:145px;
+    margin-right:28px;
+    margin-left:-10px;
+}
+
+
+#newsletter{
+    background-color:#606472;
+    padding-top:15px;
+    margin-top:-30px;
+    padding-left:35px;
+    padding-right:35px;
+    margin-left:-4px;
+}
+
+
+#newsletter h4{
+    margin-top:30px;
+}
+
+
+footer  button{
+    background-color:#FFD7E8;
+}
+
+footer small p{
+    line-height:1rem;
+    margin-top:20px;
+}
+
+
+
+
+/* -------------------------
+		PAGE ATELIERS
+-----------------------------*/
+
+.main-e-boutique {
+    /*background-color:white;*/
+}
+#navbar-e-boutique{
+    margin-top:2rem;
+
+}
+
+#hidden-section{
+    background-color:white;
+    position:absolute;
+    z-index:8;
+    left:50%;
+    transform:translateX(-50%);
+    display:none;
+    transition:0.6s ease-in;
+}
+
+#section-1-atelier {
+    margin-top:45px;
+    padding-bottom:20px;
+    /*background-color:#ECF1F4;*/
+    color:black;
+}
+
+#section-1-atelier .col-md-4{
+    /*border-bottom:1px solid black;*/
+}
+
+#section-1-atelier a{
+    font-size:1.5rem;
+    color:#5A7875;
+
+}
+
+#section-1-atelier p{
+    margin-top:10px;
+    line-height:1.4rem;
+    color:black;
+}
+
+
+/* transparent overlay when hover on picture */
+
+.overlay-container{
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.overlay-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: 1s background-color ease, 1s opacity ease;
+    -moz-transition: 1s background-color ease, 1s opacity ease;
+    transition: 1s background-color ease, 1s opacity ease;
+}
+
+.overlay-background:hover{
+    opacity:1;
+}
+
+
+
+
+span{
+    color:white;
+}
+
+.hidden{
+    border:1px solid white;
+    padding:10px 10px;
+}
+
+.see-more{
+    display: table;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.see-more .see-more-btn{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.see-more-btn h3{
+
+    transition:1s ease-in;
+}
+
+span.link-name{
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 10px 10px;
+}
+
+
+
+
+
+/* -------------------------
+		PAGE NOS LIEUX
+-----------------------------*/
+
+#section-1-lieux{
+    padding-top:40px;
+    padding-bottom:80px;
+    width:90%;
+}
+
+.col-md-4{
+    overflow:hidden;
+}
+
+.img-nos-lieux{
+
+    transition:0.3s ease-out;
+}
+
+.img-nos-lieux:hover{
+    transform: scale(1.1);
+}
+
+
+.nom-lieux{
+    position: absolute;
+    top:28%;
+    left:50%;
+    transform:translateX(-50%);
+    color:black;
+    padding:20px 30px;
+    background-color:#CADCEC;
+
+}
+
+
+
+
+
+
+/* page nos lieux detail */
+/* section 1 */
+
+#section-1-lieux-detail{
+    margin-top:40px;
+    margin-bottom:40px;
+    padding-top:30px;
+    background-color:#CDE2F4;
+    padding-bottom:30px;
+}
+
+.carousel-inner{
+
+
+}
+
+
+#section-1-lieux-detail p{
+    font-size:1.1rem;
+    line-height:20px;
+}
+
+
+/* section 2 */
+
+.section-2-lieux-detail{
+    padding-top:20px;
+    background-color:#DDF5EE;
+    margin-top:-39px;
+}
+
+.section-2-lieux-detail h2{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+
+
+
+
+
+/* -------------------------
+		PAGE ABOUT US
+-----------------------------*/
+
+.block-about-us{
+
+    margin-top:10.4rem;
+}
+
+/* background-image */
+#background2{
+    position:fixed;
+    z-index:-1;
+    top:0%;
+}
+
+#a-propos-title{
+    text-transform:uppercase;
+    font-size:2.6rem;
+    margin-top: 5rem;
+    color:white;
+}
+
+
+#about-us-section-1{
+    padding-top:4rem;
+    padding-bottom:4rem;
+    background-color: #effff7;
+}
+
+#about-us-section-1 .container, #about-us-section-2 .container, #about-us-section-3 .container{
+    max-width:1330px;
+}
+
+#about-us-section-2{
+    padding-bottom:5rem;
+    margin-bottom:5rem;
+    background-color: #effff7;
+}
+
+
+#about-us-section-3{
+    padding-bottom:5rem;
+    padding-top:5rem;
+    margin-bottom:5rem;
+    background-color: #effff7;
+}
+
+
+/* -------------------------
+	  PAGE SINGLE PRODUCT
+-----------------------------*/
+
+
+#single-product-main h3{
+    margin-bottom:4rem;
+}
+
+#single-product-main a{
+    margin-top:4rem;
+}
+
+
+/* -------------------------
+	  PAGE ATELIER DETAIL
+-----------------------------*/
+
+#atelier-detail-section-1 li{
+    border-top:1px solid black;
+    list-style-type: square;
+}
+
+#atelier-detail-section-1{
+
+    max-width: 1375px;
+}
+
+
+#atelier-detail-section-1 .container{
+    max-width:1500px;
+}
+
+
+
+/* -------------------------
+	  PAGE ADMIN PRODUCT EDITOR
+-----------------------------*/
+
+#product-editor{
+    max-width:891px;
+}
+
+
+
+
+/* -------------------------
+		MEDIA QUERY
+-----------------------------*/
+
+
+
+@media (max-width: 768px){
+
+
+
+    /* PAGE ACCUEIL */
+
+    #navbar {
+        margin-bottom: 1rem;
+    }
+
+    #presentation p {
+        margin-left:20px;
+    }
+
+    /* presentation section 2 */
+    #presentation-section-2-small{
+        display:none;
+    }
+
+    #presentation-section-2 a{
+
+        margin-left:17%;
+    }
+
+    #img_11{
+        max-width:60%;
+        margin-left:0;
+        margin-top:50px;
+    }
+
+
+
+    /* presentation section 3 */
+    #presentation-section-3 .col-md-3{
+        margin-left:0rem;
+        margin-top:0rem;
+    }
+
+
+
+
+    #presentation-section-3 .col-md-5{
+        margin-left:0rem;
+    }
+
+    #img_21{
+        display:none;
+    }
+
+    #img_22{
+        display:none;
+    }
+
+
+
+    /* presentation section 4 */
+    #presentation-section-4{
+        margin-bottom:4rem;
+    }
+
+    #img_16{
+        display:none;
+    }
+
+    #img_17{
+        display:none;
+    }
+
+
+
+    /* presentation section 5 */
+    #presentation-section-5{
+        margin-left:1.4rem !important;
+    }
+
+    #presentation-section-5 p{
+
+        margin-left:1.4rem;
+    }
+
+    #presentation-section-5 a{
+        margin-left:2rem;
+    }
+
+
+    /* presentation section 6 */
+    #presentation-section-6{
+
+    }
+
+    #img_24{
+        margin-left:0;
+        max-width:100%;
+        margin-top:30px;
+    }
+
+    #presentation-section-6 .block_2 p{
+        margin-left:0;
+    }
+
+    .block-boutique {
+
+        margin-left:0px;
+    }
+
+
+
+
+    /* presentation section 7 */
+
+    #presentation-section-7{
+
+        padding-bottom:15px;
+    }
+
+    #presentation-section-7 h3{
+
+        text-transform:uppercase;
+    }
+
+    .overlay-container span{
+        color:white !important;
+    }
+
+
+    #presentation-section-7 .block_2 {
+        margin-top:40px;
+    }
+
+    #presentation-section-7 .block_2 p{
+        margin-top:40px;
+    }
+
+    /* footer */
+
+    /*-----------------------------------
+            FOOTER
+-------------------------------------*/
+
+    footer {
+        background-color: black;
+        color: white;
+        padding-bottom:9rem;
+    }
+
+    #category-footer {
+        background-color: black;
+        color: white;
+    }
+
+    footer p {
+        font-size: 2rem;
+    }
+
+    #title-footer {
+        font-family: 'Cookie', cursive;
+        font-size: 6rem;
+        padding-top: 9rem;
+        color: burlywood;
+    }
+
+    .title-contact {
+        color:white;
+        text-align: center;
+        font-size: 12rem;
+        font-weight: 300;
+        margin: -8em auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .meet-us {
+        font-size:5rem;
+        color: #f4427a;
+    }
+
+    #row-lovin {
+        font-size: 4rem;
+        background-color: #c6e2ee;
+        color: white;
+        font-family: 'Cookie' , cursive;
+        text-align: center;
+    }
+
+    .content-contact {
+        font-size: 2rem;
+    }
+
+    .meet {
+        margin-bottom: 2rem;
+        margin-top:2rem;
+    }
+
+    #address {
+        padding-top:10rem;
+        text-align: center;
+    }
+
+    #social-network {
+        padding-top:10rem;
+        text-align: center;
+    }
+
+    #social-network a {
+        color:burlywood;
+        padding-right: 0.5rem;
+        font-size: 3rem;
+    }
+
+    #social-network a:hover {
+        color:white;
+    }
+
+
+
+
+
+    /* PAGE NOS LIEUX */
+
+    #section-1-lieux .col-md-4 {
+        margin-top:20px !important;
+    }
+
+
+
+
+    /* page nos lieux detail */
+    #section-1-lieux-detail p{
+        margin-top:40px;
+    }
+
+}
+
+
+
+
+

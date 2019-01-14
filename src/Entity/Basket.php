@@ -4,6 +4,8 @@ namespace App\Entity;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Doctrine\Common\Persistence\ObjectManager;
 
+
+
 /**
  * Represents the basket in the session
  */
@@ -19,6 +21,7 @@ class Basket implements \Countable
         $this->objectManager = $objectManager;
     }
 
+
     public function add(Product $product)
     {
         $products = $this->all();
@@ -27,7 +30,7 @@ class Basket implements \Countable
 
         if ($this->hasProduct($id)) {
             $quantity = $products[$product->getId()]['quantity'];
-            $quantity++;
+            $quantity += 1;
         }
 
         $products[$product->getId()] = [

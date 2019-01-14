@@ -7,13 +7,7 @@ product_show:
     controller: App\Controller\ProductController::show
     requirements:
         slug: '[a-zA-Z1-9\-]+'
-category:
-    path: /category-gallery
-    controller: App\Controller\ProductController::category
-
-contact:
-    path: /contact
-    controller: App\Controller\ProductController::contact
+        product : '[a-zA-Z1-9-_/]+'
 
 admin_index:
     path: /admin
@@ -46,6 +40,22 @@ admin_order-index:
 admin_order-show:
     path: /admin/order-details/{id}
     controller: App\Controller\Admin\OrderController::show
+    requirements:
+        id: '\d+'
+
+single_atelier_show:
+    path: /single_atelier/{slug}
+    controller: App\Controller\AtelierController::show
+    requirements:
+        slug: '[a-zA-Z1-9\-]+'
+
+allAteliers:
+    path: /all_ateliers
+    controller: App\Controller\AtelierController::allAteliers
+
+atelierDetail:
+    path: /atelier_detail/{id}
+    controller: App\Controller\AtelierController::atelierDetail
     requirements:
         id: '\d+'
 
