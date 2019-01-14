@@ -1,26 +1,22 @@
 {% extends 'shop/layout.html.twig' %}
 {% block title %}Paiement{% endblock %}
 
-{% block breadcrumb %}
-<div class="breadcrumbs">
+{% block content %}
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center">
-            <li class="breadcrumb-item">Identification</li>
-            <li class="breadcrumb-item">Adresse</li>
-            <li class="breadcrumb-item">Livraison</li>
-            <li class="breadcrumb-item">Récapitulatif</li>
-            <li class="breadcrumb-item active" aria-current="page">Paiement</li>
+        <div class="breadcrumbs">
+            <nav aria-label="breadcrumb" id="recap-link">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="{{ path('user_account') }}">Identification</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('checkout_address') }}">Adresse</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('checkout_shipping') }}">Livraison</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('checkout_summary') }}">Récapitulatif</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Paiement</li>
             </ol>
         </nav>
     </div>
-</div>
-{% endblock breadcrumb %}
 
-{% block shop_content %}
-<header class="mb-4">
+        <div class="card-body content-card recap-summary">
     <h1>Paiement</h1>
-</header>
 
 <script src="https://js.stripe.com/v3/"></script>
 
@@ -50,15 +46,17 @@
             </div>
 
 
-            <input type="submit" value="Payer {{ total_price }} €" class="btn btn-primary mt-4">
+            <input type="submit" value="Payer {{ total_price }} €" class="btn button-account mt-4">
         </form>
     </div>
 
     <div class="col-md mt-4 mt-md-0">
         <h4>Avec paypal</h4>
-        <a href="{{ path('paypal_checkout') }}" class="basket-checkout__order btn btn-primary">Payer avec paypal</a>
+        <a href="{{ path('paypal_checkout') }}" class="basket-checkout__order btn button-account">Payer avec paypal</a>
     </div>
 </div>
+</div>
+    </div>
 
 {% endblock %}
 

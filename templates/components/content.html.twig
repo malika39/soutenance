@@ -1,0 +1,42 @@
+{% block body %}
+    <main class="container py-lg-4 py-md-3 py-2">
+        {% block shop_content %}
+            {% if app.request.attributes.get('_route') == 'index' %}
+
+                <div id="background">
+                    <img class="img-fluid" src="{{ asset('img/s_8.jpg') }}">
+                </div>
+                <div class="hero"></div>
+                <div class="container d-flex justify-content-between align-items-center border-top">
+                    <object width="430" height="315"
+                            data="{{ asset('img/Chocolate.mp4') }}">
+                    </object>
+                    <object width="430" height="315"
+                            data="{{ asset('img/Strawberries.mp4') }}">
+                    </object>
+                    <object width="430" height="315"
+                            data="{{ asset('img/Pouring Milk Into Flour.mp4') }}">
+                    </object>
+                </div>
+            {% endif%}
+
+            {% block breadcrumb %}{% endblock breadcrumb %}
+
+            {% if app.session.flashbag.peekAll is not empty %}
+                <div class="flash container mt-2" id="flash">
+                    {% for label, messages in app.flashes %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                                <span class="font-weight-bold">{{ message }}</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </main>
+
+{% endblock %}

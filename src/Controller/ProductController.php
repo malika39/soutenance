@@ -18,20 +18,6 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function category(ProductRepository $productRepository){
-        $allProducts = $productRepository->findAll();
-
-        return $this->render('shop/category.html.twig',[
-            'all_products' => $allProducts,
-            ]);
-    }
-    public function contact(ProductRepository $productRepository){
-        $allProducts = $productRepository->findAll();
-        return $this->render('shop/contact.html.twig',[
-            'all_products' => $allProducts,
-        ]);
-    }
-
     public function show($slug)
     {
         $product = $this->getDoctrine()

@@ -1,37 +1,24 @@
 {% extends 'shop/layout.html.twig' %}
 
-{% block breadcrumb %}
-    {% if order == true %}
-        <div class="breadcrumbs">
-            <div class="container">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item active" aria-current="page">Identification</li>
-                        <li class="breadcrumb-item">Adresse</li>
-                        <li class="breadcrumb-item">Livraison</li>
-                        <li class="breadcrumb-item">Récapitulatif</li>
-                        <li class="breadcrumb-item">Paiement</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    {% endif %}
-{% endblock breadcrumb %}
+{% block page_title %}
+    Inscription
+{% endblock %}
 
-{% block shop_content %}
+{% block content %}
 
-<h1 class="pb-4 text-center">Bienvenue</h1>
-
-<div class="row pt-4">
-    <section class="login col-md pr-4">
+<div class="container" id="form-welcome">
+    <h1 class="text-center welcome">Bienvenue</h1>
+    <div class="row">
+        <div class="col-md-6 count">
         <h4>J'ai déjà un compte</h4>
         {{ render(controller('App\\Controller\\SecurityController::login', { 'order': order })) }}
-    </section>
+    </div>
 
-    <section class="register col-md border-left pl-md-4 mt-4 mt-md-0">
+    <div class="col-md-6 new-client">
         <h4>Nouveau client</h4>
         {{ render(controller('App\\Controller\\SecurityController::register', { 'order': order })) }}
-    </section>
+    </div>
+</div>
 </div>
 
 {% endblock %}

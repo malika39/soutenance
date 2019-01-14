@@ -1,25 +1,19 @@
 {% extends 'shop/layout.html.twig' %}
-{% block title %}Commandes{% endblock title %}
 
-{% block shop_content %}
+{% block page_title %}
+    Commandes
+{% endblock %}
 
-<header class="mb-4">
-    <h1>Mes commandes</h1>
-</header>
+{% block content %}
 
-<nav>
-    <ul class="nav nav-tabs user-account-tabs">
-        <li class="nav-item">
-            <a href="{{ path('user_account') }}" class="nav-link active">Compte</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ path('user_orders') }}" class="nav-link active">Commandes</a>
-        </li>
-    </ul>
-</nav>
+<div class="container">
+    <h1 class="text-center welcome">Suivi des commandes</h1>
 
 <div class="card">
-    <div class="card-body">
+    <div class="card-header title-card">
+        <h1>Mes commandes</h1>
+    </div>
+    <div class="card-body content-card">
         {% if orders is empty %}
             <p>Pas de commande pour l'instant.</p>
         {% else %}
@@ -55,6 +49,7 @@
             </table>
         {% endif %}
     </div>
+</div>
 </div>
 
 {% endblock %}

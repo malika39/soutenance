@@ -1,7 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block content %}
-    <main class="container py-lg-4 py-md-3 py-2">
-        {% block shop_content %}{% endblock %}
-    </main>
+{% block stylesheet %}
+
+{% endblock %}
+
+{% block body %}
+
+    {% include 'components/_navbar.html.twig' %}
+
+    {% block content '' %}
+
+    {% include 'components/_footer.html.twig' %}
+
+{% endblock %}
+
+{% block javascripts %}
+
 {% endblock %}
