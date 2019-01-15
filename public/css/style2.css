@@ -1,35 +1,16 @@
-/*
-	body -> #F2D8E1
-	a link -> #2E0823  #BDC1E0
-	a link hover -> #F2D8E1
-	paragraph -> #6C5B7B
-	button -> #FFD7E8
-
-
-
-
-Couleur background: background-color: #fff4db;
-
-Mes polices pour l'instant :
-
-@import url('https://fonts.googleapis.com/css?family=Cookie|Poiret+One');
-
-Titres : font-family: 'Cookie', cursive;
-Corps:font-family: 'Poiret One', cursive;
-
-
-*/
-
-
 /* --------------------------
 		GLOBAL SETTINGS
 -----------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Dosis|Handlee');
+@import url('https://fonts.googleapis.com/css?family=Cookie|Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 
 html {
     margin:0 !important;
     padding:0 !important;
+    font-size: 62.5%;
 
 }
 
@@ -37,12 +18,14 @@ html {
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo')*/
 
 body{
-    /*background-color:#F2D8E1;*/
-    /*	color:#FECFB8;*/
-    /*font-family: 'Varela Round', sans-serif !important;*/
+    /*background-color:#F2D8E1;
+    color:#FECFB8;
+    font-family: 'Varela Round', sans-serif !important;
     background-image:url("../../images/background3.jpg");
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    background-color: white;
     font-family: 'Dosis', sans-serif;
+    font-size: 1.3rem !important;
 
 }
 
@@ -103,12 +86,11 @@ span{
 }
 
 
-.container-fluid{
+#presentation-block{
     padding-right:0px !important;
     padding-left:0px !important;
     overflow:hidden;
 }
-
 
 /* background-image */
 #background{
@@ -119,7 +101,7 @@ span{
 }
 
 
-/* navbar */
+/* navbar
 
 #navbar{
     margin-top:2rem;
@@ -241,9 +223,9 @@ span{
 }
 
 .bg-dark{
-    /*background-color:#B094AD !important;*/
+    background-color:#B094AD !important;
     background-color:transparent !important;
-}
+}*/
 
 
 /* font-awesome */
@@ -252,85 +234,6 @@ i{
     font-size:1.8rem;
     margin-top:0.8rem;
 }
-
-
-/* button small screen for toggle */
-.navbar-toggler-icon{
-    filter:sepia(100) saturate(3000%) hue-rotate(210deg);
-}
-
-.navbar-toggler{
-    border:1px solid rgb(145,82,98) !important;
-}
-
-
-
-
-
-/*-----------------------------------
-           MENU DU HAUT hachimia
--------------------------------------*/
-
-#menu-lovin{
-    background: black;
-    color: white;
-    font-size: 1.7rem;
-}
-
-#menu-lovin a {
-    color: burlywood;
-}
-
-#menu-lovin a:hover {
-    color:#fff4db;
-}
-
-#logo {
-    font-size: 4rem;
-    font-family: 'Cookie', cursive;
-}
-
-#navbar-dropdown {
-    background-color: burlywood;
-}
-
-#navbar-dropdown a {
-    color: black;
-    font-size: 1.5rem;
-}
-
-#navbar-dropdown a:hover {
-    background-color:black;
-    color: burlywood;
-}
-
-.icon-style{
-    font-size: 3rem;
-    padding-right: 0.5rem;
-}
-
-.basket-count {
-    height: 1.4rem;
-    width: 1.4rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    position: absolute;
-    right: 19px;
-    top: 22px;
-    transform: translate(50%);
-    background: #E14658;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* --------------------------
 		   INTRO
@@ -729,7 +632,7 @@ a#skip {
 }
 
 #presentation-section-8 h3{
-   color:black;
+    color:black;
 }
 
 
@@ -824,29 +727,6 @@ h2{
 
 }
 
-#nos-boutiques-france{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --------------------------
 			EVENEMENT
 -----------------------------*/
@@ -912,20 +792,15 @@ h2{
 
 /* --------------------------
 			CONTACT
------------------------------*/
+-----------------------------
 
-#logo{
-    width:30%;
-    margin-top:-225px;
-    margin-right:20px;
-}
 
 /*p.logo-mini{
 	margin-top:152px;
-}*/
+}
 
 #main-footer{
-    /*background-color:rgba(152,160,125, 0.7);*/
+    /*background-color:rgba(152,160,125, 0.7);
     z-index:5;
     color: white;
 }
@@ -1009,7 +884,7 @@ footer  button{
 footer small p{
     line-height:1rem;
     margin-top:20px;
-}
+}*/
 
 
 
@@ -1124,6 +999,407 @@ span.link-name{
     padding: 20px 10px 10px;
 }
 
+/*--------------HACHIMIA---------------------*/
+
+
+/*-----------------------------------
+            LAYOUT
+-------------------------------------*/
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.contenu {
+    height: 165rem;
+    margin-top: 5rem;
+}
+
+.container {
+    min-height: 65.1vh;
+}
+
+@media(max-width: 768px){
+    #category-footer{
+        margin-top: 80rem !important;
+    }
+    #title-footer {
+        padding-top:0rem;
+    }
+}
+
+@media(max-width:990px){
+    #form-welcome{
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+}
+
+@media(max-width:763px){
+    #form-welcome{
+        background-image: url('../img/fond-blanc.jpg') !important;
+        background-repeat: no-repeat !important;
+    }
+    .count{
+        border:0!important;
+    }
+}
+
+.form-group {
+    font-size: 1.5rem !important;
+}
+
+input {
+    font-size:1.5rem !important;
+}
+
+
+/*-----------------------------------
+            MENU DU HAUT
+-------------------------------------*/
+
+#menu-lovin{
+    background: #D7C6BD;
+    color: white;
+    font-size: 2rem;
+}
+
+#menu-lovin a {
+    color: #3D2D26;
+}
+
+#menu-lovin a:hover {
+    color:white;
+}
+
+#logo-lovin {
+    font-size: 4rem;
+    font-family: 'Cookie', cursive;
+}
+
+#navbar-dropdown {
+    background-color: #D7C6BD;
+}
+
+#navbar-dropdown a {
+    color: #3D2D26;
+    font-size: 1.5rem;
+}
+
+#navbar-dropdown a:hover {
+    background-color:#3D2D26;
+    color:#D7C6BD;
+}
+
+.icon-style{
+    font-size: 3rem;
+}
+
+.basket-count {
+    height: 1.4rem;
+    width: 1.4rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    position:relative;
+    left: 17px;
+    bottom: 34px;
+    transform: translate(50%);
+    background: #E14658;
+}
+
+
+#basket-user a{
+    color:#3D2D26;
+    text-align: right;
+}
+
+#basket-user a:hover{
+    color:white;
+}
+
+
+/*-----------------------------------
+            CAROUSEL
+-------------------------------------*/
+
+.title-carousel {
+    text-align: center;
+    font-size: 13rem;
+    font-weight: 300;
+    font-family: 'Cookie', cursive;
+    color: black;
+    margin: 4em auto;
+}
+
+.title-carousel-clear {
+    text-align: center;
+    font-size: 13rem;
+    font-weight: 300;
+    font-family: 'Cookie', cursive;
+    color: #fcf3e2;
+    margin: 4em auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+/*-----------------------------------
+            GALERIE
+-------------------------------------*/
+
+.description {
+    font-size: 2rem;
+}
+
+.btn-desc {
+    font-size: 1.5rem;
+}
+
+.title-desc {
+    font-weight: 300;
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-top: 9rem;
+}
+
+.content-anim {
+    opacity:0;
+    transition: all 1s ease-out;
+}
+
+.content-anim.fade-in {
+    opacity:1;
+}
+
+#i-a4{
+    margin-bottom:0rem;
+}
+
+.img-anim {
+    opacity:0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.img-anim.fade-in{
+    opacity:1;
+    transform: translateY(0);
+}
+
+#pastry {
+    margin:0px !important;
+}
+
+/*-----------------------------------
+            FOOTER
+-------------------------------------*/
+
+footer {
+    background-color: #D7C6BD;
+    color: black;
+    padding-top: 1.5rem;
+}
+
+#category-footer {
+    background-color: #D7C6BD;
+    color:black;
+    margin-top: 10rem;
+    padding-top: 1.5rem;
+}
+
+footer p {
+    font-size: 2rem;
+}
+
+#title-footer {
+    font-family: 'Cookie', cursive;
+    font-size: 6rem;
+    margin: 0 !important;
+    color: #3D2D26;
+}
+
+
+.meet-us {
+    font-size:5rem;
+    color: #79838F;
+}
+
+.contact-container{
+    padding-left:0;
+    padding-right:0;
+}
+
+.content-contact {
+    font-size: 2rem;
+}
+
+.meet {
+    margin-bottom: 2rem;
+    margin-top:2rem;
+}
+
+#address {
+    text-align: center;
+}
+
+#social-network {
+    text-align: center;
+}
+
+#social-network a {
+    color:#3D2D26;
+    padding-right: 0.5rem;
+    font-size: 3rem;
+}
+
+#social-network a:hover {
+    color:white;
+}
+
+/*-----------------------------------
+           PAGE INSCRIPTION
+-------------------------------------*/
+
+.welcome {
+    font-size: 4rem;
+    font-family:'Cookie', cursive;
+}
+
+#form-welcome{
+    font-size: 1.7rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    background: url('../img/3130.jpg');
+    background-size: 75%;
+    padding-bottom: 19rem;
+    padding-top: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 50% 20% / 10% 40%;
+}
+
+
+.count {
+    border-right: 0.1rem black solid;
+}
+
+.button-form{
+    background-color: black;
+    color: burlywood;
+    border: 0;
+    font-size: 1.5rem;
+    margin-bottom:1rem;
+}
+
+.button-form:hover {
+    background-color: burlywood;
+    color: black;
+}
+
+/*-----------------------------------
+           PAGE MEMBRE
+-------------------------------------*/
+
+.title-card {
+    background-color:#3D2D26;
+    font-size:1rem;
+    color: white;
+}
+
+.content-card {
+    background-color:#56463D;
+    color: white;
+}
+
+.client-info{
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.button-account{
+    border: 0.1rem #3D2D26 solid;
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+}
+
+.button-account:hover{
+    background-color:#D7C6BD;
+    color:white;
+    border: 0.1rem #3D2D26 solid;
+}
+
+/*-----------------------------------
+           PAGE MEMBRE COMMANDES
+-------------------------------------*/
+
+.title-command {
+    background-color:#756866;
+    color: black;
+    font-size: 1.5rem;
+}
+
+/*-----------------------------------
+           PAGE MEMBRE PANIER
+-------------------------------------*/
+
+.icon-client-style{
+    color:#E14658;
+    font-size:2rem;
+}
+
+.btn-center{
+    display:block;
+    margin: 0 auto;
+}
+
+.basket-checkout__order{
+    margin: 0 auto;
+}
+
+/*-----------------------------------
+    PAGE MODIFICATION MOT DE PASSE
+-------------------------------------*/
+
+
+.password-modify{
+    margin-top: 3rem;
+}
+
+.content-pwrd{
+    padding-bottom: 3.5rem;
+}
+
+/*-----------------------------------
+    PAGE COMMANDE EN COURS
+-------------------------------------*/
+
+.recap {
+    margin-top: -2rem;
+    border-radius: 0.5rem;
+}
+
+#recap-link {
+    margin-top: 5rem;
+    color: white;
+}
+
+#recap-link a {
+    color: white;
+}
+
+.recap-list {
+    font-size: 1.5rem;
+}
+
+.recap-summary{
+    margin-top: -2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 5rem;
+}
+
+
 
 
 
@@ -1178,12 +1454,6 @@ span.link-name{
     background-color:#CDE2F4;
     padding-bottom:30px;
 }
-
-.carousel-inner{
-
-
-}
-
 
 #section-1-lieux-detail p{
     font-size:1.1rem;
@@ -1442,90 +1712,6 @@ span.link-name{
     #presentation-section-7 .block_2 p{
         margin-top:40px;
     }
-
-    /* footer */
-
-    /*-----------------------------------
-            FOOTER
--------------------------------------*/
-
-    footer {
-        background-color: black;
-        color: white;
-        padding-bottom:9rem;
-    }
-
-    #category-footer {
-        background-color: black;
-        color: white;
-    }
-
-    footer p {
-        font-size: 2rem;
-    }
-
-    #title-footer {
-        font-family: 'Cookie', cursive;
-        font-size: 6rem;
-        padding-top: 9rem;
-        color: burlywood;
-    }
-
-    .title-contact {
-        color:white;
-        text-align: center;
-        font-size: 12rem;
-        font-weight: 300;
-        margin: -8em auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .meet-us {
-        font-size:5rem;
-        color: #f4427a;
-    }
-
-    #row-lovin {
-        font-size: 4rem;
-        background-color: #c6e2ee;
-        color: white;
-        font-family: 'Cookie' , cursive;
-        text-align: center;
-    }
-
-    .content-contact {
-        font-size: 2rem;
-    }
-
-    .meet {
-        margin-bottom: 2rem;
-        margin-top:2rem;
-    }
-
-    #address {
-        padding-top:10rem;
-        text-align: center;
-    }
-
-    #social-network {
-        padding-top:10rem;
-        text-align: center;
-    }
-
-    #social-network a {
-        color:burlywood;
-        padding-right: 0.5rem;
-        font-size: 3rem;
-    }
-
-    #social-network a:hover {
-        color:white;
-    }
-
-
-
-
 
     /* PAGE NOS LIEUX */
 
