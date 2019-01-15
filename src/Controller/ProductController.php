@@ -35,4 +35,14 @@ class ProductController extends AbstractController
             'product' => $product,
         ]);
     }
+
+
+    public function allProducts(ProductRepository &$productRepository)
+    {
+        $allProducts = $productRepository->findAll();
+        return $this->render('shop/all_products.html.twig', [
+            'allProducts' => $allProducts,
+
+        ]);
+    }
 }

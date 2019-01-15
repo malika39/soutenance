@@ -79,7 +79,7 @@
                     <p>
                         Edge Themes give you everything you need to create an amazing website. Designed and built with care, filled with creative elements and useful options, and completely user-friendly. Set up your website quickly and with ease.Tons of shortcodes provide countless options. From image galleries to infographics.
                     </p>
-                    <button type="submit" class="btn btn-primary">Checkout</button>
+                    {#<button type="submit" class="btn btn-primary">Checkout</button>#}
                 </div>
                 <div class="col-md-3 text-center">
                     <!-- <p>Des patisseries <br>délicieuses et <br>gourmandes</p> -->
@@ -198,18 +198,19 @@
         <div class="container">
             <div class="col-md-12 text-center">
                 <h2 >Tous nos produits</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Blanditiis consequatur eos expedita nesciunt, officiis vitae!</p>
                 <!--<a href="#" class="button-style-1">En savoir plus</a>-->
             </div>
             <div class="row" >
-                <div class="col-md-4">
-                    <a href="">
+                <div class="col-md-12">
+                    <a href="{{ path('allProduct_show') }}">
                         <span class="overlay-container-2">
                             <img class="img-fluid" src="img/61.jpg" id="img-49">
                             <span class="overlay-background-2">
                                 <span class="see-more">
                                   <span class="see-more-btn">
-                                    <h3>For a sweet treat</h3>
+                                    <h3>
+                                        Voir plus
+                                    </h3>
                                     <span class="hidden">
                                         Read more
                                     </span>
@@ -220,89 +221,8 @@
                     </a>
                 </div>
 
-                <div class="col-md-4">
-                    <span class="overlay-container-2">
-                        <img class="img-fluid" src="img/61.jpg" id="img-49">
-                        <span class="overlay-background-2">
-                            <span class="see-more">
-                              <span class="see-more-btn">
-                                <h3>For a sweet treat</h3>
-                                <span class="hidden">
-                                    Read more
-                                </span>
-                              </span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-
-                <div class="col-md-4">
-                    <span class="overlay-container-2">
-                        <img class="img-fluid" src="img/61.jpg" id="img-49">
-                        <span class="overlay-background-2">
-                            <span class="see-more">
-                              <span class="see-more-btn">
-                                <h3>For a sweet treat</h3>
-                                <span class="hidden">
-                                    Read more
-                                </span>
-                              </span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
             </div>
 
-
-            <div class="row" >
-                <div class="col-md-4">
-                    <span class="overlay-container-2">
-                        <img class="img-fluid" src="img/61.jpg" id="img-49">
-                        <span class="overlay-background-2">
-                            <span class="see-more">
-                              <span class="see-more-btn">
-                                <h3>For a sweet treat</h3>
-                                <span class="hidden">
-                                    Read more
-                                </span>
-                              </span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-
-                <div class="col-md-4">
-                    <span class="overlay-container-2">
-                        <img class="img-fluid" src="img/61.jpg" id="img-49">
-                        <span class="overlay-background-2">
-                            <span class="see-more">
-                              <span class="see-more-btn">
-                                <h3>For a sweet treat</h3>
-                                <span class="hidden">
-                                    Read more
-                                </span>
-                              </span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-
-                <div class="col-md-4">
-                    <span class="overlay-container-2">
-                        <img class="img-fluid" src="img/61.jpg" id="img-49">
-                        <span class="overlay-background-2">
-                            <span class="see-more">
-                              <span class="see-more-btn">
-                                <h3>For a sweet treat</h3>
-                                <span class="hidden">
-                                    Read more
-                                </span>
-                              </span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -330,7 +250,7 @@
 
 
 
-    <section class="container-fluid" id="presentation-section-2">
+    <section class="container-fluid" id="presentation-section-9">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -486,7 +406,7 @@
         <div class="col-md-12" id="block1">
             <a href="{{ path('allAteliers') }}">
                 <span class="overlay-container">
-                  <img class="img-fluid" src="img/68.jpg" id="img-49">
+                  <img class="img-fluid" src="img/68.jpg" id="img_68">
                   <span class="overlay-background">
                     <span class="see-more">
                       <span class="see-more-btn">

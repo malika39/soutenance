@@ -8,6 +8,10 @@ product_show:
     requirements:
         slug: '[a-zA-Z1-9\-]+'
 
+allProduct_show:
+    path: /all_products
+    controller: App\Controller\ProductController::allProducts
+
 category:
     path: /category-gallery
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController

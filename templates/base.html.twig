@@ -29,10 +29,10 @@
 
     <!-- Scripts-->
     <script src="{{ asset('js/bootsrap-js/bootstrap.js') }}"></script>
-    <script src="js/script-content.js"></script>
+    <script src="{{ asset('js/script-content.js')}}"></script>
     <script src="{{asset('/js/flash.js') }}"></script>
-    <script src="{{asset('/js/script.js') }}"></script>
-    <script src="js/basket.js"></script>
+
+    <script src="{{ asset('js/basket.js') }}"></script>
 
     <title>{% block title %}
             {%  block page_title '' %} |
@@ -61,6 +61,7 @@
         {% endif %}
 
 {% block javascripts '' %}
+    <script src="{{asset('/js/script.js') }}"></script>
 {% block final_javascripts '' %}
 </body>
 </html>
