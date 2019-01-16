@@ -71,7 +71,7 @@ class PaypalController extends AbstractController
         try {
             $payment->create($this->apiContext);
         } catch (\Exception $e) {
-            return new Response('Payement impossible');
+            return new Response('Paiement impossible');
         }
         
         $this->session->set('checkout/paypal-checkout', true);
