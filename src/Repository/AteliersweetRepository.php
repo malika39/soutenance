@@ -22,9 +22,9 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function find($id, $lockMode = null, $lockVersion = null)
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.id = :id')
-            ->andWhere('p.deletedAt = 0')
+        return $this->createQueryBuilder('a')
+            ->where('a.id = :id')
+            ->andWhere('a.deletedAt = 0')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult();
@@ -32,9 +32,9 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function findOneBySlug(string $slug): ?Ateliersweet
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.slug = :slug')
-            ->andWhere('p.deletedAt = 0')
+        return $this->createQueryBuilder('a')
+            ->where('a.slug = :slug')
+            ->andWhere('a.deletedAt = 0')
             ->setParameter('slug', $slug)
             ->getQuery()
             ->getOneOrNullResult();
@@ -42,20 +42,20 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function findDuplicateSlug(?int $id, string $slug): ?Ateliersweet
     {
-        $queryBuilder = $this->createQueryBuilder('p');
+        $queryBuilder = $this->createQueryBuilder('a');
         $queryBuilder
-            ->andWhere('p.deletedAt = 0');
+            ->andWhere('a.deletedAt = 0');
         if ($id) {
             $queryBuilder
-                ->andWhere('p.id != :id')
+                ->andWhere('a.id != :id')
                 ->setParameter('id', $id);
         }
-        $queryBuilder->andWhere('p.slug = :slug OR p.slug LIKE :slug_with_suffix')
+        $queryBuilder->andWhere('a.slug = :slug OR a.slug LIKE :slug_with_suffix')
             ->setParameter('slug', $slug)
             ->setParameter('slug_with_suffix', $slug . '-%');
 
         return $queryBuilder
-            ->orderBy('p.slug', 'DESC')
+            ->orderBy('a.slug', 'DESC')
             ->setMaxResults(1)
             ->getQuery()
             ->getOneOrNullResult();
@@ -63,24 +63,24 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function findAll()
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.deletedAt = 0')
+        return $this->createQueryBuilder('a')
+            ->where('a.deletedAt = 0')
             ->getQuery()
             ->getResult();
     }
 
     public function findAllWithDeleted()
     {
-        return $this->createQueryBuilder('p')
+        return $this->createQueryBuilder('a')
             ->getQuery()
             ->getResult();
     }
 
     public function findAllById(array $ids)
     {
-        return $this->createQueryBuilder('p')
-            ->where('p.id IN (:ids)')
-            ->andWhere('p.deletedAt = 0')
+        return $this->createQueryBuilder('a')
+            ->where('a.id IN (:ids)')
+            ->andWhere('a.deletedAt = 0')
             ->setParameter('ids', $ids)
             ->getQuery()
             ->getResult();
@@ -88,9 +88,9 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function search(?string $query, int $firstResult = 0, int $maxResults = 10)
     {
-        $query = $this->createQueryBuilder('p')
-            ->where('p.name LIKE :query')
-            ->andWhere('p.deletedAt = 0')
+        $query = $this->createQueryBuilder('a')
+            ->where('a.name LIKE :query')
+            ->andWhere('a.deletedAt = 0')
             ->setFirstResult($firstResult)
             ->setMaxResults($maxResults)
             ->setParameter('query', '%'.addcslashes($query, '%_').'%');
@@ -100,10 +100,10 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function getPaginated(int $firstResult = 0, int $maxResults = 10)
     {
-        $query = $this->createQueryBuilder('p')
-            ->select('p')
-            ->where('p.deletedAt = 0')
-            ->orderBy('p.dateCreated', 'DESC')
+        $query = $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.deletedAt = 0')
+            ->orderBy('a.dateCreated', 'DESC')
             ->setFirstResult($firstResult)
             ->setMaxResults($maxResults);
 
@@ -112,19 +112,19 @@ class AteliersweetRepository extends ServiceEntityRepository
 
     public function countCurrentlySelling()
     {
-        return $this->createQueryBuilder('p')
-            ->select('count(p.id)')
-            ->where('p.deletedAt = 0')
+        return $this->createQueryBuilder('a')
+            ->select('count(a.id)')
+            ->where('a.deletedAt = 0')
             ->getQuery()
             ->getSingleScalarResult();
     }
 
     public function findLatest(int $maxResults): array
     {
-        return $this->createQueryBuilder('p')
-            ->select('p')
-            ->where('p.deletedAt = 0')
-            ->orderBy('p.dateCreated', 'DESC')
+        return $this->createQueryBuilder('a')
+            ->select('a')
+            ->where('a.deletedAt = 0')
+            ->orderBy('a.dateCreated', 'DESC')
             ->setMaxResults($maxResults)
             ->getQuery()
             ->getResult();
