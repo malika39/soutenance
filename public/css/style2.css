@@ -1120,10 +1120,6 @@ span.link-name{
     margin-top: 5rem;
 }
 
-.container {
-    min-height: 65.1vh;
-}
-
 @media(max-width: 768px){
     #category-footer{
         margin-top: 80rem !important;
@@ -1167,6 +1163,14 @@ input {
     color: white;
     font-size: 2rem;
 }
+
+/*.fixedTop{
+    position: fixed;
+    top:0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}*/
 
 #menu-lovin a {
     color: #3D2D26;
@@ -1375,12 +1379,9 @@ footer p {
     font-size: 1.7rem;
     margin-top: 4rem;
     margin-bottom: 3rem;
-    background: url('../img/fond2.jpg');
+    background: url('../img/fond-2.jpg');
     background-size: 100%;
-    padding-bottom: 19rem;
-    padding-top: 5rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding: 5rem 4rem 19rem 4rem;
     border-radius: 50% 20% / 10% 40%;
 }
 
@@ -1389,12 +1390,9 @@ footer p {
     font-size: 1.7rem;
     margin-top: 4rem;
     margin-bottom: 3rem;
-    background: url('../img/background_macaron.jpg');
+    background: url('../img/macarons-background.jpg');
     background-size:100%;
-    padding-bottom: 19rem;
-    padding-top: 5rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding: 5rem 4rem 19rem 4rem;
     border-radius: 50% 20% / 10% 40%;
 }
 

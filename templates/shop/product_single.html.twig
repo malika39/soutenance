@@ -1,17 +1,16 @@
 {% extends 'shop/layout.html.twig' %}
 
-{% block breadcrumb %}
-<div >
+{% block content %}
+<div>
     <div class="container">
         <nav>
                     <a href="{{ path('index') }}">Accueil</a>
                <div>{{ product.name }}</div>
         </nav>
+        </div>
     </div>
 </div>
-{% endblock breadcrumb %}
 
-{% block content %}
     <div class="container" id="single-product-block">
         <div class="row">
 
@@ -31,14 +30,8 @@
                         </p>
 
                 </div>
-
-
-
-
-
-
-
             </div>
+
     <div class="col-md-4">
         {% set cover = product.images|first %}
         <div class="">
@@ -74,13 +67,4 @@
 
         </div>
     </div>
-
-
-
-
-
 {% endblock %}
-
-{% block javascripts %}
-    <script src="/js/productSlider.js"></script>
-{% endblock javascripts %}
