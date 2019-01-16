@@ -33,11 +33,11 @@ class SecurityController extends AbstractController
         ]);
     }
 
-    public function register(UserPasswordEncoderInterface $passwordEncoder, ?bool $order): Response
+    public function registration(UserPasswordEncoderInterface $passwordEncoder, ?bool $order): Response
     {
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user, [
-            'action' => $this->generateUrl('security_register'),
+            'action' => $this->generateUrl('security_registration'),
         ]);
 
         $masterRequest = $this->get('request_stack')->getMasterRequest();

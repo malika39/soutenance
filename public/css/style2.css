@@ -24,7 +24,7 @@ body{
     background-repeat: no-repeat;*/
     background-color: white;
     font-family: 'Dosis', sans-serif;
-    font-size: 1.3rem !important;
+    font-size: 1.5rem !important;
 }
 
 
@@ -33,7 +33,6 @@ a{
     /*color:#fff !important;*/
     text-decoration:none !important;
     transition:0.4s ease-in;
-    font-size:2rem !important;
 }
 
 /*a:hover{
@@ -90,14 +89,6 @@ span{
     padding-right:0px !important;
     padding-left:0px !important;
     overflow:hidden;
-}
-
-/* background-image */
-#background{
-    position:fixed;
-    z-index:-1;
-    top:-5%;
-    width:100%;
 }
 
 
@@ -1147,15 +1138,14 @@ span.link-name{
         background-size: cover !important;
         background-repeat: no-repeat !important;
     }
+    #form-welcome2{
+        background: url('../img/macarons_jaunes.jpg') !important;
+    }
 }
 
 @media(max-width:763px){
-    #form-welcome{
-        background-image: url('../img/fond-blanc.jpg') !important;
-        background-repeat: no-repeat !important;
-    }
-    .count{
-        border:0!important;
+    #form-welcome2{
+        background-color: black;
     }
 }
 
@@ -1187,7 +1177,7 @@ input {
 }
 
 #logo-lovin {
-    font-size: 4rem;
+    font-size: 4rem !important;
     font-family: 'Cookie', cursive;
 }
 
@@ -1218,7 +1208,7 @@ input {
     left: 17px;
     bottom: 34px;
     transform: translate(50%);
-    background: #E14658;
+    background:white;
 }
 
 
@@ -1385,8 +1375,8 @@ footer p {
     font-size: 1.7rem;
     margin-top: 4rem;
     margin-bottom: 3rem;
-    background: url('../img/3130.jpg');
-    background-size: 75%;
+    background: url('../img/fond2.jpg');
+    background-size: 100%;
     padding-bottom: 19rem;
     padding-top: 5rem;
     padding-left: 4rem;
@@ -1395,21 +1385,31 @@ footer p {
 }
 
 
-.count {
-    border-right: 0.1rem black solid;
+#form-welcome2{
+    font-size: 1.7rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    background: url('../img/background_macaron.jpg');
+    background-size:100%;
+    padding-bottom: 19rem;
+    padding-top: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 50% 20% / 10% 40%;
 }
 
+
 .button-form{
-    background-color: black;
-    color: burlywood;
+    background-color: #D7C6BD;
+    color: #3D2D26;
     border: 0;
     font-size: 1.5rem;
     margin-bottom:1rem;
 }
 
 .button-form:hover {
-    background-color: burlywood;
-    color: black;
+    background-color: #3D2D26;
+    color: #D7C6BD;
 }
 
 /*-----------------------------------
@@ -1423,7 +1423,7 @@ footer p {
 }
 
 .content-card {
-    background-color:#56463D;
+    background-color:#8D6D67;
     color: white;
 }
 
@@ -1433,7 +1433,7 @@ footer p {
 }
 
 .button-account{
-    border: 0.1rem #3D2D26 solid;
+    border: 0.1rem #8D6D67 solid;
     font-size: 1.5rem;
     background-color: white;
     color: black;
@@ -1442,7 +1442,7 @@ footer p {
 .button-account:hover{
     background-color:#D7C6BD;
     color:white;
-    border: 0.1rem #3D2D26 solid;
+    border: 0.1rem #8D6D67 solid;
 }
 
 /*-----------------------------------
@@ -1450,8 +1450,8 @@ footer p {
 -------------------------------------*/
 
 .title-command {
-    background-color:#756866;
-    color: black;
+    background-color:#3D2D26;
+    color: white;
     font-size: 1.5rem;
 }
 
@@ -1460,7 +1460,7 @@ footer p {
 -------------------------------------*/
 
 .icon-client-style{
-    color:#E14658;
+    color:#D1D9D7;
     font-size:2rem;
 }
 
@@ -1514,9 +1514,14 @@ footer p {
     margin-bottom: 5rem;
 }
 
+.breadcrumb{
+    background-color: #3D2D26 !important;
+    font-size: 2rem;
+}
 
-
-
+.breadcrumb-item.active{
+    color:#C19A92 !important;
+}
 
 
 /* -------------------------

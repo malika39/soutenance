@@ -1,24 +1,18 @@
 {% extends 'shop/layout.html.twig' %}
 
 {% block page_title %}
-    Inscription
+    Connexion
 {% endblock %}
 
 {% block content %}
 
 <div class="container" id="form-welcome">
-    <h1 class="text-center welcome">Bienvenue</h1>
+    <h1 class="welcome text-center">Connexion</h1>
     <div class="row">
-        <div class="col-md-6 count">
-        <h4>J'ai déjà un compte</h4>
+        <div class="col-md-12 count">
         {{ render(controller('App\\Controller\\SecurityController::login', { 'order': order })) }}
     </div>
-
-    <div class="col-md-6 new-client">
-        <h4>Nouveau client</h4>
-        {{ render(controller('App\\Controller\\SecurityController::register', { 'order': order })) }}
     </div>
-</div>
 </div>
 
 {% endblock %}

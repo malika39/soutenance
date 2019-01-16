@@ -19,6 +19,16 @@ class UserController extends AbstractController
         ]);
     }
 
+    public function registration(Request $req): Response
+    {
+        $order = $req->get('order');
+
+        return $this->render('shop/account/inscription.html.twig', [
+            'order' => $order,
+        ]);
+    }
+
+
     public function account(): Response
     {
         return $this->render('shop/account/account.html.twig');
