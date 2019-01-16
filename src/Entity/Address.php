@@ -88,9 +88,7 @@ class Address
         $metadata->addPropertyConstraint('postCode', new Assert\Type('integer'));
         $metadata->addPropertyConstraint('postCode', new Assert\NotNull());
 
-        $metadata->addPropertyConstraint('phone', new PhoneNumber([
-            'message' => 'Numéro de téléphone invalide'
-        ]));
+
     }
 
     public function getId()

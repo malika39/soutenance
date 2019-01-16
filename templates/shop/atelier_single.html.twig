@@ -2,21 +2,41 @@
 {% block title %}Lovin Sweet{% endblock title %}
 
 
-
-
 {% block content %}
-
+    <div class="container" id="single-atelier-block">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="">{{ ateliersweet.name }} </h2>
+                <div >
+                    <div class="text-center">
+                        <a class="text-center toggle" href="#">Description</a>
+                    </div>
+                    <p class="toggle-atelier-description">
+                        {{ ateliersweet.description }}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                {% set cover = ateliersweet.imagess|first %}
+                <div class="">
+                    <img src="/imgs/upload/{{ cover.name }}" alt="{{ cover.description }}" class="img img-fluid product-single__image">
+                </div>
+                {% if atelier.imagess.count > 1 %}
+                    {% for image in ateliersweet.imagess[1:] %}
+                        <div class="mr-2 image-container w-25">
+                            <img src="/img/upload/{{ image.name }}" alt="{{ image.description }}" class="img img-fluid product-single__image">
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
-
-
 
 
 {% block footer %}
 
-
-
 {% endblock %}
-
 
 {% block javascript_final %}
     <script src="{{ asset('js/script.js') }}"></script>

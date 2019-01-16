@@ -24,6 +24,29 @@ contact:
     defaults:
         template: shop/contact.html.twig
 
+
+
+admin_atelier-index:
+    path: /admin/all-ateliers/{page}
+    controller: App\Controller\Admin\AtelierController::index
+    defaults: { page: 1 }
+    requirements:
+        page: '\d+'
+
+admin_atelier-editor:
+    path: /admin/atelier-editor/{id}
+    controller: App\Controller\Admin\AtelierController::editor
+    defaults: { id: null }
+    requirements:
+        id: '\d+'
+
+admin_atelier-delete:
+    path: /admin/delete-atelier/{id}
+    controller: App\Controller\Admin\AtelierController::delete
+    requirements:
+        id: '\d+'
+
+
 admin_index:
     path: /admin
     controller: App\Controller\Admin\AdminController::index
@@ -68,11 +91,11 @@ allAteliers:
     path: /all_ateliers
     controller: App\Controller\AtelierController::allAteliers
 
-atelierDetail:
-    path: /atelier_detail/{id}
-    controller: App\Controller\AtelierController::atelierDetail
-    requirements:
-        id: '\d+'
+#atelierDetail:
+    #path: /atelier_detail/{id}
+    #controller: App\Controller\AtelierController::atelierDetail
+    #requirements:
+        #id: '\d+'
 
 basket_show:
     path: /basket

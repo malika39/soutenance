@@ -1,17 +1,28 @@
 {% extends 'base.html.twig' %}
 
-
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
+
 {% endblock %}
+
+
 
 {% block body %}
 
+
+
+{% block content %}
+
     {% include 'components/_navbar.html.twig' %}
 
-    {% block content '' %}
+
 
     {% include 'components/_footer.html.twig' %}
 
+    {% block admin_content %}
+        
+    {% endblock %}
+
+{% endblock %}
 {% endblock %}

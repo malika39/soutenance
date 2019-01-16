@@ -1,7 +1,7 @@
 {% extends 'admin/layout.html.twig' %}
 {% block title %}Administration{% endblock title %}
 
-{% block content %}
+{% block admin_content %}
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-lg-none my-3 d-flex justify-content-end">
@@ -24,6 +24,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('admin_order-index') }}">Commandes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin_atelier-editor') }}">Ajouter un Atelier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin_atelier-index') }}">Tous les Atelier</a>
                     </li>
                 </ul>
             </nav>

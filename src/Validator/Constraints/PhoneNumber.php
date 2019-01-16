@@ -8,5 +8,5 @@ use Symfony\Component\Validator\Constraint;
  */
 class PhoneNumber extends Constraint
 {
-    //public $message = '"{{ string }}" Ce n'/'est pas un numéro Valide .';
+   // public $message = '"{{ string }}" is not a valid phone number.';
 }

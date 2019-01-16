@@ -140,12 +140,14 @@ $(document).ready(function(){
             -----------------------------------  */
 
         if ($(this).scrollTop() > 1700) {
+            $("#presentation-section-8").css({"marginLeft":"0px"});
             $("#presentation-section-8").css({"marginTop":"7rem"});
             // $("h2.scroll1").css({"color":"#A7BA7C"});
             $("#presentation-section-8 div").css({"opacity":1});
 
         } else {
-            $("#presentation-section-8").css({"marginTop":"500px"});
+            $("#presentation-section-8").css({"marginLeft":"40rem"});
+            $("#presentation-section-8").css({"marginTop":"30rem"});
             // $("h2.scroll1").css({"opacity":"0"});
             $("#presentation-section-8 div").css({"opacity":0});
         }
@@ -164,7 +166,7 @@ $(document).ready(function(){
             $("#presentation-section-4 div").css({"opacity":1});
 
         } else {
-            $("#presentation-section-4").css({"marginTop":"650px"});
+            $("#presentation-section-4").css({"marginTop":"20rem"});
             // $("h2.scroll1").css({"opacity":"0"});
             $("#presentation-section-4 div").css({"opacity":0});
         }
@@ -175,16 +177,28 @@ $(document).ready(function(){
                   section 9 appears on window scroll
                 -----------------------------------  */
 
-        if ($(this).scrollTop() > 2500) {
-            $("#presentation-section-9").css({"marginTop":"7rem"});
-            // $("h2.scroll1").css({"color":"#A7BA7C"});
-            $("#presentation-section-9 div").css({"opacity":1});
+        /*if ($(this).scrollTop() > 2500) {*/
+           /* $("#presentation-section-9").css({"marginTop":"7rem"});
+            $("#presentation-section-9 div").css({"opacity":1});*/
 
-        } else {
-            $("#presentation-section-9").css({"marginTop":"1600px"});
+       /* } else {
+            $("#presentation-section-9").css({"marginTop":"2200px"});
             // $("h2.scroll1").css({"opacity":"0"});
             $("#presentation-section-9 div").css({"opacity":0});
-        }
+            */
+
+            if ($(this).scrollTop() > 2700) {
+                $("#presentation-section-9").css({"marginTop":"7rem"});
+                $("#presentation-section-9").css({"marginLeft":"0px"});
+                $("#presentation-section-9 div").css({"opacity":1});
+
+            } else {
+                $("#presentation-section-9").css({"marginTom":"-300rem"});
+                $("#presentation-section-9").css({"marginLeft":"100rem"});
+                // $("h2.scroll1").css({"opacity":"0"});
+                $("#presentation-section-9 div").css({"opacity":0});
+            }
+
 
 
 
@@ -192,7 +206,7 @@ $(document).ready(function(){
            section 5 appears on window scroll
          -----------------------------------  */
 
-        if ($(this).scrollTop() > 2600) {
+        if ($(this).scrollTop() > 3000) {
             $("#presentation-section-5").css({"marginLeft":"5.3rem"});
             // $("h2.scroll1").css({"color":"#A7BA7C"});
             $("#presentation-section-5 div").css({"opacity":1});
@@ -209,7 +223,7 @@ $(document).ready(function(){
               section 6 appears on window scroll
             -----------------------------------  */
 
-        if ($(this).scrollTop() > 3100) {
+        if ($(this).scrollTop() > 3400) {
             $("#presentation-section-6").css({"marginTop":"4rem"});
             // $("h2.scroll1").css({"color":"#A7BA7C"});
             $("#presentation-section-6 div").css({"opacity":1});
@@ -241,7 +255,7 @@ $(document).ready(function(){
         // }
 
         /* image left */
-        if ($(this).scrollTop() > 3700) {
+        if ($(this).scrollTop() > 3900) {
             $("#img_68").css({"marginLeft":"0rem"});
             $("#img_68").css({"marginTop":"0rem"});
             $("#presentation-section-7").css({"marginTop":"7rem"})
@@ -283,10 +297,16 @@ $(document).ready(function(){
 
 
 
-
-
-
-
+        /* -----------------------------------
+              PAGE PRODUCT_EDITOR
+            -----------------------------------  */
+        /*if ($(this).scrollTop() > 20) {
+            $("h1").css({"marginLeft":"0rem"});
+            $("h1").css({"opacity":1});
+        } else {
+            $("h1").css({"marginLeft":"-80rem"});
+            $("h1").css({"opacity":0});
+        }*/
     });
 
 

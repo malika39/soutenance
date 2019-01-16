@@ -8,7 +8,7 @@
 
 
 html {
-    margin:0 !important;
+
     padding:0 !important;
     font-size:62.5%;
 }
@@ -41,6 +41,14 @@ a{
 }*/
 
 
+textarea{
+    font-size:2rem !important;
+}
+
+
+.btn-primary{
+    font-size:1.8rem !important;
+}
 
 a.button-style-1 {
     color:black !important;
@@ -322,17 +330,28 @@ a#skip {
     /*background-color:#F2D8E1;*/
     /*background-image:url("../../images/background3.jpg");*/
     background-repeat: no-repeat;
-    background-color: #ffffed;
+    background-color: white;
     color:black;
     transition:0.6s ease-in;
 }
 
+
+#presentation-block h2{
+    font-size: 4rem !important;
+    margin-bottom:3rem;
+}
 
 /* Pour effet scroll */
 #presentation-section-1 {
     transition:0.6s ease-in;
     height:40rem;
 }
+
+#presentation-section-1 .container{
+    transition:margin-top 0.6s ease-in, opacity 0.8s ease-in;
+    opacity:0;
+}
+
 
 #presentation-section-1 h2{
     font-size:4rem !important;
@@ -347,10 +366,6 @@ a#skip {
     line-height: 3rem;
 }
 
-#presentation-section-1 .container{
-    transition:margin-top 0.6s ease-in, opacity 2s ease-in;
-    opacity:0;
-}
 
 
 #presentation-block .container{
@@ -386,6 +401,18 @@ a#skip {
 #presentation-section-2{
     margin-top:4.4rem;
     transition:0.6s ease-in;
+    padding-right:0px !important;
+    padding-left:0px !important;
+}
+
+
+#presentation-section-2 div{
+    transition:0.8s ease-in;
+}
+
+#presentation-section-2 .container-fluid{
+    padding-right:0px !important;
+    padding-left:0px !important;
 }
 
 #presentation-section-2 img{
@@ -421,9 +448,7 @@ a#skip {
 
 
 
-#presentation-section-2 div{
-    transition:0.8s ease-in;
-}
+
 
 .see-more-btn{
     margin-top:10rem;
@@ -462,11 +487,11 @@ a#skip {
 #presentation-section-3{
     margin-top:5rem;
     max-width:87%;
-    transition:1.3s ease-in;
+    transition:1s ease-in;
 }
 
 #presentation-section-3 div{
-    transition:1.8s ease-in;
+    transition:0.8s ease-in;
 }
 
 #presentation-section-3 p{
@@ -506,11 +531,11 @@ a#skip {
 #presentation-section-4{
     margin-top:1rem;
     max-width:87%;
-    transition:1.4s ease-in;
+    transition:1.1s ease-in;
 }
 
 #presentation-section-4 div{
-    transition:1.8s ease-in;
+    transition:0.9s ease-in;
 }
 
 
@@ -672,7 +697,7 @@ a#skip {
 }
 
 #presentation-section-8 div{
-    transition:2s ease-in;
+    transition:1s ease-in;
 }
 
 
@@ -748,6 +773,18 @@ a#skip {
 
 #presentation-section-9 {
     transition:1s ease-in;
+    padding-left:0px !important;
+    padding-right:0px !important;
+}
+
+#presentation-section-9 div{
+    transition:1s ease-in;
+}
+
+
+#presentation-section-9 .container-fluid{
+    padding-left:0px !important;
+    padding-right:0px !important;
 }
 
 #presentation-section-9 h2{
@@ -765,10 +802,6 @@ a#skip {
     color:white;
 }
 
-
-#presentation-section-9 div{
-    transition:2s ease-in;
-}
 
 #presentation-section-9 img{
     transition:2s ease-in;
@@ -1114,6 +1147,206 @@ span.link-name{
     padding: 20px 10px 10px;
 }
 
+
+
+
+/* -------------------------
+		ADMIN PAGE
+-----------------------------*/
+
+.main-container{
+    max-width:73rem;
+}
+
+#admin-page-section-1{
+    margin-bottom:37rem;
+    font-size:3rem;
+    background-color: rgba(252, 210, 244, 0.6);
+    padding:30px 10px;
+
+}
+
+
+#admin-page-section-1 h2{
+    margin-bottom:6rem;
+    font-size:3rem;
+}
+
+
+
+/* -------------------------
+		MEDIA QUERY
+-----------------------------*/
+
+
+
+@media (max-width: 768px){
+
+
+
+    /* PAGE ACCUEIL */
+
+    #navbar {
+        margin-bottom: 1rem;
+    }
+
+    #presentation p {
+        margin-left:20px;
+    }
+
+    /* presentation section 2 */
+    #presentation-section-2-small{
+        display:none;
+    }
+
+    #presentation-section-2 a{
+
+        margin-left:17%;
+    }
+
+    #img_11{
+        max-width:60%;
+        margin-left:0;
+        margin-top:50px;
+    }
+
+
+
+    /* presentation section 3 */
+    #presentation-section-3 .col-md-3{
+        margin-left:0rem;
+        margin-top:0rem;
+    }
+
+
+
+    #presentation-section-3 .col-md-5{
+        margin-left:0rem;
+    }
+
+    #img_21{
+        display:none;
+    }
+
+    #img_22{
+        display:none;
+    }
+
+
+
+    /* presentation section 4 */
+    #presentation-section-4{
+        margin-bottom:4rem;
+    }
+
+    #img_16{
+        display:none;
+    }
+
+    #img_17{
+        display:none;
+    }
+
+
+
+    /* presentation section 5 */
+    #presentation-section-5{
+        margin-left:1.4rem !important;
+    }
+
+    #presentation-section-5 p{
+
+        margin-left:1.4rem;
+    }
+
+    #presentation-section-5 a{
+        margin-left:2rem;
+    }
+
+
+    /* presentation section 6 */
+    #presentation-section-6{
+
+    }
+
+    #img_24{
+        margin-left:0;
+        max-width:100%;
+        margin-top:30px;
+    }
+
+    #presentation-section-6 .block_2 p{
+        margin-left:0;
+    }
+
+    .block-boutique {
+
+        margin-left:0px;
+    }
+
+
+
+
+    /* presentation section 7 */
+
+    #presentation-section-7{
+
+        padding-bottom:15px;
+    }
+
+
+
+    #presentation-section-7 h3{
+
+        text-transform:uppercase;
+    }
+
+    .overlay-container span{
+        color:white !important;
+    }
+
+
+    #presentation-section-7 .block_2 {
+        margin-top:40px;
+    }
+
+    #presentation-section-7 .block_2 p{
+        margin-top:40px;
+    }
+
+    /* PAGE NOS LIEUX */
+
+    #section-1-lieux .col-md-4 {
+        margin-top:20px !important;
+    }
+
+
+
+
+    /* page nos lieux detail */
+    #section-1-lieux-detail p{
+        margin-top:40px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*--------------HACHIMIA---------------------*/
 
 
@@ -1130,7 +1363,7 @@ span.link-name{
 }
 
 .container {
-    min-height: 65.1vh;
+    /*min-height: 65.1vh;*/
 }
 
 @media(max-width: 768px){
@@ -1159,12 +1392,12 @@ span.link-name{
     }
 }
 
-.form-group {
+/*.form-group {
     font-size: 1.5rem !important;
-}
+}*/
 
 input {
-    font-size:1.5rem !important;
+    font-size:1.7rem !important;
 }
 
 
@@ -1683,9 +1916,36 @@ footer p {
 -----------------------------*/
 
 #product-editor{
-    max-width:891px;
+    max-width:700px;
+    background-color: rgba(255, 250, 201, 0.7);
+    margin-top:3rem;
+    margin-bottom:3rem;
+    padding:1rem 2rem;
+    border-radius:5px;
+    transition:3s ease-in;
+    margin-left:50rem;
 }
 
+#product-editor .form-group{
+    font-size: 1.8rem !important;
+}
+
+
+#product-editor form{
+    margin-bottom:4rem;
+}
+
+
+form{
+    font-size:4rem;
+}
+
+
+#product_editor_background{
+  position:fixed;
+    z-index:-3;
+    margin-top:-10rem;
+}
 
 
 
@@ -1699,9 +1959,21 @@ footer p {
     margin-bottom:7rem;
 }
 
+#section-1-all-products a{
+   color:white !important;
+}
+
+
+#section-1-all-products .col-md-4{
+    margin-top:5rem;
+
+}
+
+
 .all-products-block{
     padding:30px 30px;
-    background-color: #e3fdff;
+    background-color: rgba(215, 198, 189, 0.9);
+    border-radius:10px;
 }
 
 #section-1-all-products a{
@@ -1711,6 +1983,7 @@ footer p {
 
 .all-products-text-block{
     margin-top:3rem;
+
 }
 
 .all-products-text-block p{
@@ -1726,8 +1999,11 @@ footer p {
 
 
 #single-product-block{
-    margin-top:7rem;
-    margin-bottom:7rem;
+    margin-top:31rem;
+    margin-bottom:47.1rem;
+    background-color:white;
+    padding-top:4rem;
+    padding-bottom:4rem;
 }
 
 #single-product-block h2{
@@ -1753,164 +2029,10 @@ footer p {
 
 .toggle p{
     margin-top:2rem;
+    color:red;
 }
 
 
-/* -------------------------
-		MEDIA QUERY
------------------------------*/
-
-
-
-@media (max-width: 768px){
-
-
-
-    /* PAGE ACCUEIL */
-
-    #navbar {
-        margin-bottom: 1rem;
-    }
-
-    #presentation p {
-        margin-left:20px;
-    }
-
-    /* presentation section 2 */
-    #presentation-section-2-small{
-        display:none;
-    }
-
-    #presentation-section-2 a{
-
-        margin-left:17%;
-    }
-
-    #img_11{
-        max-width:60%;
-        margin-left:0;
-        margin-top:50px;
-    }
-
-
-
-    /* presentation section 3 */
-    #presentation-section-3 .col-md-3{
-        margin-left:0rem;
-        margin-top:0rem;
-    }
-
-
-
-    #presentation-section-3 .col-md-5{
-        margin-left:0rem;
-    }
-
-    #img_21{
-        display:none;
-    }
-
-    #img_22{
-        display:none;
-    }
-
-
-
-    /* presentation section 4 */
-    #presentation-section-4{
-        margin-bottom:4rem;
-    }
-
-    #img_16{
-        display:none;
-    }
-
-    #img_17{
-        display:none;
-    }
-
-
-
-    /* presentation section 5 */
-    #presentation-section-5{
-        margin-left:1.4rem !important;
-    }
-
-    #presentation-section-5 p{
-
-        margin-left:1.4rem;
-    }
-
-    #presentation-section-5 a{
-        margin-left:2rem;
-    }
-
-
-    /* presentation section 6 */
-    #presentation-section-6{
-
-    }
-
-    #img_24{
-        margin-left:0;
-        max-width:100%;
-        margin-top:30px;
-    }
-
-    #presentation-section-6 .block_2 p{
-        margin-left:0;
-    }
-
-    .block-boutique {
-
-        margin-left:0px;
-    }
-
-
-
-
-    /* presentation section 7 */
-
-    #presentation-section-7{
-
-        padding-bottom:15px;
-    }
-
-
-
-    #presentation-section-7 h3{
-
-        text-transform:uppercase;
-    }
-
-    .overlay-container span{
-        color:white !important;
-    }
-
-
-    #presentation-section-7 .block_2 {
-        margin-top:40px;
-    }
-
-    #presentation-section-7 .block_2 p{
-        margin-top:40px;
-    }
-
-    /* PAGE NOS LIEUX */
-
-    #section-1-lieux .col-md-4 {
-        margin-top:20px !important;
-    }
-
-
-
-
-    /* page nos lieux detail */
-    #section-1-lieux-detail p{
-        margin-top:40px;
-    }
-
-}
 
 
 
