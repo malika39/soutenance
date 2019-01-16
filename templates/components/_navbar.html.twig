@@ -3,7 +3,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+    <div class="collapse navbar-collapse justify-content-md-center fixedTop" id="navbarsExample08">
     <ul class="navbar-nav">
         <li class="nav-item active">
             <a class="nav-link" href="{{ path('index') }}">Accueil</a>
@@ -26,7 +26,7 @@
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ...
+                Espace client
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="navbar-dropdown">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted ('ROLE_USER') %}
@@ -36,13 +36,13 @@
                     <a class="dropdown-item" href="{{ path('user_orders') }}">Suivi des commandes</a>
                     <!-- Si l'utilisateur est nouveau -->
                 {% else %}
-                    <a class="dropdown-item" href={{ path('user_welcome') }}>Inscription</a>
+                    <a class="dropdown-item" href={{ path('user_registration') }}>Inscription</a>
                     <a class="dropdown-item" href={{ path('user_welcome') }}>Connexion</a>
                     <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
                 {% endif %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_ADMIN') %}
                     <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
-                    <a class="dropdown-item href="{{ path('admin_order-index') }}">Gestion des commandes</a>
+                    <a class="dropdown-item" href="{{ path('admin_order-index') }}">Gestion des commandes</a>
                 {% endif %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <a class="dropdown-item" href="{{ path('security_logout' )}}">Déconnexion</a>
@@ -50,14 +50,13 @@
             </div>
     </ul>
     </div>
-        <div class="" id="basket-user">
+        <div id="basket-user">
             <a href="{{ path('basket_show')}}"><i class="fas fa-shopping-cart icon-style"></i>
                 <div class="basket-count d-flex justify-content-center align-items-center">
-                            <span class="text-white">
+                            <span class="text-black">
                                 {{ render(controller('App\\Controller\\BasketController::productCount')) }}
                             </span>
                 </div>
             </a>
         </div>
-
 </nav>

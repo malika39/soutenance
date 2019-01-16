@@ -63,4 +63,21 @@ $(document).ready(function(){
         .setClassToggle('#i-a4', 'fade-in')
         .addTo(controller);
 
+    /*Fixation du menu
+    var positionElementInPage = $('#menu-lovin').offset().top;
+    $(window).resize(function() {
+        positionElementInPage = $('#menu-lovin').offset().top;
+    });
+    $(window).scroll(
+        function(){
+            if ($(window).scrollTop() > positionElementInPage) {
+                // fixed
+                $('#menu-lovin').addClass("fixedTop");
+            } else {
+                // unfixed
+                $('#menu-lovin').removeClass("fixedTop");
+            }
+        }
+
+    );*/
 });

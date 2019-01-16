@@ -88,7 +88,7 @@ class Address
         $metadata->addPropertyConstraint('postCode', new Assert\Type('integer'));
         $metadata->addPropertyConstraint('postCode', new Assert\NotNull());
 
-
+        ;
     }
 
     public function getId()

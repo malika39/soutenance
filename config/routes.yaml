@@ -121,13 +121,17 @@ user_welcome:
     path: /user/welcome
     controller: App\Controller\UserController::welcome
 
+user_registration:
+    path: /user/registration
+    controller: App\Controller\UserController::registration
+
 security_login:
     path: /internal/login
     controller: App\Controller\SecurityController::login
 
-security_register:
-    path: /internal/register
-    controller: App\Controller\SecurityController::register
+security_registration:
+    path: /internal/registration
+    controller: App\Controller\SecurityController::registration
 
 security_change-password:
     path: /user/account/change-password

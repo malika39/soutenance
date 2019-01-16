@@ -1,0 +1,20 @@
+{% extends 'shop/layout.html.twig' %}
+
+{% block page_title %}
+    Inscription
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container" id="form-welcome2">
+    <h1 class="welcome text-center">Inscription</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Nouveau client</h4>
+            {{ render(controller('App\\Controller\\SecurityController::registration', { 'order': order })) }}
+        </div>
+</div>
+</div>
+
+{% endblock %}
