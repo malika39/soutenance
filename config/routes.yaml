@@ -91,11 +91,7 @@ allAteliers:
     path: /all_ateliers
     controller: App\Controller\AtelierController::allAteliers
 
-singleAtelier:
-    path: /single_atelier_show/{id}
-    controller: App\Controller\AtelierController::singleAtelier
-    requirements:
-        id: '\d+'
+
 
 basket_show:
     path: /basket
