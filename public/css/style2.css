@@ -1975,7 +1975,16 @@ form{
     margin-top:7rem;
     margin-bottom:7rem;
 }
+#background{
+    position:fixed !important;
+    width:100%;
+    margin-top:-10rem;
+    z-index:-2;
+}
 
+#background img{
+    width:100%;
+}
 #section-1-all-products a{
    color:white !important;
 }
