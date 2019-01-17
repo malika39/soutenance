@@ -9,7 +9,7 @@
 <div class="container">
     <h1 class="text-center welcome">Suivi des commandes</h1>
 
-<div class="card card-client">
+<div class="card card-client client-section">
     <div class="card-header title-card">
         <h1>Mes commandes</h1>
     </div>
@@ -30,7 +30,7 @@
                     {% for order in orders %}
                         <tr>
                             <td>
-                                <a href="{{ path('user_order', { 'id': order.id }) }}">{{ order.id }}</a>
+                                <a href="{{ path('user_order', { 'id': order.id }) }}" class="text-white">{{ order.id }}</a>
                             </td>
                             <td>
                                 {{ order.dateCreated|date() }}
