@@ -64,7 +64,7 @@ class Imageatelier
         return $this->id;
     }
 
-    public function getAteliersweet(): Atelier
+    public function getAteliersweet(): Ateliersweet
     {
         return $this->ateliersweet;
     }

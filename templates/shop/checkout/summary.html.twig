@@ -2,79 +2,80 @@
 {% block page_title %}Récapitulatif{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="breadcrumbs">
-        <nav aria-label="breadcrumb" id="recap-link">
-            <ol class="breadcrumb justify-content-center recap-list">
-                <li class="breadcrumb-item"><a href="{{ path('user_account') }}">Identification</a></li>
-                <li class="breadcrumb-item"><a href="{{ path('checkout_address') }}">Adresse</a></li>
-                <li class="breadcrumb-item"><a href="{{ path('checkout_shipping') }}">Livraison</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Récapitulatif</li>
-                <li class="breadcrumb-item">Paiement</li>
-            </ol>
-        </nav>
+    <div class="container client-section">
+        <div class="breadcrumbs">
+            <nav aria-label="breadcrumb" id="recap-link">
+                <ol class="breadcrumb justify-content-center recap-list">
+                    <li class="breadcrumb-item"><a href="{{ path('user_account') }}">Identification</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('checkout_address') }}">Adresse</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('checkout_shipping') }}">Livraison</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Récapitulatif</li>
+                    <li class="breadcrumb-item">Paiement</li>
+                </ol>
+            </nav>
+        </div>
+
+
+        <div class="card-body content-card recap-summary">
+            <h1 class="text-center">Récapitulatif</h1>
+
+            <table class="table">
+                <thead>
+                <tr class="row">
+                    <th class="col-6">Produit</th>
+                    <th class="col">Quantité</th>
+                    <th class="col">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    <tr class="row">
+                        <td class="col-6">
+                            <div class="row">
+                                {% set image = product.images|first %}
+                                <div class="col">
+                                    <img src="/img/upload/{{ image.name }}" alt="{{ image.description }}"
+                                         class="img img-fluid">
+                                </div>
+                                <div class="col">
+                                    {{ product.name }}
+                                </div>
+                            </div>
+                        </td>
+                        <td class="col">{{ product.quantity }}</td>
+                        <td class="col">{{ product.calcTotalPrice }} €</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-end">
+                <div>
+                    <p>
+                        <span class="font-weight-bold">Sous total:</span> {{ total_price }} €
+                    </p>
+                    <p>
+                        <span class="font-weight-bold">Livraison:</span>
+                        {% if shipping_fee == 0 %}
+                            gratuite
+                        {% else %}
+                            {{ shipping_fee }} €
+                        {% endif %}
+                    </p>
+                    <p>
+                        <span class="font-weight-bold">Dont TVA:</span>
+                        {{ vat_price }} €
+                    </p>
+                    <p>
+                        <span class="font-weight-bold">Total à payer:</span>
+                        {{ grand_total }} €
+                    </p>
+                </div>
+            </div>
+
+            <a href="{{ path('checkout_payment') }}" class="btn button-account">Suivant</a>
+
+        </div>
     </div>
-
-
-<div class="card-body content-card recap-summary">
-    <h1 class="text-center">Récapitulatif</h1>
-
-<table class="table">
-    <thead>
-        <tr class="row">
-            <th class="col-6">Produit</th>
-            <th class="col">Quantité</th>
-            <th class="col">Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for product in products %}
-            <tr class="row">
-                <td class="col-6">
-                    <div class="row">
-                        {% set image = product.images|first %}
-                        <div class="col">
-                            <img src="/img/upload/{{ image.name }}" alt="{{ image.description }}" class="img img-fluid">
-                        </div>
-                        <div class="col">
-                            {{ product.name }}
-                        </div>
-                    </div>
-                </td>
-                <td class="col">{{ product.quantity }}</td>
-                <td class="col">{{ product.calcTotalPrice }} €</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-<div class="d-flex justify-content-end">
-    <div>
-        <p>
-            <span class="font-weight-bold">Sous total:</span> {{ total_price }} €
-        </p>
-        <p>
-            <span class="font-weight-bold">Livraison:</span>
-            {% if shipping_fee == 0 %}
-                gratuite
-            {% else %}
-                {{ shipping_fee }} €
-            {% endif %}
-        </p>
-        <p>
-            <span class="font-weight-bold">Dont TVA:</span>
-            {{ vat_price }} €
-        </p>
-        <p>
-            <span class="font-weight-bold">Total à payer:</span>
-            {{ grand_total }} €
-        </p>
-    </div>
-</div>
-
-<a href="{{ path('checkout_payment') }}" class="btn button-account">Suivant</a>
-
-</div>
-</div>
 
 {% endblock %}
