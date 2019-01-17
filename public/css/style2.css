@@ -1208,7 +1208,7 @@ span.link-name{
 
 #single-atelier-block{
     color:white;
-    background-color:red;
+    background-color: rgba(215, 198, 189, 0.88);
     margin-bottom:27rem;
     margin-top:26rem;
 }
