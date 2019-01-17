@@ -60,7 +60,7 @@
                         <a class="text-center toggle" href="#">Description</a>
                     </div>
                     <p class="toggle-atelier-description">
-                        {{ atelier.description }}
+                        {{ ateliersweet.description }}
                     </p>
                 </div>
             </div>
@@ -70,8 +70,8 @@
                     <img src="/imgs/upload/{{ cover.name }}" alt="{{ cover.description }}"
                          class="img img-fluid product-single__image">
                 </div>
-                {% if atelier.imagess.count > 1 %}
-                    {% for image in atelier.imagess %}
+                {% if ateliersweet.imagess.count > 1 %}
+                    {% for image in ateliersweet.imagess %}
                         <div class="mr-2 image-container w-25">
                             <img src="/imgs/upload/{{ image.name }}" alt="{{ image.description }}"
                                  class="img img-fluid product-single__image">
