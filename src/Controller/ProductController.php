@@ -44,12 +44,11 @@ class ProductController extends AbstractController
     }
 
 
-    public function allProducts(ProductRepository &$productRepository)
+    public function allProducts(ProductRepository $productRepository)
     {
         $allProducts = $productRepository->findAll();
         return $this->render('shop/all_products.html.twig', [
             'allProducts' => $allProducts,
-
         ]);
     }
 }

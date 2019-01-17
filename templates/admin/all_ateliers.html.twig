@@ -2,9 +2,16 @@
 {% block title %}Tous les Ateliers{% endblock title %}
 
 {% block admin_content %}
-    <header class="mb-4">
-        <h1>Atelier</h1>
-    </header>
+
+
+
+
+
+
+
+
+    <div class="container" id="admin-all-ateliers">
+        <h1 class="text-center">Atelier</h1>
 
     {{ form_start(form) }}
     {{ form_row(form.search, {
@@ -83,6 +90,8 @@
             {% endif %}
         </ul>
     </nav>
+
+    </div>
 
 {% endblock %}
 

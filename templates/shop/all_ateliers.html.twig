@@ -49,24 +49,30 @@
 
     <!--  SECTION 1 ATELIERS -->
 
-    <div class="container-fluid" id="section-1-atelier">
-
-        <section class="container text-center">
-            <div class="row">
-                {% for ateliers in all_ateliers %}
+        <div class="container-fluid" id="section-1-atelier">
+            <section class="container text-center">
+                <div class="row">
+                    {% for ateliers in all_ateliers %}
                     <div class="col-md-4">
-                        <a href="#">
+                        <a href="/single_atelier_show/{{ ateliers.id }}">
                         <span class="overlay-container">
                           <img class="img-fluid" src="img/28.jpg">
                           <span class="overlay-background">
                             <span class="see-more">
                               <span class="see-more-btn">
-                                <span class="hidden">Résever un atelier</span>
+                                <span class="hidden">Réserver un atelier</span>
                               </span>
                             </span>
                           </span>
                            <span class="link-name">
-                               <p class="text-center">{{ ateliers.name }}</p>
+                               <ul>
+                                   <li class="text-center">
+                                       <h3>{{ ateliers.name }}</h3>
+                                   </li>
+                                </span>
+                                <span class="link-name">
+                                   <li class="text-center">{{ ateliers.description }}</li>
+                                </ul>
                             </span>
                         </a>
                     </div>

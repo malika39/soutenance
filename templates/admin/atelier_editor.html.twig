@@ -1,0 +1,110 @@
+{% extends 'admin/layout.html.twig' %}
+{% block title %}{{ title }}{% endblock title %}
+
+
+
+{% block admin_content %}
+
+    <div id="background" class="carousel slide carousel-fade background" data-ride="carousel">
+        <div id="text" class="col-md-12 text-center"></div>
+        <!-- div vide pour texte qui apparait avec chaque slide
+        dans carousel -->
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ asset('img/46.jpg') }}" alt="First slide">
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-caption">
+                    {# <h4>Breaking bread</h4>
+                     <h3>Le bonheur de la pâtisserie</h3>
+                     <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet,
+                         consectetur adipisicing elit. Quidem, suscipit!</p>#}
+                    <button class="btn btn-dark">Acheter</button>
+                </div>
+
+                <video class="video-fluid w-100" autoplay loop muted>
+                    <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4"/>
+                </video>
+
+                <!--  <img class="d-block w-100" src="images/53.jpg" alt="Second slide"> -->
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="carousel-caption col-md-12 text-center">
+                    {#<h4>Breaking bread</h4>
+                    <h3>Des spécialités délicieuses</h3>
+                    <p>Nulla libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab
+                        lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
+                    <button class="btn btn-dark">Acheter</button>#}
+                </div>
+                <img class="d-block w-100" src="{{ asset('img/54.jpg') }}" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <div class="container" id="main-atelier-editor">
+        <h1 class="text-center">{{ title }}</h1>
+        {% if form.vars.data.id is not empty %}
+            <a href="{{ path('admin_atelier-delete', {'id': form.vars.data.id }) }}" class="delete-product btn btn-danger ml-md-4">Supprimer</a>
+        {% endif %}
+
+
+    {{ form_start(form) }}
+    {{ form_row(form.name, {
+        'label': 'Nom',
+    }) }}
+    {{ form_row(form.description, {
+        'label': 'Description',
+    }) }}
+
+    {{ form_row(form.price, {
+        'label': 'Prix',
+    }) }}
+
+        <h2 class="text-center">Images</h2>
+    <div class="images row" data-prototype="{{ form_widget(form.imagess.vars.prototype)|e('html_attr') }}">
+        {% for image in form.imagess %}
+            <div class="col-md-12">
+                <img src="/img/upload/{{ image.vars.value.name }}" alt="{{ image.vars.value.description }}" class="img img-fluid">
+                <div>{{ form_row(image.description) }}</div>
+                <div>{{ form_row(image.file, {
+                        'label': false,
+                        'required': false,
+                        'attr': {
+                            'accept': 'image/*',
+                        }
+                    }) }}</div>
+            </div>
+        {% endfor %}
+        {% if form.imagess|length < 3 %}
+            <div class="col-md-4 add-image-container">
+                <div class="w-100 h-100 border add-image d-flex align-items-center justify-content-center">
+                    <i class="far fa-plus-square"></i>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <input type="submit" value="Valider" class="btn btn-dark mt-4">
+    {{ form_end(form) }}
+
+    </div>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="/js/productEditor.js"></script>
+{% endblock %}

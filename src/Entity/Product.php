@@ -68,7 +68,7 @@ class Product
     private $dateCreated;
 
     /**
-     * @ORM\Column(type="datetime", nullable=false)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $deletedAt;
 
