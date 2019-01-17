@@ -24,12 +24,13 @@
                 <div class="carousel-caption">
                     <h4>Breaking bread</h4>
                     <h3>Le bonheur de la pâtisserie</h3>
-                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, suscipit!</p>
+                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Quidem, suscipit!</p>
                     <button class="btn btn-dark">Acheter</button>
                 </div>
 
                 <video class="video-fluid w-100" autoplay loop muted>
-                    <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4" />
+                    <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4"/>
                 </video>
 
                 <!--  <img class="d-block w-100" src="images/53.jpg" alt="Second slide"> -->
@@ -40,7 +41,8 @@
                 <div class="carousel-caption col-md-12 text-center">
                     <h4>Breaking bread</h4>
                     <h3>Des spécialités délicieuses</h3>
-                    <p>Nulla  libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
+                    <p>Nulla libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab
+                        lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
                     <button class="btn btn-dark">Acheter</button>
                 </div>
                 <img class="d-block w-100" src="{{ asset('img/54.jpg') }}" alt="Third slide">
@@ -56,65 +58,57 @@
         </a>
     </div>
 
-
-
-
-
-
-
-
     <div class="container" id="single-product-block">
         <div class="row">
 
             <div class="col-md-4">
 
-                    <h2 class="product-single__heading text-center">{{ product.name }} </h2>
-                <div >
+                <h2 class="product-single__heading text-center">{{ product.name }} </h2>
+                <div>
                     <div class="text-center">
-                    <p>
-                        Poids: {{ product.weight }} gr
-                    </p>
+                        <p>
+                            Poids: {{ product.weight }} gr
+                        </p>
 
                         <a class="text-center toggle" href="#">Description</a>
                     </div>
-                        <p class="toggle-description">
-                            {{ product.description }}
-                        </p>
-
+                    <p class="toggle-description">
+                        {{ product.description }}
+                    </p>
                 </div>
-
-
             </div>
 
-    <div class="col-md-4">
-        {% set cover = product.images|first %}
-        <div class="">
-            <img src="/img/upload/{{ cover.name }}" alt="{{ cover.description }}" class="img img-fluid product-single__image">
-        </div>
+            <div class="col-md-4">
+                {% set cover = product.images|first %}
+                <div class="">
+                    <img src="/img/upload/{{ cover.name }}" alt="{{ cover.description }}"
+                         class="img img-fluid product-single__image">
+                </div>
 
-        {% if product.images.count > 1 %}
+                {% if product.images.count > 1 %}
 
-                {% for image in product.images[1:] %}
-                    <div class="mr-2 image-container w-25">
-                        <img src="/img/upload/{{ image.name }}" alt="{{ image.description }}" class="img img-fluid product-single__image">
-                    </div>
-                {% endfor %}
+                    {% for image in product.images[1:] %}
+                        <div class="mr-2 image-container w-25">
+                            <img src="/img/upload/{{ image.name }}" alt="{{ image.description }}"
+                                 class="img img-fluid product-single__image">
+                        </div>
+                    {% endfor %}
 
-        {% endif %}
-    </div>
+                {% endif %}
+            </div>
 
-    <div class="col-md-4">
-        <p>Quantité: {{ product.stock }} pièces </p>
-        <p class="product-single__price"><strong> {{ product.price }} € T.T.C.</strong></p>
-        {% if product.hasStock %}
-            <a id="ajouter" href="/basket/add/{{ product.id }}" class="btn btn-primary">
-                <i class="fas fa-shopping-cart mr-2"></i>
-                Ajouter au panier
-            </a>
-        {% else %}
-            <a href="#" class="btn btn-secondary disabled">Rupture de stock</a>
-        {% endif %}
-    </div>
+            <div class="col-md-4">
+                <p>Quantité: {{ product.stock }} pièces </p>
+                <p class="product-single__price"><strong> {{ product.price }} € T.T.C.</strong></p>
+                {% if product.hasStock %}
+                    <a id="ajouter" href="/basket/add/{{ product.id }}" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Ajouter au panier
+                    </a>
+                {% else %}
+                    <a href="#" class="btn btn-secondary disabled">Rupture de stock</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 

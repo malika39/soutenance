@@ -32,11 +32,12 @@
                 <div class="carousel-caption">
                     <h4>Breaking bread</h4>
                     <h3>Le bonheur de la pâtisserie</h3>
-                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, suscipit!</p>
+                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Quidem, suscipit!</p>
                     <button class="btn btn-dark">Acheter</button>
                 </div>
                 <video class="video-fluid w-100" autoplay loop muted>
-                    <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4" />
+                    <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4"/>
                 </video>
 
                 <!--  <img class="d-block w-100" src="images/53.jpg" alt="Second slide"> -->
@@ -47,7 +48,8 @@
                 <div class="carousel-caption col-md-12 text-center">
                     <h4>Breaking bread</h4>
                     <h3>Des spécialités délicieuses</h3>
-                    <p>Nulla  libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
+                    <p>Nulla libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab
+                        lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
                     <button class="btn btn-dark">Acheter</button>
                 </div>
                 <img class="d-block w-100" src="{{ asset('img/54.jpg') }}" alt="Third slide">
@@ -77,13 +79,14 @@
                             {% set thumb = product.images|first %}
                             <div class="image-container">
                                 <a href="/product/{{ product.slug }}">
-                                    <img src="/img/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
+                                    <img src="/img/upload/{{ thumb.name }}" alt="{{ thumb.description }}"
+                                         class="product-card__image img img-fluid">
                                 </a>
                             </div>
                             <div class="all-products-text-block">
-                                    <a href="/product/{{ product.slug }}" class="product-card__link">
-                                        {{ product.name }}
-                                    </a>
+                                <a href="/product/{{ product.slug }}" class="product-card__link">
+                                    {{ product.name }}
+                                </a>
 
                                 <p class="">{{ product.description }}</p>
                                 <p class="">{{ product.price }} €</p>

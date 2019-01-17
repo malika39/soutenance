@@ -54,20 +54,9 @@
         </a>
     </div>
 
-<!-- HEADER -->
-<!-- 	<header>
-		<div class="container-fluid" id="logo-top">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<img src="images/logo2.png" width="7%">
-				</div>
-			</div>
-		</div>
-	</header> -->
 
-
-<!-- SECTION PRESENTATION-->
-<div class="container-fluid" id="presentation-block">
+    <!-- SECTION PRESENTATION-->
+    <div class="container-fluid" id="presentation-block">
     <section class="container-fluid" id="presentation-section-1">
         <div class="container">
             <div class="row">
@@ -339,76 +328,6 @@
     </section>
 
 
-    <!-- Présentation section 5 -->
-    <!--<section class="container-fluis" id="presentation-section-5">
-        <div class="container">
-            <div class="row" >
-                <div class="col-md-7">
-                    <h2>
-                        Des recettes uniques,des ingrédients de terroirs
-                    </h2>
-                    <img class="img-fluid" src="img/20.jpg" id="img_20">
-                </div>
-                <div class="col-md-5">
-                    <p>
-                        Originaire de Sicile, la pistache de Bronte est cultivée sur les pentes de l’Etna, dans une terre volcanique riche qui lui donne son goût si fin et caractéristique. Il faut tout le savoir-faire des agriculteurs siciliens pour produire une pistache de qualité. Sa récolte a lieu seulement tous les deux ans, à la main. Un must de la gastronomie !
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-
-    <!-- Présentation section 6 -->
-    <!--<section class="container-fluid" id="presentation-section-6">
-        <div class="container">
-            <div class="row" >
-                <div class="col-md-6 block_1">
-                    <img class="img-fluid" src="img/23.jpg" id="img_23">
-                    <p>
-                        Torréfié dans nos ateliers, le Chitul Tirol est essentiellement cultivé sur les collines ondulées de la région d’Alta Verapaz au Guatemala. Ce grand cru révèle des arômes de miel et poivre blanc, et des notes de tabac qui s’accordent parfaitement avec le chocolat. Quel panache ! Quelle ganache !
-                    </p>
-                    <a href="#" class="button-style-1">Découvrez la collection</a>
-                </div>
-                <div class="col-md-6">
-                    <div class="block_2">
-                        <img class="img-fluid" src="img/24.jpg" id="img_24">
-                        <p>
-                            Fruit d’un terroir unique et riche, les fèves de cacao de la plantation Robert installée au cœur de la forêt humide tropicale au Nord de l’île de Madagascar délivrent des notes fruitées intenses et pures.
-                        </p>
-                        <a href="#" class="button-style-1">Découvrez la collection</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-
-    <!-- Présentation section 7 -->
-    <!--<section class="container mb-5" id="presentation-section-7">
-        <div class="row">
-            <div class="col-md-12 offset-md-8">
-                <h2 class="">Actualités</h2>
-                <a href="#" class="button-style-2" id="actualités-button-1">Toutes nos actualités</a>
-            </div>
-        </div>
-        <div class="row" >
-            <div class="col-md-6">
-                <img class="img-fluid" src="img/25.jpg" id="img_25">
-            </div>
-            <div class="col-md-6 text-center">
-                <div class="block_2">
-                    <img class="img-fluid" src="img/26.png" id="img_26">
-                    <p>
-                        La Maison Lenôtre est fière de s'être vue décerner un Award de la Tradition Chocolatière par le Club des Croqueurs...
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-
     <section class="container-fluid mb-5" id="presentation-section-7">
 
         <div class="row">
@@ -437,70 +356,4 @@
     </section>
 
 
-    {% endblock %}
-
-
-
-    {#{% block shop_content %}
-
-    <section class="new-products">
-        <header class="d-flex flex-column justify-content-center align-items-center my-4">
-            <h2>Nouveautés</h2>
-            <div class="line"></div>
-        </header>
-        <div class="row">
-            {% for product in latest_products %}
-                <div class="col-md-4">
-                    <article class="product-card card border-0 mb-4">
-                        {% set thumb = product.images|first %}
-                        <div class="image-container">
-                            <a href="/product/{{ product.slug }}">
-                                <img src="/img/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
-                            </a>
-                        </div>
-                        <div class="card-body pt-0">
-                            <h4 class="product-card__heading">
-                                <a href="/product/{{ product.slug }}" class="product-card__link">
-                                    {{ product.name }}
-                                </a>
-                            </h4>
-                            <div class="divider mb-2"></div>
-                            <div class="product-card__price text-right">{{ product.price }} €</div>
-                        </div>
-                    </article>
-                </div>
-            {% endfor %}
-        </div>
-
-
-    <section class="all-products">
-        <header class="d-flex flex-column justify-content-center align-items-center my-4">
-            <h2>Tous les produits</h2>
-            <div class="line"></div>
-        </header>
-        <div class="row">
-            {% for product in all_products %}
-                <div class="col-md-4">
-                    <article class="product-card card border-0 mb-4">
-                        {% set thumb = product.images|first %}
-                        <div class="image-container">
-                            <a href="/product/{{ product.slug }}">
-                                <img src="/img/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
-                            </a>
-                        </div>
-                        <div class="card-body pt-0">
-                            <h4 class="product-card__heading">
-                                <a href="/product/{{ product.slug }}" class="product-card__link">
-                                    {{ product.name }}
-                                </a>
-                            </h4>
-                            <div class="divider mb-2"></div>
-                            <div class="product-card__price text-right">{{ product.price }} €</div>
-                        </div>
-                    </article>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    {% endblock %}#}
+{% endblock %}
