@@ -1810,8 +1810,8 @@ footer p {
 
 #form-welcome{
     font-size: 1.7rem;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    margin-top: 12rem;
+    margin-bottom: 23rem;
     background: url('../img/fond-2.jpg');
     background-size: 100%;
     padding: 5rem 4rem 19rem 4rem;
@@ -1821,8 +1821,8 @@ footer p {
 
 #form-welcome2{
     font-size: 1.7rem;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    margin-top: 12rem;
+    margin-bottom: 23rem;
     background: url('../img/macarons-background.jpg');
     background-size:100%;
     padding: 5rem 4rem 19rem 4rem;
