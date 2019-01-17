@@ -40,7 +40,7 @@
 
             {% for image in form.images %}
                 <div class="col-md-12">
-                    <img src="/img/upload/{{ image.vars.value.name }}" alt="" class="img img-fluid">
+                    <img src="/img/upload/{{ image.vars.value.name }}" alt="{{ image.vars.value.description }}" class="img img-fluid">
 
 
 
