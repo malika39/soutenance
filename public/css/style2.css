@@ -45,7 +45,7 @@ textarea{
 }
 
 
-.btn-primary{
+.btn-primary, .btn-dark, .btn-danger{
     font-size:1.8rem !important;
 }
 
@@ -316,7 +316,6 @@ a#skip {
 -----------------------------*/
 
 #presentation-block{
-    margin-top:93vh;
     /*background-color:rgba(220,200,250, 0.7);*/
     /*background-color:#F2D8E1;*/
     /*background-image:url("../../images/background3.jpg");*/
@@ -324,6 +323,7 @@ a#skip {
     background-color: white;
     color:black;
     transition:0.6s ease-in;
+    margin-top:96vh;
 }
 
 
@@ -718,6 +718,7 @@ a#skip {
 
 #presentation-section-8 h3{
     font-size:5rem;
+    margin-top:30rem;
 }
 
 #presentation-section-8 h3, #presentation-section-8 p{
@@ -745,7 +746,7 @@ a#skip {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: transparent;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transition: 1s background-color ease, 1s opacity ease;
@@ -1057,8 +1058,35 @@ footer small p{
     color:black;
 }
 
+#section-1-atelier .hidden{
+   font-size:2rem;
+}
+
+#section-1-atelier li{
+    margin-top:2rem;
+}
+
+
+#section-1-atelier .img-fluid{
+    padding-top:3rem;
+}
+
+#section-1-atelier h3{
+    font-size:4rem;
+}
+
+
+#section-1-atelier span{
+    color:white !important;
+}
+
 #section-1-atelier .col-md-4{
     /*border-bottom:1px solid black;*/
+}
+
+
+span.link-name {
+    padding:0 !important;
 }
 
 #section-1-atelier a{
@@ -1068,9 +1096,10 @@ footer small p{
 }
 
 #section-1-atelier p{
-    margin-top:10px;
-    line-height:1.4rem;
-    color:black;
+    margin-top:4px;
+    line-height:1.2rem;
+    color:white;
+    font-size:2rem;
 }
 
 
@@ -1102,10 +1131,6 @@ footer small p{
 
 
 
-
-span{
-    color:white;
-}
 
 .hidden{
     border:1px solid white;
@@ -1140,6 +1165,81 @@ span.link-name{
 
 
 
+/* -------------------------
+		PAGE ADMIN ALL ATELIERS
+-----------------------------*/
+
+#admin-all-ateliers{
+    font-size:2.3rem;
+    max-width:857px;
+    margin-bottom:15.8rem;
+    background-color: rgba(215, 198, 190, 0.84);
+    padding-top:3px;
+    padding-left:3rem;
+    padding-right:3rem;
+    padding-bottom:2rem;
+    margin-top:10rem;
+    border-radius:10px;
+}
+
+#admin-all-ateliers h1{
+    font-size:4rem;
+    text-transform:uppercase;
+    margin-top:2rem;
+}
+
+#admin-all-ateliers table{
+    margin-top:4rem;
+
+}
+
+
+
+
+/* -------------------------
+		PAGE SINGLE ATELIERS
+-----------------------------*/
+
+#single-atelier-block{
+    color:white;
+    background-color:red;
+    margin-bottom:27rem;
+    margin-top:26rem;
+}
+
+
+#single-atelier-block h2{
+    color:white;
+}
+
+
+
+
+/* -------------------------
+		PAGE ATELIERS EDITOR
+-----------------------------*/
+#main-atelier-editor{
+    margin-top:8rem;
+    max-width:90rem;
+    color: black;
+    background-color: rgba(255, 250, 229, 0.87);
+    border-radius:10px;
+    padding-bottom:4rem;
+    margin-bottom:8rem;
+    padding-top:3rem;
+}
+
+#main-atelier-editor h1{
+    font-size:4rem;
+    text-transform:uppercase;
+}
+
+
+#main-atelier-editor form{
+    font-size:2rem;
+}
+
+
 
 /* -------------------------
 		ADMIN PAGE
@@ -1150,11 +1250,12 @@ span.link-name{
 }
 
 #admin-page-section-1{
-    margin-bottom:37rem;
+    margin-bottom:23.4vh;
     font-size:3rem;
-    background-color: rgba(252, 210, 244, 0.6);
-    padding:30px 10px;
-
+    background-color: rgba(252, 210, 244, 0.8);
+    padding:50px 10px;
+    margin-top:28rem;
+    border-radius:10px;
 }
 
 
@@ -1164,11 +1265,61 @@ span.link-name{
 }
 
 
+#admin-navbar {
+    font-size:1.8rem;
+}
+
+
+
+/* -------------------------
+		ADMIN ORDERS PAGE
+-----------------------------*/
+#main-admin-orders{
+    padding-top:2rem;
+     font-size:2rem;
+    max-width:80rem;
+    background-color: rgba(194, 206, 215, 0.91);
+    padding-bottom:3rem;
+    margin-top:25rem;
+    margin-bottom:20rem;
+    margin-bottom:34.7rem;
+    border-radius:10px;
+ }
+
+#main-admin-orders h1{
+
+    font-size:4rem;
+    text-transform:uppercase;
+
+}
+
+
+/* -------------------------
+		ADMIN ALL PRODUCTS
+-----------------------------*/
+
+#main-admin-all-products{
+    margin-top:8rem;
+    margin-bottom:8rem;
+    background-color: rgba(242, 255, 229, 0.92);
+    font-size:2.6rem;
+    border-radius:10px;
+    padding-top:3rem;
+    padding-bottom:3rem;
+}
+
+#main-admin-all-products h1{
+   font-size:5rem;
+    margin-bottom:4rem;
+    text-transform:uppercase;
+}
+
+
+
 
 /* -------------------------
 		MEDIA QUERY
 -----------------------------*/
-
 
 
 @media (max-width: 768px){
@@ -1181,11 +1332,27 @@ span.link-name{
         margin-bottom: 1rem;
     }
 
+
+    #presentation-section-1 p{
+        margin-bottom:4rem;
+    }
+
+
+
+    #presentation-block{
+        margin-top:40vh;
+    }
+
     #presentation p {
         margin-left:20px;
     }
 
     /* presentation section 2 */
+
+    #presentation-section-2{
+        display:none;
+    }
+
     #presentation-section-2-small{
         display:none;
     }
@@ -1193,6 +1360,11 @@ span.link-name{
     #presentation-section-2 a{
 
         margin-left:17%;
+    }
+
+    #presentation-section-2 h2{
+
+        margin-top:90rem;
     }
 
     #img_11{
@@ -1213,6 +1385,11 @@ span.link-name{
 
     #presentation-section-3 .col-md-5{
         margin-left:0rem;
+    }
+
+
+    #presentation-section-3 .img-fluid{
+        margin-top:92rem;
     }
 
     #img_21{
@@ -1305,6 +1482,13 @@ span.link-name{
         margin-top:40px;
     }
 
+
+
+
+    #presentation-section-8 h3{
+        margin-top:20rem;
+    }
+
     /* PAGE NOS LIEUX */
 
     #section-1-lieux .col-md-4 {
@@ -1319,6 +1503,22 @@ span.link-name{
         margin-top:40px;
     }
 
+    /* page product editor */
+    #product-editor{
+        margin-top:16rem !important;
+    }
+
+
+    /* page main atelier editor  */
+    #main-atelier-editor{
+        margin-top:15rem;
+    }
+
+
+    /* page admin all ateliers  */
+    #admin-all-ateliers{
+        margin-top:15rem;
+    }
 }
 
 
@@ -1919,14 +2119,17 @@ footer p {
 -----------------------------*/
 
 #product-editor{
-    max-width:700px;
-    background-color: rgba(255, 250, 201, 0.7);
+    background-color: rgba(215, 198, 189, 0.85);
     margin-top:3rem;
     margin-bottom:3rem;
     padding:1rem 2rem;
-    border-radius:5px;
-    transition:3s ease-in;
-    margin-left:50rem;
+    border-radius:10px;
+}
+
+#product-editor h1{
+   font-size:4rem;
+    text-transform: uppercase;
+    margin-bottom:2rem;
 }
 
 #product-editor .form-group{
@@ -1948,6 +2151,7 @@ form{
   position:fixed;
     z-index:-3;
     margin-top:-10rem;
+    width:100%;
 }
 
 
@@ -1960,6 +2164,18 @@ form{
 #section-1-all-products{
     margin-top:7rem;
     margin-bottom:7rem;
+
+}
+
+#background{
+    position:fixed !important;
+    width:100%;
+    margin-top:-10rem;
+    z-index:-2;
+}
+
+#background img{
+    width:100%;
 }
 
 #section-1-all-products a{
@@ -2002,11 +2218,12 @@ form{
 
 
 #single-product-block{
-    margin-top:31rem;
-    margin-bottom:47.1rem;
-    background-color:white;
+    margin-top:10rem;
+    margin-bottom:10rem;
+    background-color: rgba(221, 255, 243, 0.76);
     padding-top:4rem;
     padding-bottom:4rem;
+    border-radius:20px;
 }
 
 #single-product-block h2{
