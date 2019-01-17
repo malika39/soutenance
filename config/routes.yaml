@@ -87,6 +87,10 @@ atelier_show:
     requirements:
         slug: '[a-zA-Z1-9\-]+'
 
+atelier_detail:
+    path: /atelier_detail/{id}
+    controller: App\Controller\AtelierController::atelierDetail
+
 allAteliers:
     path: /all_ateliers
     controller: App\Controller\AtelierController::allAteliers

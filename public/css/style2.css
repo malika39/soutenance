@@ -420,15 +420,21 @@ a#skip {
 }
 
 
-#presentation-section-2 p{
-    color:white;
+#presentation-section-2 h3{
+    color: #ffbfa7;
 }
 
 #presentation-section-2 p{
     font-size:2rem;
-
 }
 
+.last-description{
+    margin-bottom:30px;
+}
+
+#presentation-section-2 span{
+    color:white !important;
+}
 
 
 .image-text {
@@ -445,8 +451,9 @@ a#skip {
 
 .see-more-btn p {
     font-size:1rem;
-    margin:40px 0px;
+    margin-top:5px;
 }
+
 
 
 #presentation-section-2-small img{
@@ -717,9 +724,10 @@ a#skip {
 #presentation-section-8 h3{
     font-size:5rem;
     margin-top:30rem;
+    color: #ffb695;
 }
 
-#presentation-section-8 h3, #presentation-section-8 p{
+#presentation-section-8 p{
     color:black;
 }
 
@@ -782,9 +790,14 @@ a#skip {
     margin-bottom:3rem;
 }
 
+#presentation-section-9 span{
+    color:white !important;
+}
+
+
 #presentation-section-9 h3{
     font-size:3rem;
-    color:white;
+    color:#ffbfa7;
 }
 
 #presentation-section-9 p{
@@ -1200,7 +1213,7 @@ span.link-name{
 
 #single-atelier-block{
     color:white;
-    background-color:red;
+    background-color: rgba(215, 198, 189, 0.88);
     margin-bottom:27rem;
     margin-top:26rem;
 }
@@ -1334,7 +1347,6 @@ span.link-name{
     #presentation-section-1 p{
         margin-bottom:4rem;
     }
-
 
 
     #presentation-block{

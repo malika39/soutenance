@@ -108,11 +108,11 @@
 					          <span class="overlay-background">
 					            <span class="see-more">
 					              <span class="see-more-btn">
-					              	<h3>For a sweet treat</h3>
-					              	<p>For a sweet treat<br>
-					              	for a sweet treat</p>
+					              	<h3>{{ product.name }}</h3>
+					              	<p class="last-description"> {{ product.description }}
+					              	</p>
 					                <span class="hidden">
-					                	Read more
+					                	Voir plus
 					                </span>
 					              </span>
 					            </span>
@@ -234,16 +234,15 @@
                         <a href="/ateliersweet/{{ atelier.slug }}">
 					        <span class="overlay-container">
                                     {% set thumb = atelier.imagess | first %}
-					          <img class="img-fluid" src="{{ asset('img/49.jpg') }}" alt="" id="img-49">
+					           <img src="/imgs/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
                                 <!--<img class="img-fluid" src="/imgs/upload/" alt="" id="img-49">-->
 					          <span class="overlay-background">
 					            <span class="see-more">
 					              <span class="see-more-btn">
-					              	<h3>For a sweet treat</h3>
-					              	<p>sldkfgjkldfgjfg<br>
-					              	osjdfijsdofijsodfj</p>
+					              	<h3>{{ atelier.name }}</h3>
+					              	<p>{{ atelier.description }}</p>
 					                <span class="hidden">
-					                	Read more
+					                	Voir plus
 					                </span>
 					              </span>
 					            </span>
