@@ -1,17 +1,6 @@
 {% extends 'shop/layout.html.twig' %}
 
 {% block content %}
-<div>
-    <div class="container">
-        <nav>
-                    <a href="{{ path('index') }}">Accueil</a>
-               <div>{{ product.name }}</div>
-        </nav>
-        </div>
-    </div>
-</div>
-
-{% block content %}
 
     <!-- BACKGROUND IMAGE/CAROUSEL -->
 
@@ -33,9 +22,9 @@
 
             <div class="carousel-item">
                 <div class="carousel-caption">
-                    <h4>Breaking bread</h4>
+                    {#<h4>Breaking bread</h4>
                     <h3>Le bonheur de la pâtisserie</h3>
-                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, suscipit!</p>
+                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, suscipit!</p>#}
                     <button class="btn btn-dark">Acheter</button>
                 </div>
 
@@ -43,15 +32,13 @@
                     <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4" />
                 </video>
 
-                <!--  <img class="d-block w-100" src="images/53.jpg" alt="Second slide"> -->
             </div>
-
 
             <div class="carousel-item">
                 <div class="carousel-caption col-md-12 text-center">
                     <h4>Breaking bread</h4>
-                    <h3>Des spécialités délicieuses</h3>
-                    <p>Nulla  libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
+                    {#<h3>Des spécialités délicieuses</h3>#}
+                    {#<p>Nulla  libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>#}
                     <button class="btn btn-dark">Acheter</button>
                 </div>
                 <img class="d-block w-100" src="{{ asset('img/54.jpg') }}" alt="Third slide">
@@ -66,10 +53,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-
-
-
 
 
 
@@ -115,7 +98,7 @@
     </div>
 
     <div class="col-md-4">
-        <p>Quantité: {{ product.stock }} pièces </p>
+        <p>Stock: {{ product.stock }} pièces </p>
         <p class="product-single__price"><strong> {{ product.price }} € T.T.C.</strong></p>
         {% if product.hasStock %}
             <a id="ajouter" href="/basket/add/{{ product.id }}" class="btn btn-primary">
@@ -132,8 +115,7 @@
 {% endblock %}
 
 {#{% block javascripts  %}#}
-   <!-- <script src="{{ asset('js/productSlider.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>-->
+
 {#{% endblock javascripts %}#} 
 
 

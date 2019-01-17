@@ -12,17 +12,16 @@
 
 
 
-{% block content %}
-
     {% include 'components/_navbar.html.twig' %}
 
+    {% include 'components/_admin-navbar.html.twig' %}
 
+    {% block admin_content %}
+
+
+
+    {% endblock %}
 
     {% include 'components/_footer.html.twig' %}
 
-    {% block admin_content %}
-        
-    {% endblock %}
-
-{% endblock %}
 {% endblock %}
