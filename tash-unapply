@@ -1,0 +1,1913 @@
+[1mdiff --git a/composer.json b/composer.json[m
+[1mindex f73becc..075f75c 100644[m
+[1m--- a/composer.json[m
+[1m+++ b/composer.json[m
+[36m@@ -15,10 +15,9 @@[m
+         "symfony/asset": "^4.0",[m
+         "symfony/config": "^4.0",[m
+         "symfony/console": "^4.0",[m
+[31m-[m
+         "symfony/debug-pack": "^1.0",[m
+[32m+[m[32m        "symfony/expression-language": "^4.0",[m
+         "symfony/finder": "^4.0",[m
+[31m-[m
+         "symfony/flex": "^1.0",[m
+         "symfony/form": "^4.0",[m
+         "symfony/framework-bundle": "^4.0",[m
+[1mdiff --git a/composer.lock b/composer.lock[m
+[1mindex 111b6d1..e1d0456 100644[m
+[1m--- a/composer.lock[m
+[1m+++ b/composer.lock[m
+[36m@@ -4,9 +4,7 @@[m
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",[m
+         "This file is @generated automatically"[m
+     ],[m
+[31m-[m
+[31m-    "content-hash": "a079b03516b74a33edb701cdf40c5c2f",[m
+[31m-[m
+[32m+[m[32m    "content-hash": "cd0d80fb58d7cfc728365d3d6d7640b5",[m
+     "packages": [[m
+         {[m
+             "name": "doctrine/annotations",[m
+[36m@@ -946,12 +944,12 @@[m
+             "version": "v2.6.3",[m
+             "source": {[m
+                 "type": "git",[m
+[31m-                "url": "https://github.com/doctrine/doctrine2.git",[m
+[32m+[m[32m                "url": "https://github.com/doctrine/orm.git",[m
+                 "reference": "434820973cadf2da2d66e7184be370084cc32ca8"[m
+             },[m
+             "dist": {[m
+                 "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/434820973cadf2da2d66e7184be370084cc32ca8",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/doctrine/orm/zipball/434820973cadf2da2d66e7184be370084cc32ca8",[m
+                 "reference": "434820973cadf2da2d66e7184be370084cc32ca8",[m
+                 "shasum": ""[m
+             },[m
+[36m@@ -1180,6 +1178,56 @@[m
+             ],[m
+             "time": "2018-06-14T14:45:07+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "easycorp/easy-log-handler",[m
+[32m+[m[32m            "version": "v1.0.7",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/EasyCorp/easy-log-handler.git",[m
+[32m+[m[32m                "reference": "5f95717248d20684f88cfb878d8bf3d78aadcbba"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/EasyCorp/easy-log-handler/zipball/5f95717248d20684f88cfb878d8bf3d78aadcbba",[m
+[32m+[m[32m                "reference": "5f95717248d20684f88cfb878d8bf3d78aadcbba",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "monolog/monolog": "~1.6",[m
+[32m+[m[32m                "php": ">=5.3.0",[m
+[32m+[m[32m                "symfony/yaml": "~2.3|~3.0|~4.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "EasyCorp\\EasyLog\\": "src"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Javier Eguiluz",[m
+[32m+[m[32m                    "email": "javiereguiluz@gmail.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Project Contributors",[m
+[32m+[m[32m                    "homepage": "https://github.com/EasyCorp/easy-log-handler"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "A handler for Monolog that optimizes log messages to be processed by humans instead of software. Improve your productivity with logs that are easy to understand.",[m
+[32m+[m[32m            "homepage": "https://github.com/EasyCorp/easy-log-handler",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "easy",[m
+[32m+[m[32m                "log",[m
+[32m+[m[32m                "logging",[m
+[32m+[m[32m                "monolog",[m
+[32m+[m[32m                "productivity"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "time": "2018-07-27T15:41:37+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "egulias/email-validator",[m
+             "version": "2.1.7",[m
+[36m@@ -1287,6 +1335,84 @@[m
+             ],[m
+             "time": "2014-01-12T16:20:24+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "monolog/monolog",[m
+[32m+[m[32m            "version": "1.24.0",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/Seldaek/monolog.git",[m
+[32m+[m[32m                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",[m
+[32m+[m[32m                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": ">=5.3.0",[m
+[32m+[m[32m                "psr/log": "~1.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "provide": {[m
+[32m+[m[32m                "psr/log-implementation": "1.0.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "aws/aws-sdk-php": "^2.4.9 || ^3.0",[m
+[32m+[m[32m                "doctrine/couchdb": "~1.0@dev",[m
+[32m+[m[32m                "graylog2/gelf-php": "~1.0",[m
+[32m+[m[32m                "jakub-onderka/php-parallel-lint": "0.9",[m
+[32m+[m[32m                "php-amqplib/php-amqplib": "~2.4",[m
+[32m+[m[32m                "php-console/php-console": "^3.1.3",[m
+[32m+[m[32m                "phpunit/phpunit": "~4.5",[m
+[32m+[m[32m                "phpunit/phpunit-mock-objects": "2.3.0",[m
+[32m+[m[32m                "ruflin/elastica": ">=0.90 <3.0",[m
+[32m+[m[32m                "sentry/sentry": "^0.13",[m
+[32m+[m[32m                "swiftmailer/swiftmailer": "^5.3|^6.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "suggest": {[m
+[32m+[m[32m                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",[m
+[32m+[m[32m                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",[m
+[32m+[m[32m                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",[m
+[32m+[m[32m                "ext-mongo": "Allow sending log messages to a MongoDB server",[m
+[32m+[m[32m                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",[m
+[32m+[m[32m                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",[m
+[32m+[m[32m                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",[m
+[32m+[m[32m                "php-console/php-console": "Allow sending log messages to Google Chrome",[m
+[32m+[m[32m                "rollbar/rollbar": "Allow sending log messages to Rollbar",[m
+[32m+[m[32m                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",[m
+[32m+[m[32m                "sentry/sentry": "Allow sending log messages to a Sentry server"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "2.0.x-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Monolog\\": "src/Monolog"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Jordi Boggiano",[m
+[32m+[m[32m                    "email": "j.boggiano@seld.be",[m
+[32m+[m[32m                    "homepage": "http://seld.be"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",[m
+[32m+[m[32m            "homepage": "http://github.com/Seldaek/monolog",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "log",[m
+[32m+[m[32m                "logging",[m
+[32m+[m[32m                "psr-3"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "time": "2018-11-05T09:00:11+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "nikic/php-parser",[m
+             "version": "v4.1.0",[m
+[36m@@ -2321,6 +2447,102 @@[m
+             "homepage": "https://symfony.com",[m
+             "time": "2018-11-28T18:24:18+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/debug-bundle",[m
+[32m+[m[32m            "version": "v4.2.2",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/debug-bundle.git",[m
+[32m+[m[32m                "reference": "be5cf5e46533de3e9325a2442fb4075787545140"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/debug-bundle/zipball/be5cf5e46533de3e9325a2442fb4075787545140",[m
+[32m+[m[32m                "reference": "be5cf5e46533de3e9325a2442fb4075787545140",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "ext-xml": "*",[m
+[32m+[m[32m                "php": "^7.1.3",[m
+[32m+[m[32m                "symfony/http-kernel": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/twig-bridge": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/var-dumper": "^4.1.1"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "conflict": {[m
+[32m+[m[32m                "symfony/config": "<4.2",[m
+[32m+[m[32m                "symfony/dependency-injection": "<3.4"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "symfony/config": "~4.2",[m
+[32m+[m[32m                "symfony/dependency-injection": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/web-profiler-bundle": "~3.4|~4.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "suggest": {[m
+[32m+[m[32m                "symfony/config": "For service container configuration",[m
+[32m+[m[32m                "symfony/dependency-injection": "For using as a service from the container"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-bundle",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "4.2-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Bundle\\DebugBundle\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Fabien Potencier",[m
+[32m+[m[32m                    "email": "fabien@symfony.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony DebugBundle",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "time": "2019-01-03T09:07:35+00:00"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/debug-pack",[m
+[32m+[m[32m            "version": "v1.0.7",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/debug-pack.git",[m
+[32m+[m[32m                "reference": "09a4a1e9bf2465987d4f79db0ad6c11cc632bc79"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/debug-pack/zipball/09a4a1e9bf2465987d4f79db0ad6c11cc632bc79",[m
+[32m+[m[32m                "reference": "09a4a1e9bf2465987d4f79db0ad6c11cc632bc79",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "easycorp/easy-log-handler": "^1.0.7",[m
+[32m+[m[32m                "php": "^7.0",[m
+[32m+[m[32m                "symfony/debug-bundle": "*",[m
+[32m+[m[32m                "symfony/monolog-bundle": "^3.0",[m
+[32m+[m[32m                "symfony/profiler-pack": "*",[m
+[32m+[m[32m                "symfony/var-dumper": "*"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-pack",[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "A debug pack for Symfony projects",[m
+[32m+[m[32m            "time": "2018-12-10T12:11:11+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "symfony/dependency-injection",[m
+             "version": "v4.2.1",[m
+[36m@@ -2546,6 +2768,57 @@[m
+             "homepage": "https://symfony.com",[m
+             "time": "2018-12-01T08:52:38+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/expression-language",[m
+[32m+[m[32m            "version": "v4.2.2",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/expression-language.git",[m
+[32m+[m[32m                "reference": "78a427af5e08eba1b391ddfbcaebb6dc6ab715be"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/expression-language/zipball/78a427af5e08eba1b391ddfbcaebb6dc6ab715be",[m
+[32m+[m[32m                "reference": "78a427af5e08eba1b391ddfbcaebb6dc6ab715be",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": "^7.1.3",[m
+[32m+[m[32m                "symfony/cache": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/contracts": "^1.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "4.2-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Component\\ExpressionLanguage\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Fabien Potencier",[m
+[32m+[m[32m                    "email": "fabien@symfony.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony ExpressionLanguage Component",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "time": "2019-01-03T09:07:35+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "symfony/filesystem",[m
+             "version": "v4.2.1",[m
+[36m@@ -3237,23 +3510,42 @@[m
+             "time": "2018-12-20T19:51:03+00:00"[m
+         },[m
+         {[m
+[31m-            "name": "symfony/options-resolver",[m
+[31m-            "version": "v4.2.1",[m
+[32m+[m[32m            "name": "symfony/monolog-bridge",[m
+[32m+[m[32m            "version": "v4.2.2",[m
+             "source": {[m
+                 "type": "git",[m
+[31m-                "url": "https://github.com/symfony/options-resolver.git",[m
+[31m-                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba"[m
+[32m+[m[32m                "url": "https://github.com/symfony/monolog-bridge.git",[m
+[32m+[m[32m                "reference": "8fa559511f1d215ca81e22f222d50eb029f93902"[m
+             },[m
+             "dist": {[m
+                 "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",[m
+[31m-                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/monolog-bridge/zipball/8fa559511f1d215ca81e22f222d50eb029f93902",[m
+[32m+[m[32m                "reference": "8fa559511f1d215ca81e22f222d50eb029f93902",[m
+                 "shasum": ""[m
+             },[m
+             "require": {[m
+[31m-                "php": "^7.1.3"[m
+[32m+[m[32m                "monolog/monolog": "~1.19",[m
+[32m+[m[32m                "php": "^7.1.3",[m
+[32m+[m[32m                "symfony/contracts": "^1.0",[m
+[32m+[m[32m                "symfony/http-kernel": "~3.4|~4.0"[m
+             },[m
+[31m-            "type": "library",[m
+[32m+[m[32m            "conflict": {[m
+[32m+[m[32m                "symfony/console": "<3.4",[m
+[32m+[m[32m                "symfony/http-foundation": "<3.4"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "symfony/console": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/event-dispatcher": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/security-core": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/var-dumper": "~3.4|~4.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "suggest": {[m
+[32m+[m[32m                "symfony/console": "For the possibility to show log messages in console commands depending on verbosity settings.",[m
+[32m+[m[32m                "symfony/event-dispatcher": "Needed when using log messages in console commands.",[m
+[32m+[m[32m                "symfony/http-kernel": "For using the debugging handlers together with the response life cycle of the HTTP kernel.",[m
+[32m+[m[32m                "symfony/var-dumper": "For using the debugging handlers like the console handler or the log server handler."[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-bridge",[m
+             "extra": {[m
+                 "branch-alias": {[m
+                     "dev-master": "4.2-dev"[m
+[36m@@ -3261,7 +3553,7 @@[m
+             },[m
+             "autoload": {[m
+                 "psr-4": {[m
+[31m-                    "Symfony\\Component\\OptionsResolver\\": ""[m
+[32m+[m[32m                    "Symfony\\Bridge\\Monolog\\": ""[m
+                 },[m
+                 "exclude-from-classmap": [[m
+                     "/Tests/"[m
+[36m@@ -3281,46 +3573,158 @@[m
+                     "homepage": "https://symfony.com/contributors"[m
+                 }[m
+             ],[m
+[31m-            "description": "Symfony OptionsResolver Component",[m
+[32m+[m[32m            "description": "Symfony Monolog Bridge",[m
+             "homepage": "https://symfony.com",[m
+[31m-            "keywords": [[m
+[31m-                "config",[m
+[31m-                "configuration",[m
+[31m-                "options"[m
+[31m-            ],[m
+[31m-            "time": "2018-11-11T19:52:12+00:00"[m
+[32m+[m[32m            "time": "2019-01-03T09:07:35+00:00"[m
+         },[m
+         {[m
+[31m-            "name": "symfony/orm-pack",[m
+[31m-            "version": "v1.0.5",[m
+[32m+[m[32m            "name": "symfony/monolog-bundle",[m
+[32m+[m[32m            "version": "v3.3.1",[m
+             "source": {[m
+                 "type": "git",[m
+[31m-                "url": "https://github.com/symfony/orm-pack.git",[m
+[31m-                "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1"[m
+[32m+[m[32m                "url": "https://github.com/symfony/monolog-bundle.git",[m
+[32m+[m[32m                "reference": "572e143afc03419a75ab002c80a2fd99299195ff"[m
+             },[m
+             "dist": {[m
+                 "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/orm-pack/zipball/1b58f752cd917a08c9c8df020781d9c46a2275b1",[m
+[31m-                "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/572e143afc03419a75ab002c80a2fd99299195ff",[m
+[32m+[m[32m                "reference": "572e143afc03419a75ab002c80a2fd99299195ff",[m
+                 "shasum": ""[m
+             },[m
+             "require": {[m
+[31m-                "doctrine/doctrine-bundle": "^1.6.10",[m
+[31m-                "doctrine/doctrine-migrations-bundle": "^1.3",[m
+[31m-                "doctrine/orm": "^2.5.11",[m
+[31m-                "php": "^7.0"[m
+[32m+[m[32m                "monolog/monolog": "~1.22",[m
+[32m+[m[32m                "php": ">=5.6",[m
+[32m+[m[32m                "symfony/config": "~2.7|~3.3|~4.0",[m
+[32m+[m[32m                "symfony/dependency-injection": "~2.7|~3.4.10|^4.0.10",[m
+[32m+[m[32m                "symfony/http-kernel": "~2.7|~3.3|~4.0",[m
+[32m+[m[32m                "symfony/monolog-bridge": "~2.7|~3.3|~4.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "symfony/console": "~2.7|~3.3|~4.0",[m
+[32m+[m[32m                "symfony/phpunit-bridge": "^3.3|^4.0",[m
+[32m+[m[32m                "symfony/yaml": "~2.7|~3.3|~4.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-bundle",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "3.x-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Bundle\\MonologBundle\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+             },[m
+[31m-            "type": "symfony-pack",[m
+             "notification-url": "https://packagist.org/downloads/",[m
+             "license": [[m
+                 "MIT"[m
+             ],[m
+[31m-            "description": "A pack for the Doctrine ORM",[m
+[31m-            "time": "2017-12-12T01:47:50+00:00"[m
+[31m-        },[m
+[31m-        {[m
+[31m-            "name": "symfony/polyfill-ctype",[m
+[31m-            "version": "v1.10.0",[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "http://symfony.com/contributors"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Fabien Potencier",[m
+[32m+[m[32m                    "email": "fabien@symfony.com"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony MonologBundle",[m
+[32m+[m[32m            "homepage": "http://symfony.com",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "log",[m
+[32m+[m[32m                "logging"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "time": "2018-11-04T09:58:13+00:00"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/options-resolver",[m
+[32m+[m[32m            "version": "v4.2.1",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/options-resolver.git",[m
+[32m+[m[32m                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",[m
+[32m+[m[32m                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": "^7.1.3"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "4.2-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Component\\OptionsResolver\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Fabien Potencier",[m
+[32m+[m[32m                    "email": "fabien@symfony.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony OptionsResolver Component",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "config",[m
+[32m+[m[32m                "configuration",[m
+[32m+[m[32m                "options"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "time": "2018-11-11T19:52:12+00:00"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/orm-pack",[m
+[32m+[m[32m            "version": "v1.0.5",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/orm-pack.git",[m
+[32m+[m[32m                "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/orm-pack/zipball/1b58f752cd917a08c9c8df020781d9c46a2275b1",[m
+[32m+[m[32m                "reference": "1b58f752cd917a08c9c8df020781d9c46a2275b1",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "doctrine/doctrine-bundle": "^1.6.10",[m
+[32m+[m[32m                "doctrine/doctrine-migrations-bundle": "^1.3",[m
+[32m+[m[32m                "doctrine/orm": "^2.5.11",[m
+[32m+[m[32m                "php": "^7.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-pack",[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "A pack for the Doctrine ORM",[m
+[32m+[m[32m            "time": "2017-12-12T01:47:50+00:00"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/polyfill-ctype",[m
+[32m+[m[32m            "version": "v1.10.0",[m
+             "source": {[m
+                 "type": "git",[m
+                 "url": "https://github.com/symfony/polyfill-ctype.git",[m
+[36m@@ -3493,6 +3897,89 @@[m
+             ],[m
+             "time": "2018-09-21T13:07:52+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/polyfill-php72",[m
+[32m+[m[32m            "version": "v1.10.0",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/polyfill-php72.git",[m
+[32m+[m[32m                "reference": "9050816e2ca34a8e916c3a0ae8b9c2fccf68b631"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/9050816e2ca34a8e916c3a0ae8b9c2fccf68b631",[m
+[32m+[m[32m                "reference": "9050816e2ca34a8e916c3a0ae8b9c2fccf68b631",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": ">=5.3.3"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "1.9-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Polyfill\\Php72\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "files": [[m
+[32m+[m[32m                    "bootstrap.php"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Nicolas Grekas",[m
+[32m+[m[32m                    "email": "p@tchwork.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "compatibility",[m
+[32m+[m[32m                "polyfill",[m
+[32m+[m[32m                "portable",[m
+[32m+[m[32m                "shim"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "time": "2018-09-21T13:07:52+00:00"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/profiler-pack",[m
+[32m+[m[32m            "version": "v1.0.4",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/profiler-pack.git",[m
+[32m+[m[32m                "reference": "99c4370632c2a59bb0444852f92140074ef02209"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/profiler-pack/zipball/99c4370632c2a59bb0444852f92140074ef02209",[m
+[32m+[m[32m                "reference": "99c4370632c2a59bb0444852f92140074ef02209",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": "^7.0",[m
+[32m+[m[32m                "symfony/stopwatch": "*",[m
+[32m+[m[32m                "symfony/twig-bundle": "*",[m
+[32m+[m[32m                "symfony/web-profiler-bundle": "*"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-pack",[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "A pack for the Symfony web profiler",[m
+[32m+[m[32m            "time": "2018-12-10T12:11:44+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "symfony/property-access",[m
+             "version": "v4.2.1",[m
+[36m@@ -3639,16 +4126,16 @@[m
+         },[m
+         {[m
+             "name": "symfony/security-bundle",[m
+[31m-            "version": "v4.2.1",[m
+[32m+[m[32m            "version": "v4.2.2",[m
+             "source": {[m
+                 "type": "git",[m
+                 "url": "https://github.com/symfony/security-bundle.git",[m
+[31m-                "reference": "705b5852306fb2bbf3b7903e7929eed01fc2c9d9"[m
+[32m+[m[32m                "reference": "404bb89be12ba0e493e05f0a3196f07915bd155f"[m
+             },[m
+             "dist": {[m
+                 "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/705b5852306fb2bbf3b7903e7929eed01fc2c9d9",[m
+[31m-                "reference": "705b5852306fb2bbf3b7903e7929eed01fc2c9d9",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/404bb89be12ba0e493e05f0a3196f07915bd155f",[m
+[32m+[m[32m                "reference": "404bb89be12ba0e493e05f0a3196f07915bd155f",[m
+                 "shasum": ""[m
+             },[m
+             "require": {[m
+[36m@@ -3721,7 +4208,7 @@[m
+             ],[m
+             "description": "Symfony SecurityBundle",[m
+             "homepage": "https://symfony.com",[m
+[31m-            "time": "2018-11-14T19:14:06+00:00"[m
+[32m+[m[32m            "time": "2019-01-03T09:07:35+00:00"[m
+         },[m
+         {[m
+             "name": "symfony/security-core",[m
+[36m@@ -3969,6 +4456,56 @@[m
+             "homepage": "https://symfony.com",[m
+             "time": "2018-12-06T11:36:58+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/stopwatch",[m
+[32m+[m[32m            "version": "v4.2.1",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/stopwatch.git",[m
+[32m+[m[32m                "reference": "ec076716412274e51f8a7ea675d9515e5c311123"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/ec076716412274e51f8a7ea675d9515e5c311123",[m
+[32m+[m[32m                "reference": "ec076716412274e51f8a7ea675d9515e5c311123",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": "^7.1.3",[m
+[32m+[m[32m                "symfony/contracts": "^1.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "4.2-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Component\\Stopwatch\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Fabien Potencier",[m
+[32m+[m[32m                    "email": "fabien@symfony.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony Stopwatch Component",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "time": "2018-11-11T19:52:12+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "symfony/swiftmailer-bundle",[m
+             "version": "v3.2.4",[m
+[36m@@ -4289,26 +4826,101 @@[m
+             "time": "2018-12-05T08:06:11+00:00"[m
+         },[m
+         {[m
+[31m-            "name": "symfony/var-exporter",[m
+[32m+[m[32m            "name": "symfony/var-dumper",[m
+             "version": "v4.2.1",[m
+             "source": {[m
+                 "type": "git",[m
+[31m-                "url": "https://github.com/symfony/var-exporter.git",[m
+[31m-                "reference": "a39222e357362424b61dcde50e2f7b5a7d3306db"[m
+[32m+[m[32m                "url": "https://github.com/symfony/var-dumper.git",[m
+[32m+[m[32m                "reference": "db61258540350725f4beb6b84006e32398acd120"[m
+             },[m
+             "dist": {[m
+                 "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/a39222e357362424b61dcde50e2f7b5a7d3306db",[m
+[31m-                "reference": "a39222e357362424b61dcde50e2f7b5a7d3306db",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/db61258540350725f4beb6b84006e32398acd120",[m
+[32m+[m[32m                "reference": "db61258540350725f4beb6b84006e32398acd120",[m
+                 "shasum": ""[m
+             },[m
+             "require": {[m
+[31m-                "php": "^7.1.3"[m
+[32m+[m[32m                "php": "^7.1.3",[m
+[32m+[m[32m                "symfony/polyfill-mbstring": "~1.0",[m
+[32m+[m[32m                "symfony/polyfill-php72": "~1.5"[m
+             },[m
+[31m-            "require-dev": {[m
+[31m-                "symfony/var-dumper": "^4.1.1"[m
+[32m+[m[32m            "conflict": {[m
+[32m+[m[32m                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",[m
+[32m+[m[32m                "symfony/console": "<3.4"[m
+             },[m
+[31m-            "type": "library",[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "ext-iconv": "*",[m
+[32m+[m[32m                "symfony/process": "~3.4|~4.0",[m
+[32m+[m[32m                "twig/twig": "~1.34|~2.4"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "suggest": {[m
+[32m+[m[32m                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",[m
+[32m+[m[32m                "ext-intl": "To show region name in time zone dump",[m
+[32m+[m[32m                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "bin": [[m
+[32m+[m[32m                "Resources/bin/var-dump-server"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "4.2-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "files": [[m
+[32m+[m[32m                    "Resources/functions/dump.php"[m
+[32m+[m[32m                ],[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Component\\VarDumper\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Nicolas Grekas",[m
+[32m+[m[32m                    "email": "p@tchwork.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony mechanism for exploring and dumping PHP variables",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "debug",[m
+[32m+[m[32m                "dump"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "time": "2018-11-25T12:50:42+00:00"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/var-exporter",[m
+[32m+[m[32m            "version": "v4.2.1",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/var-exporter.git",[m
+[32m+[m[32m                "reference": "a39222e357362424b61dcde50e2f7b5a7d3306db"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/a39222e357362424b61dcde50e2f7b5a7d3306db",[m
+[32m+[m[32m                "reference": "a39222e357362424b61dcde50e2f7b5a7d3306db",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": "^7.1.3"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "symfony/var-dumper": "^4.1.1"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+             "extra": {[m
+                 "branch-alias": {[m
+                     "dev-master": "4.2-dev"[m
+[36m@@ -4348,6 +4960,72 @@[m
+             ],[m
+             "time": "2018-12-03T22:40:09+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "symfony/web-profiler-bundle",[m
+[32m+[m[32m            "version": "v4.2.1",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/symfony/web-profiler-bundle.git",[m
+[32m+[m[32m                "reference": "198cb0a6b85346bbab5e1bc74a0eb175b9fa2d08"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/symfony/web-profiler-bundle/zipball/198cb0a6b85346bbab5e1bc74a0eb175b9fa2d08",[m
+[32m+[m[32m                "reference": "198cb0a6b85346bbab5e1bc74a0eb175b9fa2d08",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "php": "^7.1.3",[m
+[32m+[m[32m                "symfony/config": "^4.2",[m
+[32m+[m[32m                "symfony/http-kernel": "~4.2",[m
+[32m+[m[32m                "symfony/routing": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/twig-bundle": "~4.2",[m
+[32m+[m[32m                "symfony/var-dumper": "~3.4|~4.0",[m
+[32m+[m[32m                "twig/twig": "~1.34|~2.4"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "conflict": {[m
+[32m+[m[32m                "symfony/dependency-injection": "<3.4",[m
+[32m+[m[32m                "symfony/event-dispatcher": "<3.4",[m
+[32m+[m[32m                "symfony/messenger": "<4.2",[m
+[32m+[m[32m                "symfony/var-dumper": "<3.4"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require-dev": {[m
+[32m+[m[32m                "symfony/console": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/dependency-injection": "~3.4|~4.0",[m
+[32m+[m[32m                "symfony/stopwatch": "~3.4|~4.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "symfony-bundle",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "4.2-dev"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Symfony\\Bundle\\WebProfilerBundle\\": ""[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "exclude-from-classmap": [[m
+[32m+[m[32m                    "/Tests/"[m
+[32m+[m[32m                ][m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Fabien Potencier",[m
+[32m+[m[32m                    "email": "fabien@symfony.com"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Symfony Community",[m
+[32m+[m[32m                    "homepage": "https://symfony.com/contributors"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Symfony WebProfilerBundle",[m
+[32m+[m[32m            "homepage": "https://symfony.com",[m
+[32m+[m[32m            "time": "2018-12-02T13:25:28+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "symfony/yaml",[m
+             "version": "v4.2.1",[m
+[36m@@ -4820,61 +5498,6 @@[m
+             "homepage": "https://symfony.com",[m
+             "time": "2018-11-26T10:55:26+00:00"[m
+         },[m
+[31m-        {[m
+[31m-            "name": "symfony/polyfill-php72",[m
+[31m-            "version": "v1.10.0",[m
+[31m-            "source": {[m
+[31m-                "type": "git",[m
+[31m-                "url": "https://github.com/symfony/polyfill-php72.git",[m
+[31m-                "reference": "9050816e2ca34a8e916c3a0ae8b9c2fccf68b631"[m
+[31m-            },[m
+[31m-            "dist": {[m
+[31m-                "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/9050816e2ca34a8e916c3a0ae8b9c2fccf68b631",[m
+[31m-                "reference": "9050816e2ca34a8e916c3a0ae8b9c2fccf68b631",[m
+[31m-                "shasum": ""[m
+[31m-            },[m
+[31m-            "require": {[m
+[31m-                "php": ">=5.3.3"[m
+[31m-            },[m
+[31m-            "type": "library",[m
+[31m-            "extra": {[m
+[31m-                "branch-alias": {[m
+[31m-                    "dev-master": "1.9-dev"[m
+[31m-                }[m
+[31m-            },[m
+[31m-            "autoload": {[m
+[31m-                "psr-4": {[m
+[31m-                    "Symfony\\Polyfill\\Php72\\": ""[m
+[31m-                },[m
+[31m-                "files": [[m
+[31m-                    "bootstrap.php"[m
+[31m-                ][m
+[31m-            },[m
+[31m-            "notification-url": "https://packagist.org/downloads/",[m
+[31m-            "license": [[m
+[31m-                "MIT"[m
+[31m-            ],[m
+[31m-            "authors": [[m
+[31m-                {[m
+[31m-                    "name": "Nicolas Grekas",[m
+[31m-                    "email": "p@tchwork.com"[m
+[31m-                },[m
+[31m-                {[m
+[31m-                    "name": "Symfony Community",[m
+[31m-                    "homepage": "https://symfony.com/contributors"[m
+[31m-                }[m
+[31m-            ],[m
+[31m-            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",[m
+[31m-            "homepage": "https://symfony.com",[m
+[31m-            "keywords": [[m
+[31m-                "compatibility",[m
+[31m-                "polyfill",[m
+[31m-                "portable",[m
+[31m-                "shim"[m
+[31m-            ],[m
+[31m-            "time": "2018-09-21T13:07:52+00:00"[m
+[31m-        },[m
+         {[m
+             "name": "symfony/process",[m
+             "version": "v4.2.1",[m
+[36m@@ -4924,225 +5547,6 @@[m
+             "homepage": "https://symfony.com",[m
+             "time": "2018-11-20T16:22:05+00:00"[m
+         },[m
+[31m-        {[m
+[31m-            "name": "symfony/profiler-pack",[m
+[31m-            "version": "v1.0.4",[m
+[31m-            "source": {[m
+[31m-                "type": "git",[m
+[31m-                "url": "https://github.com/symfony/profiler-pack.git",[m
+[31m-                "reference": "99c4370632c2a59bb0444852f92140074ef02209"[m
+[31m-            },[m
+[31m-            "dist": {[m
+[31m-                "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/profiler-pack/zipball/99c4370632c2a59bb0444852f92140074ef02209",[m
+[31m-                "reference": "99c4370632c2a59bb0444852f92140074ef02209",[m
+[31m-                "shasum": ""[m
+[31m-            },[m
+[31m-            "require": {[m
+[31m-                "php": "^7.0",[m
+[31m-                "symfony/stopwatch": "*",[m
+[31m-                "symfony/twig-bundle": "*",[m
+[31m-                "symfony/web-profiler-bundle": "*"[m
+[31m-            },[m
+[31m-            "type": "symfony-pack",[m
+[31m-            "notification-url": "https://packagist.org/downloads/",[m
+[31m-            "license": [[m
+[31m-                "MIT"[m
+[31m-            ],[m
+[31m-            "description": "A pack for the Symfony web profiler",[m
+[31m-            "time": "2018-12-10T12:11:44+00:00"[m
+[31m-        },[m
+[31m-        {[m
+[31m-            "name": "symfony/stopwatch",[m
+[31m-            "version": "v4.2.1",[m
+[31m-            "source": {[m
+[31m-                "type": "git",[m
+[31m-                "url": "https://github.com/symfony/stopwatch.git",[m
+[31m-                "reference": "ec076716412274e51f8a7ea675d9515e5c311123"[m
+[31m-            },[m
+[31m-            "dist": {[m
+[31m-                "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/ec076716412274e51f8a7ea675d9515e5c311123",[m
+[31m-                "reference": "ec076716412274e51f8a7ea675d9515e5c311123",[m
+[31m-                "shasum": ""[m
+[31m-            },[m
+[31m-            "require": {[m
+[31m-                "php": "^7.1.3",[m
+[31m-                "symfony/contracts": "^1.0"[m
+[31m-            },[m
+[31m-            "type": "library",[m
+[31m-            "extra": {[m
+[31m-                "branch-alias": {[m
+[31m-                    "dev-master": "4.2-dev"[m
+[31m-                }[m
+[31m-            },[m
+[31m-            "autoload": {[m
+[31m-                "psr-4": {[m
+[31m-                    "Symfony\\Component\\Stopwatch\\": ""[m
+[31m-                },[m
+[31m-                "exclude-from-classmap": [[m
+[31m-                    "/Tests/"[m
+[31m-                ][m
+[31m-            },[m
+[31m-            "notification-url": "https://packagist.org/downloads/",[m
+[31m-            "license": [[m
+[31m-                "MIT"[m
+[31m-            ],[m
+[31m-            "authors": [[m
+[31m-                {[m
+[31m-                    "name": "Fabien Potencier",[m
+[31m-                    "email": "fabien@symfony.com"[m
+[31m-                },[m
+[31m-                {[m
+[31m-                    "name": "Symfony Community",[m
+[31m-                    "homepage": "https://symfony.com/contributors"[m
+[31m-                }[m
+[31m-            ],[m
+[31m-            "description": "Symfony Stopwatch Component",[m
+[31m-            "homepage": "https://symfony.com",[m
+[31m-            "time": "2018-11-11T19:52:12+00:00"[m
+[31m-        },[m
+[31m-        {[m
+[31m-            "name": "symfony/var-dumper",[m
+[31m-            "version": "v4.2.1",[m
+[31m-            "source": {[m
+[31m-                "type": "git",[m
+[31m-                "url": "https://github.com/symfony/var-dumper.git",[m
+[31m-                "reference": "db61258540350725f4beb6b84006e32398acd120"[m
+[31m-            },[m
+[31m-            "dist": {[m
+[31m-                "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/db61258540350725f4beb6b84006e32398acd120",[m
+[31m-                "reference": "db61258540350725f4beb6b84006e32398acd120",[m
+[31m-                "shasum": ""[m
+[31m-            },[m
+[31m-            "require": {[m
+[31m-                "php": "^7.1.3",[m
+[31m-                "symfony/polyfill-mbstring": "~1.0",[m
+[31m-                "symfony/polyfill-php72": "~1.5"[m
+[31m-            },[m
+[31m-            "conflict": {[m
+[31m-                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",[m
+[31m-                "symfony/console": "<3.4"[m
+[31m-            },[m
+[31m-            "require-dev": {[m
+[31m-                "ext-iconv": "*",[m
+[31m-                "symfony/process": "~3.4|~4.0",[m
+[31m-                "twig/twig": "~1.34|~2.4"[m
+[31m-            },[m
+[31m-            "suggest": {[m
+[31m-                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",[m
+[31m-                "ext-intl": "To show region name in time zone dump",[m
+[31m-                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"[m
+[31m-            },[m
+[31m-            "bin": [[m
+[31m-                "Resources/bin/var-dump-server"[m
+[31m-            ],[m
+[31m-            "type": "library",[m
+[31m-            "extra": {[m
+[31m-                "branch-alias": {[m
+[31m-                    "dev-master": "4.2-dev"[m
+[31m-                }[m
+[31m-            },[m
+[31m-            "autoload": {[m
+[31m-                "files": [[m
+[31m-                    "Resources/functions/dump.php"[m
+[31m-                ],[m
+[31m-                "psr-4": {[m
+[31m-                    "Symfony\\Component\\VarDumper\\": ""[m
+[31m-                },[m
+[31m-                "exclude-from-classmap": [[m
+[31m-                    "/Tests/"[m
+[31m-                ][m
+[31m-            },[m
+[31m-            "notification-url": "https://packagist.org/downloads/",[m
+[31m-            "license": [[m
+[31m-                "MIT"[m
+[31m-            ],[m
+[31m-            "authors": [[m
+[31m-                {[m
+[31m-                    "name": "Nicolas Grekas",[m
+[31m-                    "email": "p@tchwork.com"[m
+[31m-                },[m
+[31m-                {[m
+[31m-                    "name": "Symfony Community",[m
+[31m-                    "homepage": "https://symfony.com/contributors"[m
+[31m-                }[m
+[31m-            ],[m
+[31m-            "description": "Symfony mechanism for exploring and dumping PHP variables",[m
+[31m-            "homepage": "https://symfony.com",[m
+[31m-            "keywords": [[m
+[31m-                "debug",[m
+[31m-                "dump"[m
+[31m-            ],[m
+[31m-            "time": "2018-11-25T12:50:42+00:00"[m
+[31m-        },[m
+[31m-        {[m
+[31m-            "name": "symfony/web-profiler-bundle",[m
+[31m-            "version": "v4.2.1",[m
+[31m-            "source": {[m
+[31m-                "type": "git",[m
+[31m-                "url": "https://github.com/symfony/web-profiler-bundle.git",[m
+[31m-                "reference": "198cb0a6b85346bbab5e1bc74a0eb175b9fa2d08"[m
+[31m-            },[m
+[31m-            "dist": {[m
+[31m-                "type": "zip",[m
+[31m-                "url": "https://api.github.com/repos/symfony/web-profiler-bundle/zipball/198cb0a6b85346bbab5e1bc74a0eb175b9fa2d08",[m
+[31m-                "reference": "198cb0a6b85346bbab5e1bc74a0eb175b9fa2d08",[m
+[31m-                "shasum": ""[m
+[31m-            },[m
+[31m-            "require": {[m
+[31m-                "php": "^7.1.3",[m
+[31m-                "symfony/config": "^4.2",[m
+[31m-                "symfony/http-kernel": "~4.2",[m
+[31m-                "symfony/routing": "~3.4|~4.0",[m
+[31m-                "symfony/twig-bundle": "~4.2",[m
+[31m-                "symfony/var-dumper": "~3.4|~4.0",[m
+[31m-                "twig/twig": "~1.34|~2.4"[m
+[31m-            },[m
+[31m-            "conflict": {[m
+[31m-                "symfony/dependency-injection": "<3.4",[m
+[31m-                "symfony/event-dispatcher": "<3.4",[m
+[31m-                "symfony/messenger": "<4.2",[m
+[31m-                "symfony/var-dumper": "<3.4"[m
+[31m-            },[m
+[31m-            "require-dev": {[m
+[31m-                "symfony/console": "~3.4|~4.0",[m
+[31m-                "symfony/dependency-injection": "~3.4|~4.0",[m
+[31m-                "symfony/stopwatch": "~3.4|~4.0"[m
+[31m-            },[m
+[31m-            "type": "symfony-bundle",[m
+[31m-            "extra": {[m
+[31m-                "branch-alias": {[m
+[31m-                    "dev-master": "4.2-dev"[m
+[31m-                }[m
+[31m-            },[m
+[31m-            "autoload": {[m
+[31m-                "psr-4": {[m
+[31m-                    "Symfony\\Bundle\\WebProfilerBundle\\": ""[m
+[31m-                },[m
+[31m-                "exclude-from-classmap": [[m
+[31m-                    "/Tests/"[m
+[31m-                ][m
+[31m-            },[m
+[31m-            "notification-url": "https://packagist.org/downloads/",[m
+[31m-            "license": [[m
+[31m-                "MIT"[m
+[31m-            ],[m
+[31m-            "authors": [[m
+[31m-                {[m
+[31m-                    "name": "Fabien Potencier",[m
+[31m-                    "email": "fabien@symfony.com"[m
+[31m-                },[m
+[31m-                {[m
+[31m-                    "name": "Symfony Community",[m
+[31m-                    "homepage": "https://symfony.com/contributors"[m
+[31m-                }[m
+[31m-            ],[m
+[31m-            "description": "Symfony WebProfilerBundle",[m
+[31m-            "homepage": "https://symfony.com",[m
+[31m-            "time": "2018-12-02T13:25:28+00:00"[m
+[31m-        },[m
+         {[m
+             "name": "symfony/web-server-bundle",[m
+             "version": "v4.2.1",[m
+[1mdiff --git a/config/bundles.php b/config/bundles.php[m
+[1mindex 4ad895c..b0b2d03 100644[m
+[1m--- a/config/bundles.php[m
+[1m+++ b/config/bundles.php[m
+[36m@@ -12,4 +12,6 @@[m [mreturn [[m
+     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],[m
+     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],[m
+     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],[m
+[32m+[m[32m    Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],[m
+[32m+[m[32m    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],[m
+ ];[m
+[1mdiff --git a/public/css/.DS_Store b/public/css/.DS_Store[m
+[1mindex a2278e1..2e2307d 100644[m
+Binary files a/public/css/.DS_Store and b/public/css/.DS_Store differ
+[1mdiff --git a/public/css/style2.css b/public/css/style2.css[m
+[1mindex 8d36f6b..9ac13d4 100644[m
+[1m--- a/public/css/style2.css[m
+[1m+++ b/public/css/style2.css[m
+[36m@@ -308,15 +308,11 @@[m [ma#skip {[m
+ }[m
+ [m
+ [m
+[31m-[m
+[31m-[m
+[31m-[m
+ /* --------------------------[m
+ 		PAGE ACCUEIL[m
+ -----------------------------*/[m
+ [m
+ #presentation-block{[m
+[31m-    margin-top:93vh;[m
+     /*background-color:rgba(220,200,250, 0.7);*/[m
+     /*background-color:#F2D8E1;*/[m
+     /*background-image:url("../../images/background3.jpg");*/[m
+[36m@@ -1395,6 +1391,7 @@[m [minput {[m
+     background: #D7C6BD;[m
+     color: white;[m
+     font-size: 2rem;[m
+[32m+[m[32m    /*z-index: 1;*/[m
+ }[m
+ [m
+ /*.fixedTop{[m
+[36m@@ -1541,6 +1538,7 @@[m [mfooter {[m
+     background-color: #D7C6BD;[m
+     color: black;[m
+     padding-top: 1.5rem;[m
+[32m+[m
+ }[m
+ [m
+ #category-footer {[m
+[36m@@ -1604,7 +1602,7 @@[m [mfooter p {[m
+ -------------------------------------*/[m
+ [m
+ .welcome {[m
+[31m-    font-size: 4rem;[m
+[32m+[m[32m    font-size: 8rem;[m
+     font-family:'Cookie', cursive;[m
+ }[m
+ [m
+[36m@@ -1658,9 +1656,12 @@[m [mfooter p {[m
+     color: white;[m
+ }[m
+ [m
+[32m+[m
+[32m+[m
+ .client-info{[m
+     font-size: 1.5rem;[m
+     padding-bottom: 3rem;[m
+[32m+[m[32m    min-height: 88.1vh;[m
+ }[m
+ [m
+ .button-account{[m
+[36m@@ -1686,12 +1687,16 @@[m [mfooter p {[m
+     font-size: 1.5rem;[m
+ }[m
+ [m
+[32m+[m[32m.client-section{[m
+[32m+[m[32m    margin-bottom: 40rem !important;[m
+[32m+[m[32m}[m
+[32m+[m
+ /*-----------------------------------[m
+            PAGE MEMBRE PANIER[m
+ -------------------------------------*/[m
+ [m
+ .icon-client-style{[m
+[31m-    color:#D1D9D7;[m
+[32m+[m[32m    color:white;[m
+     font-size:2rem;[m
+ }[m
+ [m
+[36m@@ -1940,7 +1945,7 @@[m [mfooter p {[m
+ [m
+ [m
+ form{[m
+[31m-    font-size:4rem;[m
+[32m+[m[32m    font-size:2.5rem;[m
+ }[m
+ [m
+ [m
+[36m@@ -1955,7 +1960,16 @@[m [mform{[m
+ /* -------------------------[m
+ 	  PAGE ALL PRODUCTS USER[m
+ -----------------------------*/[m
+[32m+[m[32m#background{[m
+[32m+[m[32m    position:fixed !important;[m
+[32m+[m[32m    width:100%;[m
+[32m+[m[32m    margin-top:-10rem;[m
+[32m+[m[32m    z-index:-2;[m
+[32m+[m[32m}[m
+ [m
+[32m+[m[32m#background img{[m
+[32m+[m[32m    width:100%;[m
+[32m+[m[32m}[m
+ [m
+ #section-1-all-products{[m
+     margin-top:7rem;[m
+[1mdiff --git a/src/Controller/BlogController.php b/src/Controller/BlogController.php[m
+[1mindex 6982b86..37f735f 100644[m
+[1m--- a/src/Controller/BlogController.php[m
+[1m+++ b/src/Controller/BlogController.php[m
+[36m@@ -2,7 +2,14 @@[m
+ [m
+ namespace App\Controller;[m
+ [m
+[32m+[m[32muse App\Entity\Article;[m
+[32m+[m[32muse App\Entity\User;[m
+[32m+[m[32muse App\Form\ArticleFormType;[m
+[32m+[m[32muse Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;[m
+ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;[m
+[32m+[m[32muse Symfony\Component\HttpFoundation\File\UploadedFile;[m
+[32m+[m[32muse Symfony\Component\HttpFoundation\Request;[m
+[32m+[m[32muse Symfony\Component\HttpFoundation\Response;[m
+ use Symfony\Component\Routing\Annotation\Route;[m
+ [m
+ class BlogController extends AbstractController[m
+[36m@@ -16,4 +23,112 @@[m [mclass BlogController extends AbstractController[m
+             'controller_name' => 'BlogController',[m
+         ]);[m
+     }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Démonstration de l'ajout d'un Article avec Doctrine ![m
+[32m+[m[32m     * @Route("/blog/test", name="article_demo")[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function demo()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        #Appel du membre[m
+[32m+[m[32m        $user = $this->getDoctrine()[m
+[32m+[m[32m            ->getRepository(User::class)[m
+[32m+[m[32m            ->find(1);[m
+[32m+[m
+[32m+[m[32m        #Création de l'Article[m
+[32m+[m[32m        $article = new Article();[m
+[32m+[m[32m        $article[m
+[32m+[m[32m            ->setTitre("Galette des rois : la meilleure recette")[m
+[32m+[m[32m            ->setSlug("galette-des-rois-la-meilleure-recette")[m
+[32m+[m[32m            ->setContenu("<p>Pour faire une super galette, il vous faut de la pâte feuilleté, du beurre et de la poudre d'amandes !</p>")[m
+[32m+[m[32m            ->setFeaturedImage("croissant.jpg")[m
+[32m+[m[32m            ->setDateCreation(\DateTime::createFromFormat('Y-m-d', "2018-01-16"))[m
+[32m+[m[32m            ->setUser($user);[m
+[32m+[m
+[32m+[m[32m        /*[m
+[32m+[m[32m         * Récupération du Manager de Doctrine.[m
+[32m+[m[32m         * Le Entity Manager est une classe qui sait[m
+[32m+[m[32m         * comment persister d'autres classes.[m
+[32m+[m[32m         * (Effectuer des opérations CRUD sur nos entités).[m
+[32m+[m[32m         */[m
+[32m+[m
+[32m+[m[32m        $em = $this->getDoctrine()->getManager();[m
+[32m+[m[32m        $em->persist($user);[m
+[32m+[m[32m        $em->persist($article);[m
+[32m+[m[32m        $em->flush();[m
+[32m+[m
+[32m+[m[32m        return new Response('Nouvel article ajouté avec ID:' . $article->getId() . 'de Auteur:' . $user->getLastName());[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Formulaire pour ajouter un article.[m
+[32m+[m[32m     * @Route ("/blog/creer-un-article", name="article_new")[m
+[32m+[m[32m     * @Security("has_role('ROLE_ADMIN')")[m
+[32m+[m[32m     */[m
+[32m+[m
+[32m+[m[32m    public function newArticle(Request $request)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        #Récupération de l'utilisateur[m
+[32m+[m[32m        $membre = $this->getDoctrine()[m
+[32m+[m[32m            ->getRepository(User::class)[m
+[32m+[m[32m            ->find(1);[m
+[32m+[m
+[32m+[m[32m        #Création d'un Nouvel Article[m
+[32m+[m[32m        $article = new Article();[m
+[32m+[m[32m        $article->setUser($this->getUser());[m
+[32m+[m
+[32m+[m[32m        #Création du Formulaire[m
+[32m+[m[32m        $form = $this->createForm(ArticleFormType::class, $article)[m
+[32m+[m[32m            ->handleRequest($request);[m
+[32m+[m
+[32m+[m[32m        #Si le formulaire est soumis et valide[m
+[32m+[m[32m        if ($form->isSubmitted() && $form->isValid()){[m
+[32m+[m[32m            #dump($article);[m
+[32m+[m[32m            #1.Traitement de l'upload de l'image[m
+[32m+[m
+[32m+[m[32m            /** @var UploadedFile $featuredImage */[m
+[32m+[m[32m            $featuredImage = $article->getFeaturedImage();[m
+[32m+[m
+[32m+[m[32m            $fileName = $this->slugify($article->getTitre()) . '.' . $featuredImage->guessExtension();[m
+[32m+[m
+[32m+[m[32m            // Move the file to the directory where brochures are stored[m
+[32m+[m[32m            try {[m
+[32m+[m[32m                $featuredImage->move([m
+[32m+[m[32m                    $this->getParameter('articles_assets_dir'),[m
+[32m+[m[32m                    $fileName[m
+[32m+[m[32m                );[m
+[32m+[m[32m            } catch (FileException $e) {[m
+[32m+[m[32m                // ... handle exception if something happens during file upload[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            #Mise à jour de l'image[m
+[32m+[m[32m            $article->setFeaturedImage($fileName);[m
+[32m+[m
+[32m+[m[32m            #Mise à jour du slug[m
+[32m+[m[32m            $article->setSlug($this->slugify($article->getTitre()));[m
+[32m+[m
+[32m+[m[32m            #Sauvegarde en BDD[m
+[32m+[m[32m            $em = $this->getDoctrine()->getManager();[m
+[32m+[m[32m            $em->persist($article);[m
+[32m+[m[32m            $em->flush();[m
+[32m+[m
+[32m+[m[32m            #Notification[m
+[32m+[m[32m            $this->addFlash('notice',[m
+[32m+[m[32m                'Félicitations, votre article est en ligne!');[m
+[32m+[m
+[32m+[m[32m            #Redirection[m
+[32m+[m[32m            return $this->redirectToRoute('category', [[m
+[32m+[m[32m                'slug' => $article->getSlug(),[m
+[32m+[m[32m                'id' =>$article->getId() ]);[m
+[32m+[m[32m            // ... persist the $product variable or any other work[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        #Affichage dans la vue[m
+[32m+[m[32m        return $this->render('form/articleform.html.twig', [[m
+[32m+[m[32m            'form'=> $form->createView()[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+ }[m
+[1mdiff --git a/src/Form/ArticleFormType.php b/src/Form/ArticleFormType.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5e8c4b8[m
+[1m--- /dev/null[m
+[1m+++ b/src/Form/ArticleFormType.php[m
+[36m@@ -0,0 +1,62 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32m/**[m
+[32m+[m[32m * Created by PhpStorm.[m
+[32m+[m[32m * User: PC6[m
+[32m+[m[32m * Date: 02/01/2019[m
+[32m+[m[32m * Time: 14:34[m
+[32m+[m[32m */[m
+[32m+[m
+[32m+[m[32mnamespace App\Form;[m
+[32m+[m
+[32m+[m[32muse App\Entity\Article;[m
+[32m+[m[32muse Symfony\Bridge\Doctrine\Form\Type\EntityType;[m
+[32m+[m[32muse Symfony\Component\Form\AbstractType;[m
+[32m+[m[32muse Symfony\Component\Form\Extension\Core\Type\CheckboxType;[m
+[32m+[m[32muse Symfony\Component\Form\Extension\Core\Type\FileType;[m
+[32m+[m[32muse Symfony\Component\Form\Extension\Core\Type\SubmitType;[m
+[32m+[m[32muse Symfony\Component\Form\Extension\Core\Type\TextareaType;[m
+[32m+[m[32muse Symfony\Component\Form\Extension\Core\Type\TextType;[m
+[32m+[m[32muse Symfony\Component\Form\FormBuilderInterface;[m
+[32m+[m[32muse Symfony\Component\OptionsResolver\OptionsResolver;[m
+[32m+[m
+[32m+[m[32mclass ArticleFormType extends AbstractType[m
+[32m+[m[32m{[m
+[32m+[m[32m    public function buildForm(FormBuilderInterface $builder, array $options)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $builder->add('titre',TextType::class, [[m
+[32m+[m[32m            'required'=>true,[m
+[32m+[m[32m            'label'=>"Titre",[m
+[32m+[m[32m            'attr' => [[m
+[32m+[m[32m                'placeholder'=>"Titre"[m
+[32m+[m[32m            ][m
+[32m+[m[32m        ])[m
+[32m+[m
+[32m+[m[32m            ->add('contenu', TextareaType::class, [[m
+[32m+[m[32m                'label' => "Contenu"[m
+[32m+[m[32m            ])[m
+[32m+[m
+[32m+[m[32m            ->add('featuredImage', FileType::class, [[m
+[32m+[m[32m                'label' => "Image",[m
+[32m+[m[32m                'attr' => [[m
+[32m+[m[32m                    'class' =>'dropify'[m
+[32m+[m[32m                ][m
+[32m+[m[32m            ])[m
+[32m+[m
+[32m+[m[32m            ->add('submit', SubmitType::class, [[m
+[32m+[m[32m                'label' => 'Publier mon article'[m
+[32m+[m[32m            ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public function configureOptions(OptionsResolver $resolver)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $resolver->setDefaults([[m
+[32m+[m[32m            'date_class' => Article::class[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public function getBlockPrefix()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        return 'form';[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/symfony.lock b/symfony.lock[m
+[1mindex 9e8162d..b36a414 100644[m
+[1m--- a/symfony.lock[m
+[1m+++ b/symfony.lock[m
+[36m@@ -65,12 +65,24 @@[m
+     "doctrine/reflection": {[m
+         "version": "v1.0.0"[m
+     },[m
+[32m+[m[32m    "easycorp/easy-log-handler": {[m
+[32m+[m[32m        "version": "1.0",[m
+[32m+[m[32m        "recipe": {[m
+[32m+[m[32m            "repo": "github.com/symfony/recipes",[m
+[32m+[m[32m            "branch": "master",[m
+[32m+[m[32m            "version": "1.0",[m
+[32m+[m[32m            "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"[m
+[32m+[m[32m        }[m
+[32m+[m[32m    },[m
+     "egulias/email-validator": {[m
+         "version": "2.1.4"[m
+     },[m
+     "jdorn/sql-formatter": {[m
+         "version": "v1.2.17"[m
+     },[m
+[32m+[m[32m    "monolog/monolog": {[m
+[32m+[m[32m        "version": "1.24.0"[m
+[32m+[m[32m    },[m
+     "nikic/php-parser": {[m
+         "version": "v4.0.1"[m
+     },[m
+[36m@@ -146,6 +158,18 @@[m
+     "symfony/debug": {[m
+         "version": "v4.0.7"[m
+     },[m
+[32m+[m[32m    "symfony/debug-bundle": {[m
+[32m+[m[32m        "version": "4.1",[m
+[32m+[m[32m        "recipe": {[m
+[32m+[m[32m            "repo": "github.com/symfony/recipes",[m
+[32m+[m[32m            "branch": "master",[m
+[32m+[m[32m            "version": "4.1",[m
+[32m+[m[32m            "ref": "f8863cbad2f2e58c4b65fa1eac892ab189971bea"[m
+[32m+[m[32m        }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "symfony/debug-pack": {[m
+[32m+[m[32m        "version": "v1.0.7"[m
+[32m+[m[32m    },[m
+     "symfony/dependency-injection": {[m
+         "version": "v4.0.7"[m
+     },[m
+[36m@@ -161,6 +185,9 @@[m
+     "symfony/event-dispatcher": {[m
+         "version": "v4.0.7"[m
+     },[m
+[32m+[m[32m    "symfony/expression-language": {[m
+[32m+[m[32m        "version": "v4.2.2"[m
+[32m+[m[32m    },[m
+     "symfony/filesystem": {[m
+         "version": "v4.0.7"[m
+     },[m
+[36m@@ -209,6 +236,18 @@[m
+             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"[m
+         }[m
+     },[m
+[32m+[m[32m    "symfony/monolog-bridge": {[m
+[32m+[m[32m        "version": "v4.2.2"[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "symfony/monolog-bundle": {[m
+[32m+[m[32m        "version": "3.1",[m
+[32m+[m[32m        "recipe": {[m
+[32m+[m[32m            "repo": "github.com/symfony/recipes",[m
+[32m+[m[32m            "branch": "master",[m
+[32m+[m[32m            "version": "3.1",[m
+[32m+[m[32m            "ref": "18ebf5a940573a20de06f9c4060101eeb438cf3d"[m
+[32m+[m[32m        }[m
+[32m+[m[32m    },[m
+     "symfony/options-resolver": {[m
+         "version": "v4.0.8"[m
+     },[m
+[1mdiff --git a/templates/form/articleform.html.twig b/templates/form/articleform.html.twig[m
+[1mnew file mode 100644[m
+[1mindex 0000000..66e209e[m
+[1m--- /dev/null[m
+[1m+++ b/templates/form/articleform.html.twig[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m{% extends 'shop/layout.html.twig' %}[m
+[32m+[m
+[32m+[m[32m{% set active = 'form' %}[m
+[32m+[m
+[32m+[m[32m{% block page_title %}[m
+[32m+[m[32m    Rédiger un article[m
+[32m+[m[32m{% endblock %}[m
+[32m+[m
+[32m+[m[32m{% block content %}[m
+[32m+[m[32m    <div class="row">[m
+[32m+[m[32m        <div class="col-md-8 col-sm-12">[m
+[32m+[m
+[32m+[m[32m            <h3>Rédiger un Article</h3>[m
+[32m+[m[32m            {{ form(form, {attr:{novalidate: 'novalidate'}}) }}[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m{% endblock %}[m
+\ No newline at end of file[m
+[1mdiff --git a/templates/shop/account/account.html.twig b/templates/shop/account/account.html.twig[m
+[1mindex 1f79950..ead054c 100644[m
+[1m--- a/templates/shop/account/account.html.twig[m
+[1m+++ b/templates/shop/account/account.html.twig[m
+[36m@@ -10,7 +10,7 @@[m
+ [m
+     <h1 class="text-center welcome">Bonjour {{ app.user.lastName }}</h1>[m
+ [m
+[31m-    <div class="card">[m
+[32m+[m[32m    <div class="card card-client">[m
+         <div class="card-header title-card">[m
+             <h1>Mes informations</h1>[m
+         </div>[m
+[1mdiff --git a/templates/shop/account/orders.html.twig b/templates/shop/account/orders.html.twig[m
+[1mindex 9cb26a2..ba0bb0c 100644[m
+[1m--- a/templates/shop/account/orders.html.twig[m
+[1m+++ b/templates/shop/account/orders.html.twig[m
+[36m@@ -9,7 +9,7 @@[m
+ <div class="container">[m
+     <h1 class="text-center welcome">Suivi des commandes</h1>[m
+ [m
+[31m-<div class="card">[m
+[32m+[m[32m<div class="card card-client">[m
+     <div class="card-header title-card">[m
+         <h1>Mes commandes</h1>[m
+     </div>[m
+[1mdiff --git a/templates/shop/basket.html.twig b/templates/shop/basket.html.twig[m
+[1mindex ff8d1c9..cf88f55 100644[m
+[1m--- a/templates/shop/basket.html.twig[m
+[1m+++ b/templates/shop/basket.html.twig[m
+[36m@@ -3,7 +3,7 @@[m
+ [m
+ {% block content %}[m
+ [m
+[31m-<div class="container">[m
+[32m+[m[32m<div class="container client-section">[m
+     <h1 class="text-center welcome">Mon panier</h1>[m
+ [m
+ {% if products is empty %}[m
+[36m@@ -11,7 +11,7 @@[m
+         <div class="card-header title-card">[m
+             <h1>Contenu du panier</h1>[m
+         </div>[m
+[31m-        <div class="card-body content-card">[m
+[32m+[m[32m        <div class="card-body content-card ">[m
+             <p>Le panier est vide.</p>[m
+             <a href="/" class="btn button-account">Continuer les achats</a>[m
+         </div>[m
+[1mdiff --git a/templates/shop/category.html.twig b/templates/shop/category.html.twig[m
+[1mindex 61d6add..24ad6a7 100644[m
+[1m--- a/templates/shop/category.html.twig[m
+[1m+++ b/templates/shop/category.html.twig[m
+[36m@@ -57,7 +57,6 @@[m
+                         <p class="description">Nous vendons de délicieux cupcakes de différentes saveurs:[m
+                             vanille, chocolat, caramel ... A vous de choisir celui qui vous préférez.[m
+                         </p>[m
+[31m-                        <button type="button" class="btn btn-outline-dark btn-desc">En savoir plus</button>[m
+                     </div>[m
+                 </div>[m
+ [m
+[36m@@ -67,7 +66,6 @@[m
+                         <p class="description">Craquez et fondez pour nos différentes saveurs de macarons à votre[m
+                             disposition ![m
+                         </p>[m
+[31m-                        <button type="button" class="btn btn-outline-dark btn-desc">En savoir plus</button>[m
+                     </div>[m
+                     <div class="col-md-6 img-anim" id="i-a2">[m
+                         <img src="{{ asset('img/macaron-orange.png') }}" class="img-fluid">[m
+[36m@@ -83,7 +81,6 @@[m
+                         <p class="description">Des viennoiseries préparés tous les matins, parfait pour un bon petit déjeuner et commencer[m
+                             idéalement la journée.[m
+                         </p>[m
+[31m-                        <button type="button" class="btn btn-outline-dark btn-desc">En savoir plus</button>[m
+                     </div>[m
+                 </div>[m
+ [m
+[36m@@ -91,7 +88,6 @@[m
+                     <div class="col-md-6 content-anim" id="c-a4">[m
+                         <h3 class="title-desc">Des pâtisseries individuelles</h3>[m
+                         <p class="description">Toutes de sortes de petits délices selon vos envies.</p>[m
+[31m-                        <button type="button" class="btn btn-outline-dark btn-desc">En savoir plus</button>[m
+                     </div>[m
+                     <div class="col-md-6 img-anim" id="i-a4">[m
+                         <img src="{{ asset('img/tartelette.png') }}" class="img-fluid">[m
+[1mdiff --git a/templates/shop/checkout/address.html.twig b/templates/shop/checkout/address.html.twig[m
+[1mindex 369c7ae..6dbc2e8 100644[m
+[1m--- a/templates/shop/checkout/address.html.twig[m
+[1m+++ b/templates/shop/checkout/address.html.twig[m
+[36m@@ -2,7 +2,7 @@[m
+ {% block page_title %}Adresse{% endblock %}[m
+ [m
+ {% block content %}[m
+[31m-    <div class="container">[m
+[32m+[m[32m    <div class="container client-section">[m
+         <div class="breadcrumbs">[m
+             <nav aria-label="breadcrumb" id="recap-link">[m
+                 <ol class="breadcrumb justify-content-center recap-list">[m
+[1mdiff --git a/templates/shop/checkout/payment.html.twig b/templates/shop/checkout/payment.html.twig[m
+[1mindex 0af0336..00b5b86 100644[m
+[1m--- a/templates/shop/checkout/payment.html.twig[m
+[1m+++ b/templates/shop/checkout/payment.html.twig[m
+[36m@@ -2,7 +2,7 @@[m
+ {% block title %}Paiement{% endblock %}[m
+ [m
+ {% block content %}[m
+[31m-    <div class="container">[m
+[32m+[m[32m    <div class="container client-section">[m
+         <div class="breadcrumbs">[m
+             <nav aria-label="breadcrumb" id="recap-link">[m
+                 <ol class="breadcrumb justify-content-center">[m
+[1mdiff --git a/templates/shop/checkout/shipping.html.twig b/templates/shop/checkout/shipping.html.twig[m
+[1mindex d38172f..8d4bcac 100644[m
+[1m--- a/templates/shop/checkout/shipping.html.twig[m
+[1m+++ b/templates/shop/checkout/shipping.html.twig[m
+[36m@@ -2,7 +2,7 @@[m
+ {% block page_title %}Livraison{% endblock %}[m
+ [m
+ {% block content %}[m
+[31m-<div class="container">[m
+[32m+[m[32m<div class="container client-section">[m
+ <div class="breadcrumbs">[m
+         <nav aria-label="breadcrumb" id="recap-link">[m
+             <ol class="breadcrumb justify-content-center recap-list">[m
+[1mdiff --git a/templates/shop/checkout/summary.html.twig b/templates/shop/checkout/summary.html.twig[m
+[1mindex 41e753e..6fd67d3 100644[m
+[1m--- a/templates/shop/checkout/summary.html.twig[m
+[1m+++ b/templates/shop/checkout/summary.html.twig[m
+[36m@@ -2,7 +2,7 @@[m
+ {% block page_title %}Récapitulatif{% endblock %}[m
+ [m
+ {% block content %}[m
+[31m-<div class="container">[m
+[32m+[m[32m<div class="container client-section">[m
+     <div class="breadcrumbs">[m
+         <nav aria-label="breadcrumb" id="recap-link">[m
+             <ol class="breadcrumb justify-content-center recap-list">[m
+[1mdiff --git a/templates/shop/index.html.twig b/templates/shop/index.html.twig[m
+[1mindex 697ecb2..2f1ae74 100644[m
+[1m--- a/templates/shop/index.html.twig[m
+[1m+++ b/templates/shop/index.html.twig[m
+[36m@@ -441,75 +441,6 @@[m
+ [m
+ [m
+ [m
+[31m-[m
+[31m-    {% block footer %}[m
+[31m-[m
+[31m-    <!-- FOOTER  -->[m
+[31m-    <div class="row">[m
+[31m-        <div class="col-md-12 text-center mb-5" id="actualités-button-2">[m
+[31m-            <a href="#" class="button-style-2">Toutes nos actualités</a>[m
+[31m-        </div>[m
+[31m-    </div>[m
+[31m-    <footer id="main-footer">[m
+[31m-        <div class="container-fluid" id="footer-container">[m
+[31m-            <div class="row">[m
+[31m-                <div class="col-md-4">[m
+[31m-                    <img src="../img/logo2.png" class="d-inline-block" id="logo">[m
+[31m-                    <div class="d-inline-block" id="footer-block1">[m
+[31m-                        <ul class="list-unstyled">[m
+[31m-                            <li>Besoin d'aide?</li>[m
+[31m-                            <hr>[m
+[31m-                            <li><span>Votre conseiller</span></li>[m
+[31m-                            <li><strong>08425465456</strong></li>[m
+[31m-                            <li>(Prix d'un appel local)</li>[m
+[31m-                            <li><strong>Du lundi au vendredi</strong></li>[m
+[31m-                            <li><strong>8h - 20h</strong></li>[m
+[31m-                        </ul>[m
+[31m-                    </div>[m
+[31m-                </div>[m
+[31m-                <div class="col-md-2 col-6" id="footer-block2">[m
+[31m-                    <ul class="list-unstyled">[m
+[31m-                        <li><a href="#">Lovin Sweet</a></li>[m
+[31m-                        <li><a href="#">Portraits de chefs</a></li>[m
+[31m-                        <li><a href="#">Actualités</a></li>[m
+[31m-[m
+[31m-[m
+[31m-                    </ul>[m
+[31m-                </div>[m
+[31m-                <div class="col-md-2 col-6" id="footer-block3">[m
+[31m-                    <ul class="list-unstyled">[m
+[31m-                        <li><a href="#">Nous trouver</a></li>[m
+[31m-                        <li><a href="e-shop.html">Trouver une boutique</a></li>[m
+[31m-                        <li><a href="contact.html">Contactez nous</a></li>[m
+[31m-                        <li><a href="#">Mentions légales</a></li>[m
+[31m-                    </ul>[m
+[31m-                </div>[m
+[31m-                <div class="col-md-4" id="newsletter">[m
+[31m-                    <h4 class="text-center">Newsletter</h4>[m
+[31m-                    <p class="text-center">Abonnez vous à notre newsletter</p>[m
+[31m-                    <form>[m
+[31m-                        <div class="form-group">[m
+[31m-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"[m
+[31m-                                   placeholder="Entrer votre email" name="email">[m
+[31m-                        </div>[m
+[31m-                        <button type="submit" class="btn btn-block btn-news">Envoyer[m
+[31m-                        </button>[m
+[31m-                        <small><em><p>En s’inscrivant à la newsletter, vous acceptez de recevoir les communications,[m
+[31m-                                    promotions et actualités de la part de Lenôtre. Vous pouvez à tout moment utiliser[m
+[31m-                                    le lien de désabonnement intégré dans la newsletter. Pour plus d’information,[m
+[31m-                                    veuillez consulter notre Politique de confidentialité</p></em></small>[m
+[31m-                    </form>[m
+[31m-                </div>[m
+[31m-            </div>[m
+[31m-        </div>[m
+[31m-    </footer>[m
+[31m-</div>[m
+[31m-[m
+[31m-{% endblock %}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+     {#{% block shop_content %}[m
+ [m
+     <section class="new-products">[m
+[36m@@ -572,4 +503,4 @@[m
+         </div>[m
+     </section>[m
+ [m
+[31m-    {% endblock %}#}[m
+[32m+[m[32m    {% endblock %}#}[m
+\ No newline at end of file[m
+[1mdiff --git a/templates/shop/product_single.html.twig b/templates/shop/product_single.html.twig[m
+[1mindex 3ab860d..58e7d99 100644[m
+[1m--- a/templates/shop/product_single.html.twig[m
+[1m+++ b/templates/shop/product_single.html.twig[m
+[36m@@ -1,16 +1,5 @@[m
+ {% extends 'shop/layout.html.twig' %}[m
+ [m
+[31m-{% block content %}[m
+[31m-<div>[m
+[31m-    <div class="container">[m
+[31m-        <nav>[m
+[31m-                    <a href="{{ path('index') }}">Accueil</a>[m
+[31m-               <div>{{ product.name }}</div>[m
+[31m-        </nav>[m
+[31m-        </div>[m
+[31m-    </div>[m
+[31m-</div>[m
+[31m-[m
+ {% block content %}[m
+ [m
+     <!-- BACKGROUND IMAGE/CAROUSEL -->[m
+[36m@@ -131,9 +120,4 @@[m
+ [m
+ {% endblock %}[m
+ [m
+[31m-{#{% block javascripts  %}#}[m
+[31m-   <!-- <script src="{{ asset('js/productSlider.js') }}"></script>[m
+[31m-    <script src="{{ asset('js/script.js') }}"></script>-->[m
+[31m-{#{% endblock javascripts %}#} [m
+[31m-[m
+ [m
