@@ -77,8 +77,8 @@
         <h2 class="text-center">Images</h2>
     <div class="images row" data-prototype="{{ form_widget(form.imagess.vars.prototype)|e('html_attr') }}">
         {% for image in form.imagess %}
-            <div class="col-md-12">
-                <img src="/img/upload/{{ image.vars.value.name }}" alt="{{ image.vars.value.description }}" class="img img-fluid">
+            <div class="col-md-12 text-center">
+                <img class="img-fluid" src="/imgs/upload/{{ image.vars.value.name }}" alt="{{ image.vars.value.description }}" class="img img-fluid">
                 <div>{{ form_row(image.description) }}</div>
                 <div>{{ form_row(image.file, {
                         'label': false,

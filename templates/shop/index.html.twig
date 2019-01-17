@@ -229,12 +229,12 @@
                 <!-- 	<div class="col-md-4">
                         <a href="#" class="button-style-1">Découvrez la collection</a>
                     </div> -->
-                {% for atelier in all_ateliers %}
+                {% for atelier in latest_ateliers %}
                     <div class="col-md-4" id="block1">
                         <a href="/ateliersweet/{{ atelier.slug }}">
 					        <span class="overlay-container">
                                     {% set thumb = atelier.imagess | first %}
-					          <img class="img-fluid" src="{{ asset('img/49.jpg') }}" alt="" id="img-49">
+					           <img src="/imgs/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
                                 <!--<img class="img-fluid" src="/imgs/upload/" alt="" id="img-49">-->
 					          <span class="overlay-background">
 					            <span class="see-more">
@@ -242,7 +242,7 @@
 					              	<h3>{{ atelier.name }}</h3>
 					              	<p>{{ atelier.description }}</p>
 					                <span class="hidden">
-					                	Read more
+					                	Voir plus
 					                </span>
 					              </span>
 					            </span>

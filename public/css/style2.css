@@ -790,9 +790,14 @@ a#skip {
     margin-bottom:3rem;
 }
 
+#presentation-section-9 span{
+    color:white !important;
+}
+
+
 #presentation-section-9 h3{
     font-size:3rem;
-    color:white;
+    color:#ffbfa7;
 }
 
 #presentation-section-9 p{

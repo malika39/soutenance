@@ -89,7 +89,7 @@ atelier_show:
 
 atelier_detail:
     path: /atelier_detail/{id}
-    controller: App\Controller\Admin\AtelierController::atelier_detail
+    controller: App\Controller\AtelierController::atelierDetail
 
 allAteliers:
     path: /all_ateliers

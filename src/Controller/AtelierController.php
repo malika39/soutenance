@@ -58,13 +58,13 @@ class AtelierController extends AbstractController
 
     public function atelierDetail($id)
     {
-        $atelier = $this->getDoctrine()
+        $atelierDetail = $this->getDoctrine()
             ->getRepository(Ateliersweet::class)
             ->find($id);
         /* Ateliersweet::class -> c'est le nom de la classe dans entity
         Ateliersweet */
-        return $this->render('shop/atelier_single.html.twig', [
-            'atelier' => $atelier
+        return $this->render('shop/atelier_detail.html.twig', [
+            'atelier' => $atelierDetail
         ]);
     }
 }
