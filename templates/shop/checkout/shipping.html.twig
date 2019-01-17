@@ -2,39 +2,39 @@
 {% block page_title %}Livraison{% endblock %}
 
 {% block content %}
-<div class="container client-section">
-<div class="breadcrumbs">
-        <nav aria-label="breadcrumb" id="recap-link">
-            <ol class="breadcrumb justify-content-center recap-list">
-                <li class="breadcrumb-item"><a href="{{ path('user_account') }}">Identification</a></li>
-                <li class="breadcrumb-item"><a href="{{ path('checkout_shipping') }}">Adresse</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Livraison</li>
-                <li class="breadcrumb-item">Récapitulatif</li>
-                <li class="breadcrumb-item">Paiement</li>
-            </ol>
-        </nav>
+    <div class="container client-section">
+        <div class="breadcrumbs">
+            <nav aria-label="breadcrumb" id="recap-link">
+                <ol class="breadcrumb justify-content-center recap-list">
+                    <li class="breadcrumb-item"><a href="{{ path('user_account') }}">Identification</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('checkout_shipping') }}">Adresse</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Livraison</li>
+                    <li class="breadcrumb-item">Récapitulatif</li>
+                    <li class="breadcrumb-item">Paiement</li>
+                </ol>
+            </nav>
+        </div>
+
+
+        <div class="card-body content-card recap">
+            <h1 class="text-center">Livraison</h1>
+
+            {{ form_start(form, { 'attr': { 'id': 'form' } }) }}
+            {% for shippingMethod in form.shippingMethod %}
+                {% set index = shippingMethod.vars.value %}
+                {% set entity = form.shippingMethod.vars.choices[index].data %}
+                {% if entity.fee == 0 %}
+                    {% set label = entity.name ~ ' gratuit' %}
+                {% else %}
+                    {% set label = entity.name ~ ' ' ~ entity.fee ~ ' €' %}
+                {% endif %}
+                {{ form_row(shippingMethod, {
+                    'label': label,
+                }) }}
+            {% endfor %}
+            {{ form_end(form) }}
+            <input type="submit" form="form" value="Suivant" class="btn button-account">
+
+        </div>
     </div>
-
-
-<div class="card-body content-card recap">
-    <h1 class="text-center">Livraison</h1>
-
-{{ form_start(form, { 'attr': { 'id': 'form' } })  }}
-    {% for shippingMethod in form.shippingMethod %}
-        {% set index = shippingMethod.vars.value %}
-        {% set entity = form.shippingMethod.vars.choices[index].data %}
-        {% if entity.fee == 0 %}
-            {% set label = entity.name ~ ' gratuit' %}
-        {% else %}
-            {% set label = entity.name ~ ' ' ~ entity.fee ~ ' €' %}
-        {% endif %}
-        {{ form_row(shippingMethod, {
-            'label': label,
-        }) }}
-    {% endfor %}
-{{ form_end(form) }}
-<input type="submit" form="form" value="Suivant" class="btn button-account">
-
-</div>
-</div>
 {% endblock %}

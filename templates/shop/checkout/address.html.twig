@@ -15,13 +15,13 @@
             </nav>
         </div>
         <div class="card-body content-card recap">
-    <h1 class="text-center">Adresse de livraison</h1>
+            <h1 class="text-center">Adresse de livraison</h1>
 
-{{ form_start(address_form, { 'attr': { 'id': 'address-form' }}) }}
-    {% include "shop/account/address_form.html.twig" with {'address_form': address_form} %}
-{{ form_end(address_form) }}
-<input type="submit" form="address-form" value="Suivant" class="btn button-account">
+            {{ form_start(address_form, { 'attr': { 'id': 'address-form' }}) }}
+            {% include "shop/account/address_form.html.twig" with {'address_form': address_form} %}
+            {{ form_end(address_form) }}
+            <input type="submit" form="address-form" value="Suivant" class="btn button-account">
 
-</div>
+        </div>
     </div>
 {% endblock %}
