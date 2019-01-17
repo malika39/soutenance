@@ -4,9 +4,11 @@ namespace App\Controller\Admin;
 
 use App\Entity\Article;
 use App\Entity\User;
+use App\Controller\SlugTrait;
 use App\Form\ArticleFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,6 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends AbstractController
 {
+    use SlugTrait;
+
     /**
      * @Route("/blog", name="blog")
      */
@@ -89,7 +93,7 @@ class BlogController extends AbstractController
             /** @var UploadedFile $featuredImage */
             $featuredImage = $article->getFeaturedImage();
 
-            $fileName = $this->slugify($article->getTitre()) . '.' . $featuredImage->guessExtension();
+            /*$fileName = $this->slugifyArticle($article->getTitre()) . '.' . $featuredImage->guessExtension();
 
             // Move the file to the directory where brochures are stored
             try {
@@ -99,13 +103,13 @@ class BlogController extends AbstractController
                 );
             } catch (FileException $e) {
                 // ... handle exception if something happens during file upload
-            }
+            }*/
 
             #Mise à jour de l'image
             $article->setFeaturedImage($fileName);
 
             #Mise à jour du slug
-            $article->setSlug($this->slugify($article->getTitre()));
+            $article->setSlug($this->slugifyArticle($article->getTitre()));
 
             #Sauvegarde en BDD
             $em = $this->getDoctrine()->getManager();
@@ -117,7 +121,7 @@ class BlogController extends AbstractController
                 'Félicitations, votre article est en ligne!');
 
             #Redirection
-            return $this->redirectToRoute('category', [
+            return $this->redirectToRoute('index', [
                 'slug' => $article->getSlug(),
                 'id' =>$article->getId() ]);
             // ... persist the $product variable or any other work
@@ -129,6 +133,5 @@ class BlogController extends AbstractController
             'form'=> $form->createView()
         ]);
     }
-
 
 }
