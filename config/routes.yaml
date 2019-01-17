@@ -81,8 +81,8 @@ admin_order-show:
     requirements:
         id: '\d+'
 
-single_atelier_show:
-    path: /single_atelier/{slug}
+atelier_show:
+    path: /ateliersweet/{slug}
     controller: App\Controller\AtelierController::show
     requirements:
         slug: '[a-zA-Z1-9\-]+'
