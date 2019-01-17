@@ -2255,13 +2255,14 @@ form{
 
 
 #single-product-block{
-    margin-top:10rem;
-    margin-bottom:10rem;
+    margin-top:24rem;
+    margin-bottom:22rem;
     background-color: rgba(221, 255, 243, 0.76);
     padding-top:4rem;
     padding-bottom:4rem;
-    border-radius:20px;
+    border-radius:3px;
 }
+
 
 #single-product-block h2{
     font-size:4rem;
