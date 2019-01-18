@@ -34,7 +34,13 @@
                     <div class="col-md-4">
                         <a href="/ateliersweet/{{ ateliers.slug }}">
                         <span class="overlay-container">
-                          <img class="img-fluid" src="img/28.jpg">
+                           {% if ateliers.imagess is not empty %}
+                               {% set thumb = ateliers.imagess | first %}
+                               <img src="/imgs/upload/{{ thumb.name }}" alt="{{ thumb.description  }}" class="img img-fluid">
+                                {% else %}
+                               <img src="http://www.bagherra.eu/wp-content/uploads/2016/11/orionthemes-placeholder-image-1.png"
+                                    alt="under construction" class="img img-fluid">
+                           {% endif %}
                           <span class="overlay-background">
                             <span class="see-more">
                               <span class="see-more-btn">
