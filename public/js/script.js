@@ -3,6 +3,166 @@ $(document).ready(function(){
 
 
 
+
+        /*-----------------------
+               PAGE ADMIN
+        -------------------------- */
+
+        // background color changes with timer
+        function playsliderAdmin(){
+            $('#admin-page-section-1').css("background-color", "rgba(252, 210, 244, 0.8)");
+            var interval = 2000; // `setTimeout` accepts time in millis
+            // Change the color to red after 6 seconds
+            setTimeout(function() {
+                $('#admin-page-section-1').css("background-color", "rgba(215, 192, 180, 0.91)");
+            }, interval);
+            x = setTimeout(function(){playsliderAdmin()}, 6000);
+        }
+        playsliderAdmin();
+
+
+        /*-----------------------
+               PAGE ADMIN ORDER
+        -------------------------- */
+        // background color changes with timer
+        function playslider(){
+            $('#main-admin-orders').css("background-color", "rgba(194, 206, 215, 0.91)");
+            var interval = 2000; // `setTimeout` accepts time in millis
+            // Change the color to red after 6 seconds
+            setTimeout(function() {
+                $('#main-admin-orders').css("background-color", "rgba(215, 192, 180, 0.91)");
+            }, interval);
+            x = setTimeout(function(){playslider()}, 6000);
+        }
+        playslider();
+
+
+    /*----------------------------
+         PAGE TOUS LES ATELIERS
+    ------------------------------ */
+
+    // background color changes with timer
+    function playsliderAllAteliers(){
+        $('#section-1-atelier').css("background-color", "rgba(221, 255, 210, 0.8)");
+        var interval = 2000; // `setTimeout` accepts time in millis
+        // Change the color to red after 6 seconds
+        setTimeout(function() {
+            $('#section-1-atelier').css("background-color", "rgba(255, 238, 207, 1)");
+        }, interval);
+        x = setTimeout(function(){playsliderAllAteliers()}, 6000);
+    }
+    playsliderAllAteliers();
+
+
+        /*-----------------------
+               PAGE PRODUCT EDITOR
+        -------------------------- */
+
+        // background color changes with timer
+        function playsliderProductEditor(){
+            $('#product-editor').css("background-color", "rgba(252, 210, 244, 0.8)");
+            var interval = 2000; // `setTimeout` accepts time in millis
+            // Change the color to red after 6 seconds
+            setTimeout(function() {
+                $('#product-editor').css("background-color", "rgba(215, 192, 180, 0.91)");
+            }, interval);
+            x = setTimeout(function(){playsliderProductEditor()}, 6000);
+        }
+        playsliderProductEditor();
+
+
+
+
+        /*-----------------------
+             PAGE ATELIER EDITOR
+        -------------------------- */
+
+        // background color changes with timer
+        function playsliderAtelierEditor(){
+            $('#main-atelier-editor').css("background-color", "rgba(252, 210, 125, 0.8)");
+            var interval = 2000; // `setTimeout` accepts time in millis
+            // Change the color to red after 6 seconds
+            setTimeout(function() {
+                $('#main-atelier-editor').css("background-color", "rgba(152, 192, 126, 0.91)");
+            }, interval);
+            x = setTimeout(function(){playsliderAtelierEditor()}, 6000);
+        }
+        playsliderAtelierEditor();
+
+
+
+        /*-----------------------
+               PAGE ATELIER EDITOR
+         -------------------------- */
+
+        function playsliderSingleAtelier(){
+            $('#single-atelier-block').css("background-color", "rgba(200, 150, 180, 0.7)");
+            $('#single-atelier-block').css("color", "rgb(11,60,55)");
+            $('#single-atelier-block h2').css("color", "rgb(11,100,55)");
+            $('#single-atelier-block a').css("color", "rgb(255,255,255)");
+            $('#single-atelier-block p').css("color", "rgb(255,255,255)");
+            var interval = 2000; // `setTimeout` accepts time in millis
+            // Change the color to red after 6 seconds
+            setTimeout(function() {
+                $('#single-atelier-block').css("background-color", "rgba(150, 160, 230, 0.91)");
+
+                $('#single-atelier-block').css("color", "rgb(0,0,0)");
+                $('#single-atelier-block h2').css("color", "rgb(0,0,0)");
+                $('#single-atelier-block a').css("color", "rgb(0,0,0)");
+                $('#single-atelier-block p').css("color", "rgb(0,0,0)");
+            }, interval);
+
+
+
+
+            x = setTimeout(function(){playsliderSingleAtelier()}, 6000);
+        }
+        playsliderSingleAtelier();
+
+
+        /*----------------------------
+             PAGE TOUS LES ATELIERS Admin
+        ------------------------------ */
+
+        // background color changes with timer
+        function playsliderAdminAllAteliers(){
+            $('#admin-all-ateliers').css("background-color", "rgba(252, 210, 125, 0.8)");
+            var interval = 2000; // `setTimeout` accepts time in millis
+            // Change the color to red after 6 seconds
+            setTimeout(function() {
+                $('#admin-all-ateliers').css("background-color", "rgba(152, 192, 126, 0.91)");
+            }, interval);
+            x = setTimeout(function(){playsliderAdminAllAteliers()}, 6000);
+        }
+        playsliderAdminAllAteliers();
+
+
+
+
+
+
+    /*-----------------------
+           ALL PRODUCTS ADMIN
+    -------------------------- */
+
+    // background color changes with timer
+    function playsliderAdminAllProducts(){
+        $('#main-admin-all-products').css("background-color", "rgba(40, 210, 244, 0.8)");
+        var interval = 2000; // `setTimeout` accepts time in millis
+        // Change the color to red after 6 seconds
+        setTimeout(function() {
+            $('#main-admin-all-products').css("background-color", "rgba(215, 192, 180, 0.91)");
+        }, interval);
+        x = setTimeout(function(){playsliderAdminAllProducts()}, 6000);
+    }
+    playsliderAdminAllProducts();
+
+
+
+
+
+
+
 // fade out title and redirect to accueil.php
     $("#video").click(function() {
         $(this).fadeOut(4000);
@@ -17,6 +177,39 @@ $(document).ready(function(){
     /*-----------------------
                PAGE SINGLE PRODUCT USER
         -------------------------- */
+
+
+    // background color changes with timer
+    function playsliderSingleProduct(){
+        $('#single-product-block').css("background-color", "rgba(252, 210, 244, 0.8)");
+        var interval = 2000; // `setTimeout` accepts time in millis
+        // Change the color to red after 6 seconds
+        setTimeout(function() {
+            $('#single-product-block').css("background-color", "rgba(215, 192, 180, 0.91)");
+        }, interval);
+        x = setTimeout(function(){playsliderSingleProduct()}, 6000);
+    }
+    playsliderSingleProduct();
+
+
+    /*-----------------------
+       ALL PRODUCTS USER
+-------------------------- */
+
+    // background color changes with timer
+    function playsliderAllProductsUser(){
+        $('.all-products-block').css("background-color", "rgba(150, 210, 244, 0.8)");
+        var interval = 2000; // `setTimeout` accepts time in millis
+        // Change the color to red after 6 seconds
+        setTimeout(function() {
+            $('.all-products-block').css("background-color", "rgba(215, 192, 180, 0.91)");
+        }, interval);
+        x = setTimeout(function(){playsliderAllProductsUser()}, 6000);
+    }
+    playsliderAllProductsUser();
+
+
+
 
     // show description when click on it
 
@@ -255,7 +448,7 @@ $(document).ready(function(){
         // }
 
         /* image left */
-        if ($(this).scrollTop() > 3900) {
+        if ($(this).scrollTop() > 3600) {
             $("#img_68").css({"marginLeft":"0rem"});
             $("#img_68").css({"marginTop":"0rem"});
             $("#presentation-section-7").css({"marginTop":"7rem"})

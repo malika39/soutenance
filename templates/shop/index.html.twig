@@ -1,10 +1,7 @@
 {% extends 'shop/layout.html.twig' %}
 {% block title %}Lovin Sweet{% endblock title %}
 
-
-
 {% block content %}
-
 
     <div id="background" class="carousel slide carousel-fade background" data-ride="carousel">
         <div id="text" class="col-md-12 text-center"></div>
@@ -15,44 +12,12 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="{{ asset('img/46.jpg') }}" alt="First slide">
             </div>
-
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <h4>Breaking bread</h4>
-                   {# <h3>Le bonheur de la pâtisserie</h3>
-                    <p>Nulla a pharetra mollis interdum.a pharetra augue mollis interdum.<br>Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Quidem, suscipit!</p>#}
-                    <button class="btn btn-dark">Acheter</button>
-                </div>
-
-                <video class="video-fluid w-100" autoplay loop muted>
-                    <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4"/>
-                </video>
-
-            </div>
-
-
-           {# <div class="carousel-item">
-                <div class="carousel-caption col-md-12 text-center">
-                    <h4>Breaking bread</h4>
-                    <h3>Des spécialités délicieuses</h3>
-                    <p>Nulla libero, a pharetra augue mollis interdum. adipisicing <br>Lorem ipsum dolor sit amet, ci ab
-                        lausa vit hm alias. consectetur adipisicing elit. Quidem, suscipit!</p>
-                    <button class="btn btn-dark">Acheter</button>
-                </div>
-                <img class="d-block w-100" src="{{ asset('img/54.jpg') }}" alt="Third slide">
-            </div>#}
+            <video class="video-fluid w-100" autoplay loop muted>
+                <source src="{{ asset('video/Macaron.mp4') }}" type="video/mp4"/>
+            </video>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-
+    </div>
 
     <!-- SECTION PRESENTATION-->
     <div class="container-fluid" id="presentation-block">
@@ -66,19 +31,16 @@
                         la tradition des grands maîtres pâtissiers et vous émerveilleront par leur saveurs étonnantes.
                     </p>
                     <p>
-                        Edge Themes give you everything you need to create an amazing website. Designed and built with
-                        care, filled with creative elements and useful options, and completely user-friendly. Set up
-                        your website quickly and with ease.Tons of shortcodes provide countless options. From image
-                        galleries to infographics.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae consequatur, dolore dolores
+                        est facilis illo iusto libero nemo nisi possimus provident quaerat quia recusandae sunt tempora
+                        tempore unde vel? Aut culpa distinctio nesciunt recusandae repellat, repellendus soluta tenetur
+                        voluptatem.
                     </p>
-                    {#<button type="submit" class="btn btn-primary">Checkout</button>#}
                 </div>
                 <div class="col-md-3 text-center">
-                    <!-- <p>Des patisseries <br>délicieuses et <br>gourmandes</p> -->
                     <img src="{{ asset('img/47.jpg') }}" class="img-fluid">
                 </div>
                 <div class="col-md-3 text-center">
-                    <!-- <p>Des patisseries <br>délicieuses et <br>gourmandes</p> -->
                     <img src="{{ asset('img/48.jpg') }}" class="img-fluid">
                 </div>
             </div>
@@ -95,16 +57,13 @@
                 </div>
             </div>
             <div class="row">
-                <!-- 	<div class="col-md-4">
-                        <a href="#" class="button-style-1">Découvrez la collection</a>
-                    </div> -->
                 {% for product in latest_products %}
-
-                <div class="col-md-4" id="block1">
-                    {% set thumb = product.images|first %}
-                    <a href="/product/{{ product.slug }}">
+                    <div class="col-md-4" id="block1">
+                        {% set thumb = product.images|first %}
+                        <a href="/product/{{ product.slug }}">
 					        <span class="overlay-container">
-					          <img src="/img/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
+					          <img src="/img/upload/{{ thumb.name }}" alt="{{ thumb.description }}"
+                                   class="product-card__image img img-fluid">
 					          <span class="overlay-background">
 					            <span class="see-more">
 					              <span class="see-more-btn">
@@ -118,11 +77,11 @@
 					            </span>
 					          </span>
                             </span>
-                    </a>
-                </div>
+                        </a>
+                    </div>
                 {% endfor %}
-
-
+            </div>
+        </div>
     </section>
 
 
@@ -139,55 +98,40 @@
                         constant du détail, une passion pour les bons produits et le plaisir de créer des chocolats de
                         caractère.</p>
                     <p>
-                        Edge Themes give you everything you need to create an amazing website. Designed and built with
-                        care, filled with creative elements and useful options, and completely user-friendly. Set up
-                        your website quickly and with ease.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores blanditiis cumque,
+                        necessitatibus nesciunt numquam quia quod rem repellat voluptate? Alias doloribus dolorum enim,
+                        eveniet facilis laboriosam laudantium necessitatibus nobis nulla officiis perferendis porro
+                        praesentium quaerat quod vel. Maiores, voluptate!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- Présentation section 8 -->
     <section class="container-fluid" id="presentation-section-8">
         <div class="container">
             <div class="col-md-12 text-center">
                 <h2>Tous nos produits</h2>
-                <!--<a href="#" class="button-style-1">En savoir plus</a>-->
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <a href="{{ path('allProduct_show') }}">
                         <span class="overlay-container-2">
-
                             <img src="{{ asset('img/69.jpg') }}" alt="">
                             <span class="overlay-background-2">
-
                                 <span class="see-more">
-
                                   <span class="see-more-btn">
-
-
                                     <h3>
                                         Voir plus
                                     </h3>
-
-                                   {# <span class="hidden">
-
-                                        Read more
-                                    </span>#}
-
                                   </span>
-                                    <img class="img-fluid" src="{{ asset('img/61.jpg') }}" id="img-49">
                                 </span>
                             </span>
                         </span>
                     </a>
                 </div>
-
             </div>
-
         </div>
     </section>
 
@@ -196,18 +140,11 @@
         <div class="container">
             <div class="col-md-12 text-center">
                 <h2>Le savoir-faire Lovin Sweet</h2>
-                <!--<a href="#" class="button-style-1">En savoir plus</a>-->
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <img class="img-fluid" src="{{ asset('img/62.jpg') }}" id="img_16">
-                    <!--<img class="img-fluid" src="img/17.png" id="img_17">-->
                 </div>
-
-                <!-- Une vidéo youtube s'ouvre dans nouvelle fenêtre
-                quand on clique
-                Plugin jquery video lightbox
-                https://html5box.com/html5lightbox/ -->
                 <div class="video col-md-6 ">
                     <a href="https://www.youtube.com/watch?v=JolwVF68L6k" class="html5lightbox">
                         <img class="img-fluid" src="{{ asset('img/19.jpg') }}" id="img_19">
@@ -216,8 +153,6 @@
             </div>
         </div>
     </section>
-
-
     <section class="container-fluid" id="presentation-section-9">
         <div class="container-fluid">
             <div class="row">
@@ -226,16 +161,13 @@
                 </div>
             </div>
             <div class="row">
-                <!-- 	<div class="col-md-4">
-                        <a href="#" class="button-style-1">Découvrez la collection</a>
-                    </div> -->
                 {% for atelier in latest_ateliers %}
                     <div class="col-md-4" id="block1">
                         <a href="/ateliersweet/{{ atelier.slug }}">
 					        <span class="overlay-container">
                                     {% set thumb = atelier.imagess | first %}
-					           <img src="/imgs/upload/{{ thumb.name }}" alt="{{ thumb.description }}" class="product-card__image img img-fluid">
-                                <!--<img class="img-fluid" src="/imgs/upload/" alt="" id="img-49">-->
+					           <img src="/imgs/upload/{{ thumb.name }}" alt="{{ thumb.description }}"
+                                    class="product-card__image img img-fluid">
 					          <span class="overlay-background">
 					            <span class="see-more">
 					              <span class="see-more-btn">
@@ -251,13 +183,10 @@
                         </a>
                     </div>
                 {% endfor %}
-
-
+            </div>
+        </div>
     </section>
-
-
     <section class="container-fluid mb-5" id="presentation-section-7">
-
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center">Tous nos ateliers</h2>
@@ -271,7 +200,7 @@
                     <span class="see-more">
                       <span class="see-more-btn">
                         <h3>Nos ateliers</h3>
-                        <p>Des ateliers pour tout le monde</p>
+                        <p id="description-ateliers">Des ateliers pour tout le monde</p>
                         <span class="hidden">
                             Découvrir
                         </span>
@@ -282,6 +211,4 @@
             </a>
         </div>
     </section>
-
-
 {% endblock %}
