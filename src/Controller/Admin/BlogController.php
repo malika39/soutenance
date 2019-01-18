@@ -18,51 +18,21 @@ class BlogController extends AbstractController
 {
     use SlugTrait;
 
+
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/blog/article/{slug<[a-zA-Z1-9-_/]+>}", methods={"GET"}, defaults={"slug"="news"}, name="article")
      */
-    public function index()
+    public function articleSingle()
     {
-        return $this->render('blog/index.html.twig', [
-            'controller_name' => 'BlogController',
+        $repository = $this->getDoctrine()
+            ->getRepository(Article::class);
+        $articles = $repository->findBy([], ['id' => 'DESC']);
+
+        return $this->render('article/index.html.twig', [
+            'controller_name' => 'ArticleController',
         ]);
     }
 
-    /**
-     * Démonstration de l'ajout d'un Article avec Doctrine !
-     * @Route("/blog/test", name="article_demo")
-     */
-    public function demo()
-    {
-        #Appel du membre
-        $user = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->find(1);
-
-        #Création de l'Article
-        $article = new Article();
-        $article
-            ->setTitre("Galette des rois : la meilleure recette")
-            ->setSlug("galette-des-rois-la-meilleure-recette")
-            ->setContenu("<p>Pour faire une super galette, il vous faut de la pâte feuilleté, du beurre et de la poudre d'amandes !</p>")
-            ->setFeaturedImage("croissant.jpg")
-            ->setDateCreation(\DateTime::createFromFormat('Y-m-d', "2018-01-16"))
-            ->setUser($user);
-
-        /*
-         * Récupération du Manager de Doctrine.
-         * Le Entity Manager est une classe qui sait
-         * comment persister d'autres classes.
-         * (Effectuer des opérations CRUD sur nos entités).
-         */
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->persist($article);
-        $em->flush();
-
-        return new Response('Nouvel article ajouté avec ID:' . $article->getId() . 'de Auteur:' . $user->getLastName());
-    }
 
     /**
      * Formulaire pour ajouter un article.
@@ -93,7 +63,7 @@ class BlogController extends AbstractController
             /** @var UploadedFile $featuredImage */
             $featuredImage = $article->getFeaturedImage();
 
-            /*$fileName = $this->slugifyArticle($article->getTitre()) . '.' . $featuredImage->guessExtension();
+            $fileName = $this->slugifyArticle($article->getTitre()) . '.' . $featuredImage->guessExtension();
 
             // Move the file to the directory where brochures are stored
             try {
@@ -103,7 +73,7 @@ class BlogController extends AbstractController
                 );
             } catch (FileException $e) {
                 // ... handle exception if something happens during file upload
-            }*/
+            }
 
             #Mise à jour de l'image
             $article->setFeaturedImage($fileName);
@@ -121,7 +91,7 @@ class BlogController extends AbstractController
                 'Félicitations, votre article est en ligne!');
 
             #Redirection
-            return $this->redirectToRoute('index', [
+            return $this->redirectToRoute('blog', [
                 'slug' => $article->getSlug(),
                 'id' =>$article->getId() ]);
             // ... persist the $product variable or any other work

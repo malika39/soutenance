@@ -1,7 +1,37 @@
 {% extends 'blog/layout.blog.html.twig' %}
 
-{% block page_title%}Blog{% endblock %}
+{% block page_title %}Blog{% endblock %}
+
 
 {% block content %}
-    <h1>Bienvenue sur le blog</h1>
+    <div class="container block-articles">
+    <h1 class="welcome text-center">Bienvenue sur le blog de Lovin Sweet</h1>
+    {% if articles is not empty %}
+    <h2 class="text-center">Les derniers articles publiés</h2>
+    {% for article in articles %}
+        <div class="row">
+            <h1>{{ article.titre }}</h1>
+            <div class="col-md-12">
+                <p>{{ article.user.lastName ~ ' ' ~ article.user.firstName }} | {{ article.dateCreation | date }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img alt="" src="{{ asset('images/upload/' ~ article.featuredImage) }}">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>{{ article.contenu }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-danger">
+            <strong>
+                Aucune publication pour le moment.
+            </strong>
+        </div>
+        </div>
+    {% endif %}
 {% endblock %}

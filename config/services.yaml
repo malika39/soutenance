@@ -3,6 +3,7 @@
 parameters:
     images_directory: '%kernel.project_dir%/public/img/upload'
     imagess_directory: '%kernel.project_dir%/public/imgs/upload'
+    articles_assets_dir: '%kernel.project_dir%/public/images/upload'
     # imagess et images pour créer dossier atelier et products
 
 services:

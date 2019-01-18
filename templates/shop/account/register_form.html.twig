@@ -1,3 +1,9 @@
+{% extends 'shop/layout.html.twig' %}
+
+
+{%  block content %}
+<div class="container" id="form-welcome2">
+    <h1 class="welcome text-center">Confirmer l'inscription</h1>
 {{ form_start(registrationForm) }}
     {{ form_row(registrationForm.email, {
         'label': 'E-mail',
@@ -15,4 +21,6 @@
 
     <input type="submit" value="Créer mon compte" class="btn btn-primary button-form">
 {{ form_end(registrationForm) }}
+</div>
+{% endblock %}
 
