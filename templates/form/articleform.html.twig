@@ -1,17 +1,18 @@
 {% extends 'shop/layout.html.twig' %}
 
-{% set active = 'form' %}
-
 {% block page_title %}
     Rédiger un article
 {% endblock %}
 
 {% block content %}
+    <div class="container client-section">
     <div class="row">
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-12">
 
-            <h3>Rédiger un Article</h3>
+            <h3 class="welcome text-center">Rédiger un article</h3>
             {{ form(form, {attr:{novalidate: 'novalidate'}}) }}
+
         </div>
+    </div>
     </div>
 {% endblock %}

@@ -9,7 +9,7 @@
         "ext-intl": "*",
         "ext-json": "*",
         "paypal/rest-api-sdk-php": "^1.13",
-        "sensio/framework-extra-bundle": "^5.1",
+        "sensio/framework-extra-bundle": "^5.2",
         "squizlabs/php_codesniffer": "^3.3",
         "stripe/stripe-php": "^6.27",
         "symfony/asset": "^4.0",

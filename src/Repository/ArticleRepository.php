@@ -19,6 +19,29 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    #Pour afficher les articles dans l'ordre décroissant (du plus récent au plus ancien), 5 articles maximum
+    public function findLatestArticles()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findArticlesSuggestions($idArticle)
+    {
+        return $this->createQueryBuilder('a')
+            # Tous les articles d'une catégorie ($idCategorie)
+            ->where('a.id = :article_id')
+            ->setParameter('article_id', $idArticle)
+
+            # par ordre décroissant
+            ->orderBy('a.id', 'DESC')
+
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */

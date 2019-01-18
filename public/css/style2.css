@@ -658,7 +658,6 @@ a#skip {
     width: 100%;
 }
 
-
 /* --------------------------
 	  PAGE NOS BOUTIQUES
 -----------------------------*/
@@ -1724,6 +1723,11 @@ input {
     color: white;
 }
 
+.welcome-user{
+margin-left: 2rem;
+height: 1.8rem;
+}
+
 
 /*-----------------------------------
             CAROUSEL
@@ -2025,6 +2029,14 @@ footer p {
     color: #C19A92 !important;
 }
 
+/*-----------------------------------
+                BLOG
+-------------------------------------*/
+
+.block-articles{
+    margin-bottom:69rem;
+}
+
 
 /* -------------------------
 		PAGE NOS LIEUX
@@ -2275,6 +2287,25 @@ form {
 #section-1-all-products a {
     font-size: 3rem !important;
     text-transform: uppercase;
+
+/* -------------------------
+	  PAGE SINGLE PRODUCT USER
+-----------------------------*/
+
+
+#single-product-block{
+    margin-top:24rem;
+    margin-bottom:22rem;
+    background-color: rgba(221, 255, 243, 0.76);
+    padding-top:4rem;
+    padding-bottom:4rem;
+    border-radius:3px;
+}
+
+
+#single-product-block h2{
+    font-size:4rem;
+    margin-bottom:5rem;
 }
 
 .all-products-text-block {

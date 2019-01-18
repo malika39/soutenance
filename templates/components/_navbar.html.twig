@@ -24,6 +24,7 @@
             <a class="nav-link" href="{{ path('contact') }}">Contact</a>
         </li>
 
+
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Espace client
@@ -38,7 +39,7 @@
                 {% else %}
                     <a class="dropdown-item" href={{ path('user_registration') }}>Inscription</a>
                     <a class="dropdown-item" href={{ path('user_welcome') }}>Connexion</a>
-                    <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
+                    <a class="dropdown-item" href={{ path('presentation') }}>Qui-sommes-nous?</a>
                 {% endif %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_ADMIN') %}
                     <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
@@ -49,6 +50,7 @@
                 {% endif %}
             </div>
     </ul>
+
     </div>
         <div id="basket-user">
             <a href="{{ path('basket_show')}}"><i class="fas fa-shopping-cart icon-style"></i>

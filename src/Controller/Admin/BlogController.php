@@ -4,9 +4,11 @@ namespace App\Controller\Admin;
 
 use App\Entity\Article;
 use App\Entity\User;
+use App\Controller\SlugTrait;
 use App\Form\ArticleFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,51 +16,23 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends AbstractController
 {
+    use SlugTrait;
+
+
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/blog/article/{slug<[a-zA-Z1-9-_/]+>}", methods={"GET"}, defaults={"slug"="news"}, name="article")
      */
-    public function index()
+    public function articleSingle()
     {
-        return $this->render('blog/index.html.twig', [
-            'controller_name' => 'BlogController',
+        $repository = $this->getDoctrine()
+            ->getRepository(Article::class);
+        $articles = $repository->findBy([], ['id' => 'DESC']);
+
+        return $this->render('article/index.html.twig', [
+            'controller_name' => 'ArticleController',
         ]);
     }
 
-    /**
-     * Démonstration de l'ajout d'un Article avec Doctrine !
-     * @Route("/blog/test", name="article_demo")
-     */
-    public function demo()
-    {
-        #Appel du membre
-        $user = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->find(1);
-
-        #Création de l'Article
-        $article = new Article();
-        $article
-            ->setTitre("Galette des rois : la meilleure recette")
-            ->setSlug("galette-des-rois-la-meilleure-recette")
-            ->setContenu("<p>Pour faire une super galette, il vous faut de la pâte feuilleté, du beurre et de la poudre d'amandes !</p>")
-            ->setFeaturedImage("croissant.jpg")
-            ->setDateCreation(\DateTime::createFromFormat('Y-m-d', "2018-01-16"))
-            ->setUser($user);
-
-        /*
-         * Récupération du Manager de Doctrine.
-         * Le Entity Manager est une classe qui sait
-         * comment persister d'autres classes.
-         * (Effectuer des opérations CRUD sur nos entités).
-         */
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->persist($article);
-        $em->flush();
-
-        return new Response('Nouvel article ajouté avec ID:' . $article->getId() . 'de Auteur:' . $user->getLastName());
-    }
 
     /**
      * Formulaire pour ajouter un article.
@@ -89,7 +63,7 @@ class BlogController extends AbstractController
             /** @var UploadedFile $featuredImage */
             $featuredImage = $article->getFeaturedImage();
 
-            $fileName = $this->slugify($article->getTitre()) . '.' . $featuredImage->guessExtension();
+            $fileName = $this->slugifyArticle($article->getTitre()) . '.' . $featuredImage->guessExtension();
 
             // Move the file to the directory where brochures are stored
             try {
@@ -105,7 +79,7 @@ class BlogController extends AbstractController
             $article->setFeaturedImage($fileName);
 
             #Mise à jour du slug
-            $article->setSlug($this->slugify($article->getTitre()));
+            $article->setSlug($this->slugifyArticle($article->getTitre()));
 
             #Sauvegarde en BDD
             $em = $this->getDoctrine()->getManager();
@@ -117,7 +91,7 @@ class BlogController extends AbstractController
                 'Félicitations, votre article est en ligne!');
 
             #Redirection
-            return $this->redirectToRoute('category', [
+            return $this->redirectToRoute('blog', [
                 'slug' => $article->getSlug(),
                 'id' =>$article->getId() ]);
             // ... persist the $product variable or any other work
@@ -129,6 +103,5 @@ class BlogController extends AbstractController
             'form'=> $form->createView()
         ]);
     }
-
 
 }
