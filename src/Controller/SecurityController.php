@@ -54,7 +54,6 @@ class SecurityController extends AbstractController
             try {
                 $em->flush();
             } catch (\Exception $e) {
-                $this->addFlash('warning', 'Attention ! Cette adresse email est déjà utilisée.');
                 return $this->redirectToRoute('user_welcome');
             }
 
