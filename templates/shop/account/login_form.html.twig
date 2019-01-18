@@ -5,6 +5,26 @@
     </div>
 {% endif %}
 
+
+{% if app.session.flashbag.peekAll is not empty %}
+
+    <div class="flash container mt-2" id="flash">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                    <span class="font-weight-bold">{{ message }}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+
+        {% endfor %}
+    </div>
+
+{% endif %}
+
+
 {{ form_start(loginForm) }}
     {{ form_row(loginForm.username, {
         'full_name': '_email',

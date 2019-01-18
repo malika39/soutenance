@@ -101,134 +101,6 @@ span{
 }
 
 
-/* navbar
-
-#navbar{
-    margin-top:2rem;
-}
-
-.nav-item li{
-    margin-top:1.3rem;
-
-}
-
-#menu-lovin{
-    background: black;
-    color: white;
-    font-size: 1.7rem;
-}
-
-#menu-lovin a {
-    color: burlywood;
-}
-
-#logo {
-    font-size: 4rem;
-    font-family: 'Cookie', cursive;
-}
-
-#navbar-dropdown {
-    background-color: burlywood;
-}
-
-#navbar-dropdown a {
-    color: black;
-}
-
-#navbar-dropdown a:hover {
-    background-color:black;
-    color: burlywood;
-}
-
-#user {
-    font-size: 2.5rem;
-    color:#fff4db;
-}
-
-
-
-
-#link-block1 ul, #link-block2 ul, #link-block3 ul, #link-block4 ul, #link-block5 ul{
-    background-color:white;
-    position:absolute;
-    display:none;
-}
-
-#link-block1 ul{
-    width:17rem;
-
-}
-
-#link-block1 li{
-    margin-left:-15rem;
-
-}
-
-
-#link-block2 ul{
-    width:12rem;
-}
-
-#link-block2 li{
-    margin-left:-10rem;
-}
-
-#link-block3 ul{
-    width:10rem;
-}
-
-#link-block3 li{
-    margin-left:-8rem;
-}
-
-
-
-#link-block4 ul{
-    width:13rem;
-}
-
-#link-block4 li{
-    margin-left:-10rem;
-}
-
-#link-block5 li{
-    margin-left:-4rem;
-}
-
-
-
-
-.fab{
-    color:white;
-}
-
-.navbar-dark .navbar-brand{
-    color:#B094AD !important;
-}
-
-.navbar-nav a{
-    color:#87BA6E !important;
-    font-size:1.2rem;
-}
-.navbar-nav a:hover{
-    color:#6972A7 !important;
-}
-
-.navbar-nav li{
-    margin-left:20px;
-}
-
-.navbar-nav span a{
-
-}
-
-.bg-dark{
-    background-color:#B094AD !important;
-    background-color:transparent !important;
-}*/
-
-
-/* font-awesome */
 i{
     color:black;
     font-size:1.8rem;
@@ -810,14 +682,6 @@ a#skip {
     transition:2s ease-in;
     width:100%;
 }
-
-
-
-
-
-
-
-
 
 /* --------------------------
 	  PAGE NOS BOUTIQUES
@@ -1669,6 +1533,11 @@ input {
     color:white;
 }
 
+.welcome-user{
+margin-left: 2rem;
+height: 1.8rem;
+}
+
 
 /*-----------------------------------
             CAROUSEL
@@ -1971,6 +1840,14 @@ footer p {
 
 .breadcrumb-item.active{
     color:#C19A92 !important;
+}
+
+/*-----------------------------------
+                BLOG
+-------------------------------------*/
+
+.block-articles{
+    margin-bottom:69rem;
 }
 
 

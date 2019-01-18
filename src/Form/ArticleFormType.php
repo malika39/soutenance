@@ -40,11 +40,13 @@ class ArticleFormType extends AbstractType
                 'attr' => [
                     'class' =>'dropify'
                 ]
+
             ])
 
-            ->add('submit', SubmitType::class, [
-                'label' => 'Publier mon article'
-            ]);
+            ->add('submit', SubmitType::class,[
+            'label' => 'Publier mon article'
+        ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -52,11 +54,6 @@ class ArticleFormType extends AbstractType
         $resolver->setDefaults([
             'date_class' => Article::class
         ]);
-    }
-
-    public function getBlockPrefix()
-    {
-        return 'form';
     }
 
 }

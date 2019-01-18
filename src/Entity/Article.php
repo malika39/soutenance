@@ -49,6 +49,11 @@ class Article extends AbstractController
      */
     private $user;
 
+    public function __construct()
+    {
+        $this->dateCreation = new \DateTime();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,12 +95,12 @@ class Article extends AbstractController
         return $this;
     }
 
-    public function getFeaturedImage(): ?string
+    public function getFeaturedImage()
     {
         return $this->featuredImage;
     }
 
-    public function setFeaturedImage(string $featuredImage): self
+    public function setFeaturedImage($featuredImage): self
     {
         $this->featuredImage = $featuredImage;
 
