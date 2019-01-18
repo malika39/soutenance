@@ -39,7 +39,7 @@
                 {% else %}
                     <a class="dropdown-item" href={{ path('user_registration') }}>Inscription</a>
                     <a class="dropdown-item" href={{ path('user_welcome') }}>Connexion</a>
-                    <a class="dropdown-item" href=#>Qui-sommes-nous?</a>
+                    <a class="dropdown-item" href={{ path('presentation') }}>Qui-sommes-nous?</a>
                 {% endif %}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_ADMIN') %}
                     <a class="dropdown-item" href="{{ path('admin_index') }}">Gestion de la boutique</a>
